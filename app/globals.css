@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Styles - PRD Section 7.2 */
+:root {
+  /* Primary Colors */
+  --primary-green: #00d395;
+  --primary-dark: #00a876;
+  --primary-light: #b3f5e6;
+
+  /* Accent Colors */
+  --accent-blue: #4f46e5;
+  --accent-yellow: #fbbf24;
+  --accent-purple: #8b5cf6;
+  --accent-orange: #f97316;
+
+  /* Neutral Colors */
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-700: #374151;
+  --gray-900: #111827;
+
+  /* Semantic Colors */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --info: #3b82f6;
+}
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  /* Typography */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold;
+  }
+}
+
+@layer components {
+  /* Button Styles - PRD Section 7.4.2 */
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-all duration-200;
+    @apply px-6 py-3 text-base;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+    @apply active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply bg-white hover:bg-gray-50 text-primary border-2 border-primary font-semibold rounded-lg transition-all duration-200;
+    @apply px-6 py-3 text-base;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+
+  /* Input Styles - PRD Section 7.4.1 */
+  .input-field {
+    @apply w-full h-12 px-4 text-base border-2 border-gray-300 rounded-lg;
+    @apply focus:border-primary focus:ring-2 focus:ring-primary focus:ring-opacity-20;
+    @apply transition-all duration-200 outline-none;
+  }
+
+  .input-field:focus {
+    @apply border-primary shadow-md;
+  }
+
+  .input-field.filled {
+    @apply border-success;
+  }
+
+  .input-field.error {
+    @apply border-error;
+  }
+
+  /* Mobile-First Input - PRD Section 7.7.3 */
+  @media (max-width: 768px) {
+    .input-field {
+      @apply h-14 text-base;
+      /* Prevent iOS auto-zoom */
+      font-size: 16px !important;
+    }
+
+    .btn-primary {
+      @apply h-14 text-lg w-full;
+    }
+  }
+
+  /* Card Styles - PRD Section 7.4.3 */
+  .card {
+    @apply bg-white rounded-xl shadow-sm p-6 border border-gray-200;
+    @apply transition-shadow duration-300 hover:shadow-md;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: linear-gradient(135deg, #00d395 0%, #4f46e5 100%);
+  }
+
+  .gradient-result {
+    background: linear-gradient(to right, #f3f4f6 0%, #e0e7ff 100%);
+  }
+
+  .gradient-button {
+    background: linear-gradient(to right, #00d395, #00c489);
+  }
+
+  .gradient-hero {
+    background: linear-gradient(180deg, rgba(0, 211, 149, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  /* Animations - PRD Section 7.5 */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeInUp {
+    animation: fadeInUp 0.3s ease-out;
+  }
+}
