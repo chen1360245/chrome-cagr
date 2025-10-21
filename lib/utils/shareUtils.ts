@@ -1,6 +1,7 @@
 /**
  * Share Utilities
  * Helper functions for URL encoding and sharing functionality
+ * Updated: 2025-10-22 - Fixed share functionality for production
  */
 
 import type { CalculationResult } from '@/types/calculator'
