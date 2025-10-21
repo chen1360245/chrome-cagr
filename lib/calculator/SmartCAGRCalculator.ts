@@ -176,7 +176,9 @@ export class SmartCAGRCalculator {
     const cagr = r * 100 // Convert to percentage
     const totalGrowth = ((fv - pv) / pv) * 100
     const absoluteReturn = fv - pv
-    const doublingTime = r !== 0 ? 72 / (r * 100) : Infinity
+    // Use accurate logarithmic formula instead of Rule of 72 approximation
+    // doublingTime = log(2) / log(1 + r)
+    const doublingTime = r !== 0 ? Math.log(2) / Math.log(1 + r) : Infinity
 
     return {
       cagr,

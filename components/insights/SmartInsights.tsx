@@ -163,15 +163,15 @@ export function SmartInsights({ result, className }: SmartInsightsProps) {
         </div>
       </div>
 
-      {/* 3. Rule of 72 (if applicable) */}
+      {/* 3. Doubling Time (if applicable) */}
       {isFinite(result.metrics.doublingTime) && (
         <div className="rounded-lg border border-primary/20 p-4 bg-primary/5">
           <div className="flex items-start gap-3">
             <Lightbulb className="w-5 h-5 text-primary mt-0.5" />
             <div className="flex-1">
-              <h4 className="font-semibold text-gray-900 mb-1">Rule of 72</h4>
+              <h4 className="font-semibold text-gray-900 mb-1">Doubling Time</h4>
               <p className="text-sm text-gray-700">
-                At {formatPercentage(cagr)} annual growth, your money will double in approximately{' '}
+                At {formatPercentage(cagr)} annual growth, your money will double in exactly{' '}
                 <span className="font-semibold text-primary">
                   {result.metrics.doublingTime.toFixed(1)} years
                 </span>
