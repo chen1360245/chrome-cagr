@@ -17,6 +17,7 @@ import { Timeline } from '@/components/visualization/Timeline'
 import { YearlyTable } from '@/components/visualization/YearlyTable'
 import { SmartInsights } from '@/components/insights/SmartInsights'
 import { Button } from '@/components/ui/button'
+import { ShareButton } from '@/components/share/ShareButton'
 
 export interface ResultPanelEnhancedProps {
   result: CalculationResult
@@ -206,6 +207,11 @@ export function ResultPanelEnhanced({ result, className }: ResultPanelEnhancedPr
               </code>
             </div>
           </div>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex flex-wrap gap-3 pt-2">
+          <ShareButton result={result} variant="secondary" className="flex-1 min-w-[140px]" />
         </div>
 
         {/* Visualizations Section */}

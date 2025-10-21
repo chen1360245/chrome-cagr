@@ -1,26 +1,38 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
+import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Smart CAGR Calculator - Calculate Any Investment Parameter Instantly',
+  title: 'CAGR Calculator - Free Online Compound Annual Growth Rate Calculator',
   description:
-    "The world's first intelligent 4-parameter CAGR calculator. Input any 3 values (initial amount, final value, time period, growth rate) and instantly calculate the 4th. Free, accurate, and mobile-friendly.",
+    'Free online CAGR calculator - Calculate compound annual growth rate, final value, initial value, or time period. Learn how to calculate CAGR with formulas, examples, and step-by-step guide. Mobile-friendly and accurate.',
   keywords: [
     'CAGR calculator',
     'compound annual growth rate',
+    'calculate cagr',
+    'cagr calculator online',
+    'how to calculate cagr',
+    'cagr formula',
+    'cagr formula calculator',
     'investment calculator',
     'growth rate calculator',
-    'ROI calculator',
+    'cagr calculation',
+    'reverse cagr calculator',
+    'calculate final value from cagr',
+    'cagr return calculator',
+    'free cagr calculator',
     'investment returns',
+    'ROI calculator',
   ],
   authors: [{ name: 'CAGR Calculator Team' }],
   openGraph: {
-    title: 'Smart CAGR Calculator - Investment Growth Calculator',
+    title: 'CAGR Calculator - Free Online Compound Annual Growth Rate Calculator',
     description:
-      'Calculate CAGR, final value, initial investment, or time period. The most comprehensive CAGR calculator available.',
+      'Free online CAGR calculator - Calculate compound annual growth rate, final value, initial value, or time period. Learn how to calculate CAGR with formulas and examples.',
     url: 'https://cagrcalculator.app',
     siteName: 'CAGR Calculator',
     locale: 'en_US',
@@ -28,8 +40,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Smart CAGR Calculator',
-    description: 'The most intelligent CAGR calculator - Calculate any investment parameter',
+    title: 'CAGR Calculator - Free Online Tool',
+    description: 'Free online CAGR calculator - Calculate compound annual growth rate, final value, initial value, or time period with formulas and examples.',
   },
   robots: {
     index: true,
@@ -58,8 +70,28 @@ export default function RootLayout({
         {/* Additional meta tags */}
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href="https://cagrcalculator.app" />
+
+        {/* Microsoft Clarity */}
+        <Script
+          id="microsoft-clarity"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "ttnln3bgvt");
+            `,
+          }}
+        />
       </head>
       <body className={inter.className}>
+        {/* Google Analytics */}
+        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+          <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+        )}
+
         <div className="min-h-screen flex flex-col">
           {/* Header */}
           <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
@@ -113,8 +145,13 @@ export default function RootLayout({
                       </a>
                     </li>
                     <li>
-                      <a href="#examples" className="hover:text-primary transition">
-                        Examples
+                      <a href="#use-cases" className="hover:text-primary transition">
+                        Use Cases
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#how-to-use" className="hover:text-primary transition">
+                        How to Use
                       </a>
                     </li>
                     <li>

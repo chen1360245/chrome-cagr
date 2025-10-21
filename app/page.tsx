@@ -10,6 +10,15 @@ import { ModeIndicator } from '@/components/calculator/ModeIndicator'
 import { ResultPanelEnhanced } from '@/components/calculator/ResultPanelEnhanced'
 import { Button } from '@/components/ui/button'
 import { DollarSign, Target, Clock, TrendingUp, RotateCcw } from 'lucide-react'
+import { CollapsibleSection } from '@/components/educational/CollapsibleSection'
+import { WhatIsCAGR } from '@/components/educational/WhatIsCAGR'
+import { FormulaExplained } from '@/components/educational/FormulaExplained'
+import { UseCases } from '@/components/educational/UseCases'
+import { CAGRvsMetrics } from '@/components/educational/CAGRvsMetrics'
+import { FAQ } from '@/components/educational/FAQ'
+import { HowToUse } from '@/components/educational/HowToUse'
+import { About } from '@/components/educational/About'
+import { BookOpen, Calculator as CalculatorIcon, Lightbulb, BarChart, HelpCircle, Info } from 'lucide-react'
 
 export default function HomePage() {
   const {
@@ -135,86 +144,88 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Educational Sections (Placeholder - PRD Section 5.3) */}
-      <section id="what-is-cagr" className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">What is CAGR?</h2>
-          <div className="bg-white rounded-xl shadow-sm p-8 border border-gray-200">
-            <p className="text-gray-700 leading-relaxed mb-4">
-              CAGR (Compound Annual Growth Rate) is the rate of return that would be required for an
-              investment to grow from its beginning balance to its ending balance, assuming the
-              profits were reinvested at the end of each year.
-            </p>
-            <p className="text-gray-700 leading-relaxed">
-              Unlike simple average returns, CAGR accounts for the compounding effect, making it a
-              more accurate measure of investment performance over time.
+      {/* Educational Content Sections - PRD Phase 3 Week 7 */}
+      <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
+        <div className="max-w-4xl mx-auto space-y-6">
+          {/* Section Divider */}
+          <div className="border-t-2 border-gray-200 pt-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-2">
+              📚 Learn About CAGR
+            </h2>
+            <p className="text-center text-gray-600 mb-8">
+              Everything you need to know to make informed investment decisions
             </p>
           </div>
-        </div>
-      </section>
 
-      <section id="how-to-use" className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">How to Use</h2>
-          <div className="bg-white rounded-xl shadow-sm p-8 border border-gray-200">
-            <ol className="list-decimal list-inside space-y-4 text-gray-700">
-              <li className="leading-relaxed">
-                <span className="font-semibold">Choose any 3 parameters:</span> Enter values for
-                Initial Value, Final Value, Time Period, or CAGR Rate
-              </li>
-              <li className="leading-relaxed">
-                <span className="font-semibold">System auto-detects:</span> The calculator
-                automatically identifies which parameter you want to calculate
-              </li>
-              <li className="leading-relaxed">
-                <span className="font-semibold">Click Calculate:</span> Get instant results with
-                detailed insights and visualizations
-              </li>
-              <li className="leading-relaxed">
-                <span className="font-semibold">Analyze results:</span> Review growth metrics,
-                yearly breakdown, and smart recommendations
-              </li>
-            </ol>
-          </div>
-        </div>
-      </section>
+          {/* What is CAGR - Default Expanded */}
+          <CollapsibleSection
+            id="what-is-cagr"
+            title="What is CAGR?"
+            icon={<BookOpen className="w-6 h-6" />}
+            defaultExpanded={true}
+          >
+            <WhatIsCAGR />
+          </CollapsibleSection>
 
-      <section id="faq" className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
-          <div className="space-y-4">
-            <details className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
-              <summary className="font-semibold text-gray-900 cursor-pointer">
-                What's a good CAGR?
-              </summary>
-              <p className="mt-4 text-gray-700 leading-relaxed">
-                A "good" CAGR depends on the asset class and market conditions. Historically, the
-                S&P 500 has averaged about 10-11% annually. A CAGR above 15% is considered
-                excellent, while 20%+ is exceptional.
-              </p>
-            </details>
+          {/* How to Calculate CAGR - Formula Explained */}
+          <CollapsibleSection
+            id="formula"
+            title="How to Calculate CAGR - Formula Explained"
+            icon={<CalculatorIcon className="w-6 h-6" />}
+            defaultExpanded={false}
+          >
+            <FormulaExplained />
+          </CollapsibleSection>
 
-            <details className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
-              <summary className="font-semibold text-gray-900 cursor-pointer">
-                How is CAGR different from average return?
-              </summary>
-              <p className="mt-4 text-gray-700 leading-relaxed">
-                CAGR accounts for compounding and provides a smoothed annual growth rate, while
-                simple average return doesn't consider the sequence and compounding of returns.
-                CAGR is more accurate for long-term investments.
-              </p>
-            </details>
+          {/* CAGR Calculator Use Cases & Examples */}
+          <CollapsibleSection
+            id="use-cases"
+            title="CAGR Calculator Use Cases & Examples"
+            icon={<Lightbulb className="w-6 h-6" />}
+            defaultExpanded={false}
+          >
+            <UseCases />
+          </CollapsibleSection>
 
-            <details className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
-              <summary className="font-semibold text-gray-900 cursor-pointer">
-                Can I calculate negative CAGR?
-              </summary>
-              <p className="mt-4 text-gray-700 leading-relaxed">
-                Yes! If your final value is less than your initial value, you'll get a negative
-                CAGR, indicating a loss. The calculator supports CAGR values from -100% to +1000%.
-              </p>
-            </details>
-          </div>
+          {/* CAGR vs Other Metrics */}
+          <CollapsibleSection
+            id="cagr-vs-metrics"
+            title="CAGR vs Other Metrics"
+            icon={<BarChart className="w-6 h-6" />}
+            defaultExpanded={false}
+          >
+            <CAGRvsMetrics />
+          </CollapsibleSection>
+
+          {/* How to Use This CAGR Calculator */}
+          <CollapsibleSection
+            id="how-to-use"
+            title="How to Use This CAGR Calculator"
+            icon={<HelpCircle className="w-6 h-6" />}
+            defaultExpanded={false}
+          >
+            <HowToUse />
+          </CollapsibleSection>
+
+          {/* CAGR Calculator FAQ */}
+          <CollapsibleSection
+            id="faq"
+            title="CAGR Calculator FAQ"
+            icon={<HelpCircle className="w-6 h-6" />}
+            defaultExpanded={false}
+          >
+            <FAQ />
+          </CollapsibleSection>
+
+          {/* About Our Free Online CAGR Calculator */}
+          <CollapsibleSection
+            id="about"
+            title="About Our Free Online CAGR Calculator"
+            icon={<Info className="w-6 h-6" />}
+            defaultExpanded={false}
+          >
+            <About />
+          </CollapsibleSection>
         </div>
       </section>
     </div>

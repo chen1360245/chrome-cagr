@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils/cn'
 import { formatPercentage, formatCurrency } from '@/lib/utils/formatters'
 import { compareToBenchmark, type BenchmarkName } from '@/lib/constants/benchmarks'
 import type { CalculationResult } from '@/types/calculator'
+import { SmartCAGRCalculator } from '@/lib/calculator/SmartCAGRCalculator'
 import {
   TrendingUp,
   TrendingDown,
@@ -93,8 +94,8 @@ export function SmartInsights({ result, className }: SmartInsightsProps) {
         show: true,
         message: `${n.toFixed(1)} years is a very long timeline!`,
         suggestions: [
-          `Increase initial investment: ${formatCurrency(pv)} → ${formatCurrency(pv * 2)} saves ${(n - result.calculateTime(pv * 2, fv, cagr)).toFixed(1)} years`,
-          `Aim for higher returns: ${formatPercentage(cagr)} → ${formatPercentage(cagr * 1.2)} saves ${(n - result.calculateTime(pv, fv, cagr * 1.2)).toFixed(1)} years`,
+          `Increase initial investment: ${formatCurrency(pv)} → ${formatCurrency(pv * 2)} saves ${(n - SmartCAGRCalculator.calculateTime(pv * 2, fv, cagr / 100)).toFixed(1)} years`,
+          `Aim for higher returns: ${formatPercentage(cagr)} → ${formatPercentage(cagr * 1.2)} saves ${(n - SmartCAGRCalculator.calculateTime(pv, fv, (cagr * 1.2) / 100)).toFixed(1)} years`,
           `Adjust target: ${formatCurrency(fv)} → ${formatCurrency(fv * 0.75)} is more achievable`,
         ],
       }

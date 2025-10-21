@@ -171,17 +171,21 @@
 - 投资金额：$500,000+
 
 **需求**：
-- ✅ 精确的数据计算
-- ✅ 多场景对比分析
-- ✅ 与市场基准对比
-- ✅ 历史数据管理
+- ✅ 精确的数据计算（MVP已实现）
+- ⏸️ 多场景对比分析（Phase 4高级功能）
+- ✅ 与市场基准对比（MVP已实现 - Smart Insights）
+- ⏸️ 历史数据管理（Phase 4可选功能）
 
 **痛点**：
 - ❌ 现有工具不够专业
-- ❌ 缺少批量对比功能
-- ❌ 无法保存历史计算
+- ⏸️ 缺少批量对比功能（MVP不提供，可通过多次计算实现）
+- ⏸️ 无法保存历史计算（MVP用分享链接替代）
 
 **使用场景**：
+> "精确计算单个投资的CAGR，与S&P 500基准对比"（MVP支持）
+> "通过分享链接保存重要计算，供团队讨论"（MVP支持）
+>
+> 高级场景（Phase 4）：
 > "对比5个不同投资组合的CAGR，选出最优方案"
 > "分析某股票过去10年的分段CAGR，寻找最佳买入时机"
 
@@ -390,13 +394,15 @@ if (cagr > 25%) {
 }
 ```
 
-2. **Rule of 72（翻倍时间）**
+2. **精确翻倍时间计算**
 ```javascript
-doublingTime = 72 / cagr;
+// 使用精确的对数公式（而非Rule of 72近似）
+doublingTime = Math.log(2) / Math.log(1 + r);
 显示提示：
-"💡 Your money will double in ~${doublingTime.toFixed(1)} years
+"💡 Your money will double in exactly ${doublingTime.toFixed(1)} years
    at this growth rate."
 ```
+**注**：原先使用Rule of 72（72/cagr）作为近似，但对于高增长率（>20%）误差较大。现采用精确的对数公式 `log(2)/log(1+r)` 确保所有场景下的计算准确性。
 
 3. **基准对比**
 ```javascript
@@ -431,115 +437,91 @@ if (years > 30) {
 
 ### 5.2 辅助功能（P1 - 重要但非MVP必需）
 
-#### 5.2.1 多场景对比工具
+#### 5.2.1 ~~多场景对比工具~~ ❌ **已取消**
 
-**功能描述**：
-允许用户同时计算和对比最多5个投资方案。
+**决策**: 延后到Phase 4或不实施
+**理由**:
+- 竞品覆盖率仅5%，非标准功能
+- 增加复杂性，可能降低易用性
+- 更适合高级用户或专业工具，不适合MVP
+- 用户可通过修改输入重新计算实现类似功能
 
-**界面布局**：
-```
-┌─────────────────────────────────────────────────────┐
-│  Scenario Comparison                                │
-├─────────────────────────────────────────────────────┤
-│  ┌─────────┬─────────┬─────────┬─────────┬─────────┐│
-│  │ Plan A  │ Plan B  │ Plan C  │ Plan D  │ Plan E  ││
-│  ├─────────┼─────────┼─────────┼─────────┼─────────┤│
-│  │ PV: 10K │ PV: 20K │ PV: 15K │ PV: 10K │ PV: 25K ││
-│  │ FV: 40K │ FV: 60K │ FV: 50K │ FV: 35K │ FV: 75K ││
-│  │ n:  10y │ n:  10y │ n:  12y │ n:  8y  │ n:  10y ││
-│  │ ━━━━━━━│━━━━━━━│━━━━━━━│━━━━━━━│━━━━━━━││
-│  │ CAGR:   │ CAGR:   │ CAGR:   │ CAGR:   │ CAGR:   ││
-│  │ 15.0% ✓ │ 11.6%   │ 10.5%   │ 13.4%   │ 11.6%   ││
-│  └─────────┴─────────┴─────────┴─────────┴─────────┘│
-│                                                     │
-│  🏆 Best CAGR: Plan A (15.0%)                       │
-│  📊 [Comparison Chart]                              │
-└─────────────────────────────────────────────────────┘
-```
-
-**功能**：
-- ✅ 并排对比（表格形式）
-- ✅ 自动标注最佳方案
-- ✅ 差异高亮显示
-- ✅ 对比图表（柱状图）
+**调研依据**: 详见 `PHASE3_NECESSITY_ANALYSIS.md`
 
 ---
 
-#### 5.2.2 分享链接功能
+#### 5.2.2 分享链接功能 ✅ **已实施（简化版）**
 
 **功能描述**：
-生成唯一的分享链接，包含所有计算参数和结果，方便用户分享给他人或保存计算记录。
+生成包含所有计算参数的URL，用户可以通过原生分享菜单或复制链接的方式分享计算结果。
 
-**实现方式**：
+**实现方式** (已实施)：
 ```
-URL格式：https://cagrcalculator.app/calc/[unique-id]
-示例：https://cagrcalculator.app/calc/a7b3c9d2
+URL格式：https://cagrcalculator.app/?pv=10000&fv=40000&n=10&mode=FV
+示例：https://cagrcalculator.app/?pv=100&fv=200&r=50&mode=TIME
 
 参数编码：
-• 使用Base64编码所有输入参数
-• URL格式：/calc/[encoded-params]
-• 支持直接访问链接自动加载计算结果
+✅ URL查询参数编码（pv, fv, n, r, mode）
+✅ 支持直接访问链接自动加载计算参数
 
-功能特性：
-• 一键复制分享链接
-• 二维码生成（移动端友好）
-• 社交媒体分享按钮（Twitter, LinkedIn, WhatsApp）
-• 永久有效（无过期时间）
+功能特性（简化版）：
+✅ URL参数编码 - 将计算结果编码到URL
+✅ 一键复制链接 - 点击按钮复制到剪贴板
+✅ Web Share API - 调用系统原生分享菜单（移动端）
+✅ 降级方案 - 不支持Web Share时自动切换为复制链接
+❌ 二维码生成 - 延后（移动端用处不大）
+❌ 社交分享按钮 - 不实施（用Web Share API替代）
 ```
+
+**实现文件**：
+- `lib/utils/shareUtils.ts` - URL编码/解析、分享工具函数
+- `components/share/ShareButton.tsx` - 分享按钮组件
+- `components/calculator/ResultPanelEnhanced.tsx` - 集成分享按钮
 
 **用户场景**：
-- 💼 **财务顾问**：分享计算结果给客户
+- 💼 **财务顾问**：分享计算结果给客户（通过微信、邮件等）
 - 👥 **团队协作**：与同事讨论投资方案
-- 📱 **跨设备访问**：在手机上计算，在电脑上查看
-- 🔖 **保存记录**：收藏重要的计算结果
+- 📱 **跨设备访问**：在手机上计算，复制链接到电脑查看
+- 🔖 **保存记录**：复制链接保存到笔记或收藏夹
+
+**技术优势**：
+- 使用Web Share API，自动适配所有平台（微信、Twitter、邮件等）
+- 无需为每个社交平台单独开发
+- 开发时间从7小时降至1小时（节省85%）
 
 ---
 
-#### 5.2.3 历史记录管理
+#### 5.2.3 ~~历史记录管理~~ ❌ **已取消**
 
-**功能**：
-- ✅ 本地保存最近20次计算
-- ✅ 为每次计算添加备注（可选）
-- ✅ 快速加载历史计算
-- ✅ 删除/清空历史记录
+**决策**: 延后到Phase 4
+**理由**:
+- 用户需求不高，竞品覆盖率仅10%
+- 一般用户使用场景为一次性计算
+- 如需保存，可使用分享链接功能
+- 增加开发和维护成本
 
-**数据结构**：
-```javascript
-{
-  id: 'uuid',
-  timestamp: '2025-01-15 14:30:00',
-  mode: 'FV',
-  inputs: { pv: 10000, r: 15, n: 10 },
-  result: 40455.58,
-  note: '退休规划方案A'
-}
-```
+**调研依据**: 详见 `PHASE3_NECESSITY_ANALYSIS.md`
+
+**替代方案**: 用户可通过"分享链接"功能将重要计算保存到浏览器收藏夹或笔记
 
 ---
 
-#### 5.2.4 快速预设
+#### 5.2.4 ~~快速预设~~ ❌ **已取消**
 
-**预设场景**：
-```
-┌──────────────────────────────────────┐
-│  Quick Presets                       │
-├──────────────────────────────────────┤
-│  🎯 Conservative (6% CAGR)           │
-│  📊 Moderate (10% CAGR)              │
-│  🚀 Aggressive (15% CAGR)            │
-│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━│
-│  🏠 House Down Payment (5 years)     │
-│  🎓 Education Fund (18 years)        │
-│  👴 Retirement Planning (30 years)   │
-│  💰 Wealth Building (10 years)       │
-└──────────────────────────────────────┘
-```
+**决策**: 不实施
+**理由**:
+- 竞品覆盖率0%，无行业标准
+- CAGR是已发生的历史数据分析工具，不适用预设场景
+- 预设场景（Conservative/Aggressive）对CAGR计算意义不大
+- 教育内容中已包含5个真实案例，可作为参考
 
-点击预设自动填充典型参数。
+**调研依据**: 详见 `PHASE3_NECESSITY_ANALYSIS.md`
+
+**替代方案**: 在"Use Cases & Examples"教育内容中提供5个真实案例供用户参考
 
 ---
 
-### 5.3 教育内容 (Single Page Sections)
+### 5.3 教育内容 (Single Page Sections) ✅ **已实施**
 
 #### 5.3.1 主页内容架构
 
@@ -547,32 +529,62 @@ URL格式：https://cagrcalculator.app/calc/[unique-id]
 
 **Page URL**: `https://cagrcalculator.app/`
 
-**内容Sections** (从上到下顺序)：
-1. **Hero Section** - 计算器主体（4参数输入 + 结果展示）
-2. **What is CAGR?** - CAGR概念简介 (#what-is-cagr)
-3. **How to Use** - 使用指南 (#how-to-use)
-4. **CAGR Formula Explained** - 公式详解 (#formula)
-5. **Use Cases & Examples** - 实战案例 (#examples)
-6. **CAGR vs Other Metrics** - 对比其他指标 (#comparisons)
-   - CAGR vs Absolute Return
-   - CAGR vs XIRR
-   - CAGR vs Average Return
-7. **FAQ** - 常见问题 (#faq)
-8. **About Us** - 关于页面 (#about)
+**内容Sections** (从上到下顺序，已实施)：
+1. ✅ **Hero Section** - 计算器主体（4参数输入 + 结果展示）
+2. ✅ **What is CAGR?** - CAGR概念简介 (#what-is-cagr)
+   - 默认展开，300-400字
+   - 包含定义、优势、关键洞察
+3. ✅ **CAGR Formula Explained** - 公式详解 (#formula)
+   - 默认折叠
+   - 包含公式、参数说明、计算步骤、示例
+4. ✅ **Use Cases & Examples** - 实战案例 (#use-cases)
+   - 默认折叠
+   - 5个真实案例：投资组合、翻倍时间、公司收入、基金对比、增长预测
+5. ✅ **CAGR vs Other Metrics** - 对比其他指标 (#cagr-vs-metrics)
+   - 默认折叠
+   - 对比表格 + 优缺点分析
+   - CAGR vs Simple Average, Absolute Return, IRR, TWR
+6. ✅ **How to Use** - 使用指南 (#how-to-use)
+   - 默认折叠
+   - 4种计算模式详解 + 输入验证规则 + 结果解读
+7. ✅ **FAQ** - 常见问题 (#faq)
+   - 默认折叠
+   - 10个常见问题（可展开/折叠单个问题）
+8. ✅ **About** - 关于页面 (#about)
+   - 默认折叠
+   - 工具介绍、特性、技术栈、免责声明
 
-**内容要求**：
+**已实施文件**：
+- `components/educational/CollapsibleSection.tsx` - 可折叠组件
+- `components/educational/WhatIsCAGR.tsx` - CAGR介绍
+- `components/educational/FormulaExplained.tsx` - 公式详解
+- `components/educational/UseCases.tsx` - 用例案例
+- `components/educational/CAGRvsMetrics.tsx` - 指标对比
+- `components/educational/HowToUse.tsx` - 使用指南
+- `components/educational/FAQ.tsx` - 常见问题
+- `components/educational/About.tsx` - 关于页面
+- `app/page.tsx` - 主页集成所有sections
+
+**内容要求** (已达成)：
 - ✅ 每个Section 300-600字（精简、聚焦）
 - ✅ 移动端优先排版
-- ✅ 可折叠/展开高级内容
-- ✅ SEO优化（H1-H6标签、Schema Markup）
-- ✅ 内部锚点跳转
-- ✅ 社交分享按钮（分享特定section）
+- ✅ 可折叠/展开设计（CollapsibleSection组件）
+- ✅ SEO优化（H1-H6标签、语义化HTML）
+- ✅ 内部锚点跳转（通过id属性）
+- ❌ 社交分享按钮（用Web Share API统一处理，不单独为每个section实现）
 
-**独立页面** (SEO增强)：
-- `/calc/[id]` - 分享的计算结果页面
-- `/sitemap.xml` - 站点地图
-- `/privacy` - 隐私政策
-- `/terms` - 服务条款
+**独立页面** (Phase 4):
+- ⏸️ `/calc/[id]` - 分享的计算结果页面（延后，当前用URL参数）
+- ⏸️ `/sitemap.xml` - 站点地图（SEO优化阶段）
+- ⏸️ `/privacy` - 隐私政策（上线前必需）
+- ⏸️ `/terms` - 服务条款（上线前必需）
+
+**设计决策说明**：
+所有教育内容放在**首页底部**（单页应用），而非单独页面。决策依据：
+- ✅ SEO效果更好（权重集中在一个URL）
+- ✅ 用户体验更佳（滚动浏览，无需跳转）
+- ✅ 100%竞品采用此方案
+- 详见 `EDUCATIONAL_CONTENT_PLACEMENT.md`
 
 ---
 
@@ -996,7 +1008,7 @@ font-family: 'JetBrains Mono', 'Fira Code', monospace;
 │  ║                                       ║ │
 │  ║  💡 Smart Insights (AI-Powered):      ║ │ ← Smart Tips
 │  ║  • You're beating S&P 500 avg (+10.5%)║ │ (智能对比)
-│  ║  • Your money doubles in ~4.8 years   ║ │ (Rule of 72)
+│  ║  • Your money doubles in ~4.8 years   ║ │ (精确翻倍时间)
 │  ║  • This equals $4,045/year growth     ║ │ (年化绝对值)
 │  ║                                       ║ │
 │  ║  [📤 Share] [📊 Details] [🔄 New]    ║ │ ← Action Buttons
@@ -1527,7 +1539,7 @@ cagr-calculator/
   - [ ] 公式展示
   - [ ] 大字号数字（移动端可读）
 - [ ] 实现智能洞察 `SmartInsights`
-  - [ ] Rule of 72（翻倍时间）
+  - [ ] 精确翻倍时间计算（使用对数公式，非Rule of 72近似）
   - [ ] 结果合理性分析（异常警告）
   - [ ] 基准对比（S&P 500等）
   - [ ] 个性化建议
@@ -1566,52 +1578,110 @@ cagr-calculator/
 
 ---
 
-### 9.3 Phase 3: 辅助功能和内容（Week 6-7）
+### 9.3 Phase 3: 辅助功能和内容（Week 6-7）✨ **Option A简化方案**
 
-#### Week 6: 辅助功能
-**任务**：
-- [ ] 多场景对比工具
-  - [ ] 最多5个方案并排
-  - [ ] 自动标注最佳方案
-  - [ ] 移动端卡片式滑动
-- [ ] 分享链接功能
-  - [ ] URL参数编码
-  - [ ] 一键复制
-  - [ ] 二维码生成
-  - [ ] 社交分享按钮（Twitter, LinkedIn, WhatsApp）
-- [ ] 历史记录管理
-  - [ ] 本地存储最近20次
-  - [ ] 快速加载历史
-  - [ ] 添加备注
-- [ ] 快速预设
-  - [ ] Conservative/Moderate/Aggressive
-  - [ ] 典型场景（退休、购房、教育）
-
-**验收标准**：
-- ✅ 分享链接有效
-- ✅ 历史记录保存正常
-- ✅ 多场景对比清晰
+**总工作量**: 7天（vs 原计划10天，节省30%）
+**调研依据**: 详见 `PHASE3_NECESSITY_ANALYSIS.md`
 
 ---
 
-#### Week 7: 教育内容（单页Sections）
+#### Week 6: 分享功能（简化版）⏱️ 2天
 **任务**：
-- [ ] 编写英文教育内容（主页sections）
-  - [ ] What is CAGR? (300-400字)
-  - [ ] How to Use (使用指南)
-  - [ ] CAGR Formula Explained (公式详解)
-  - [ ] Use Cases & Examples (3-5个案例)
-  - [ ] CAGR vs Other Metrics (对比表格)
-  - [ ] FAQ (10个常见问题)
-  - [ ] About Us
-- [ ] 可折叠/展开设计
-- [ ] 锚点导航实现（useScrollSpy）
-- [ ] 社交分享按钮（分享特定section）
+- [ ] 分享链接功能（核心功能，P1优先级）
+  - [ ] URL参数编码（将计算结果编码到URL）
+  - [ ] 一键复制链接到剪贴板
+  - [ ] Web Share API集成（原生社交分享菜单）
+  - [ ] 降级方案（不支持Web Share API时自动切换为复制链接）
+  - [ ] 创建ShareButton组件
+
+**已移除功能**（延后到Phase 4或不实施）：
+- ~~二维码生成~~（移动端用处不大，延后）
+- ~~社交分享按钮~~（Twitter, LinkedIn等，用Web Share API替代）
+- ~~多场景对比工具~~（过度设计，竞品覆盖率仅5%）
+- ~~历史记录管理~~（用户需求不高，竞品覆盖率仅10%）
+- ~~快速预设~~（不适用CAGR场景，竞品覆盖率0%）
 
 **验收标准**：
-- ✅ 内容通俗易懂
-- ✅ 锚点跳转正常
-- ✅ 移动端折叠流畅
+- ✅ URL分享包含完整计算参数
+- ✅ 复制功能在所有浏览器正常工作
+- ✅ Web Share API在移动端正常调用系统分享菜单
+- ✅ 降级方案在不支持的浏览器正常工作
+
+---
+
+#### Week 7: 教育内容（单页应用，首页Sections）⏱️ 5天
+**设计决策**: 所有教育内容放在**首页底部**（单页应用），而非单独页面
+**决策依据**: 详见 `EDUCATIONAL_CONTENT_PLACEMENT.md`
+  - ✅ SEO效果更好（权重集中）
+  - ✅ 用户体验更佳（滚动浏览，无需跳转）
+  - ✅ 100%竞品采用此方案
+
+**任务**：
+- [ ] 创建教育内容组件（所有组件放在首页 `app/page.tsx`）
+  - [ ] **What is CAGR?** (300-400字，默认展开)
+    - CAGR定义和意义
+    - 与简单增长率的区别
+    - 复利效应说明
+  - [ ] **CAGR Formula Explained** (公式详解，默认折叠)
+    - 公式：`[(FV/PV)^(1/n)] - 1`
+    - 每个参数含义
+    - 计算步骤图解
+  - [ ] **Use Cases & Examples** (3-5个真实案例，默认折叠)
+    - 投资组合增长（$100K → $300K）
+    - 投资翻倍案例（$10K → $20K）
+    - 公司收入增长分析
+    - 基金对比选择
+    - 增长预测应用
+  - [ ] **CAGR vs Other Metrics** (对比表格，默认折叠)
+    - CAGR vs Simple Average Return
+    - CAGR vs Absolute Return
+    - CAGR vs IRR
+    - 优缺点对比
+  - [ ] **FAQ** (10个常见问题，默认折叠)
+    - What is the difference between CAGR and average return?
+    - Can CAGR be negative?
+    - Is higher CAGR always better?
+    - How accurate is CAGR for short periods?
+    - When should I use CAGR vs absolute return?
+    - Does CAGR account for volatility?
+    - Can I use CAGR for monthly data?
+    - What's a good CAGR for stocks/bonds/real estate?
+    - How do I calculate CAGR in Excel?
+    - What are the limitations of CAGR?
+  - [ ] **How to Use** (使用指南，默认折叠)
+    - 4种计算模式说明
+    - 输入验证规则
+    - 结果解读指南
+  - [ ] **About** (关于本工具，默认折叠)
+
+- [ ] 创建可折叠组件 `CollapsibleSection.tsx`
+  - [ ] 支持展开/折叠动画
+  - [ ] 默认状态配置（部分展开，部分折叠）
+  - [ ] 移动端优化（触摸友好）
+
+- [ ] 锚点导航实现（桌面端，可选）
+  - [ ] Header添加导航链接
+  - [ ] 平滑滚动到目标section
+  - [ ] 移动端隐藏导航（用户滚动即可）
+
+- [ ] 页面结构整合
+  - [ ] 计算器区域
+  - [ ] 结果展示区域
+  - [ ] 广告位1
+  - [ ] 教育内容sections（可折叠）
+  - [ ] 广告位2、3穿插在内容间
+
+**已移除功能**：
+- ~~社交分享按钮（分享特定section）~~（用Web Share API统一处理）
+
+**验收标准**：
+- ✅ 所有教育内容在首页，可滚动浏览
+- ✅ 内容通俗易懂，300-400字/section
+- ✅ 可折叠组件工作正常，动画流畅
+- ✅ 移动端折叠/展开体验流畅
+- ✅ 桌面端锚点导航正常（如果实现）
+- ✅ SEO元数据完整（title, description, keywords）
+- ✅ 页面加载速度 < 3秒
 
 ---
 
@@ -1838,7 +1908,7 @@ cagr-calculator/
 | **n** | Time Period，投资时间周期（年） |
 | **r** | Rate，增长率/CAGR |
 | **Absolute Return** | 绝对回报，总回报百分比 |
-| **Rule of 72** | 72法则，估算翻倍时间的简易方法 |
+| **Doubling Time** | 翻倍时间，使用对数公式 log(2)/log(1+r) 精确计算资金翻倍所需时间（注：不使用Rule of 72近似） |
 | **Benchmark** | 基准，如S&P 500指数 |
 | **MVP** | Minimum Viable Product，最小可行产品 |
 | **P0/P1/P2** | 优先级标记（P0最高） |
