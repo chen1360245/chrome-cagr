@@ -74,21 +74,14 @@ export function generateShareText(result: CalculationResult): string {
 
 /**
  * Check if Web Share API is supported
- * Disabled on localhost due to browser limitations
+ * DISABLED: Web Share API is unreliable on both localhost and production
+ * Always use clipboard copying for better UX consistency
  */
 export function isWebShareSupported(): boolean {
-  if (typeof navigator === 'undefined') return false
-  if (!('share' in navigator)) return false
-
-  // Disable Web Share API on localhost (unreliable in development)
-  if (typeof window !== 'undefined') {
-    const hostname = window.location.hostname
-    if (hostname === 'localhost' || hostname === '127.0.0.1') {
-      return false
-    }
-  }
-
-  return true
+  // Web Share API disabled - use clipboard copying instead
+  // Reason: Inconsistent behavior across browsers and environments
+  // Shows error "我们无法为你显示所有共享方法" on many systems
+  return false
 }
 
 /**
