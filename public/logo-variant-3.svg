@@ -1,0 +1,30 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Hexagon Background -->
+  <path d="M 100 20 L 170 60 L 170 140 L 100 180 L 30 140 L 30 60 Z"
+        fill="#8B5CF6"
+        opacity="0.1"/>
+
+  <!-- Hexagon Border -->
+  <path d="M 100 20 L 170 60 L 170 140 L 100 180 L 30 140 L 30 60 Z"
+        stroke="#8B5CF6"
+        stroke-width="3"
+        fill="none"/>
+
+  <!-- Growth Bars (ascending) -->
+  <rect x="60" y="130" width="15" height="30" fill="#8B5CF6" rx="2"/>
+  <rect x="85" y="110" width="15" height="50" fill="#8B5CF6" rx="2"/>
+  <rect x="110" y="85" width="15" height="75" fill="#8B5CF6" rx="2"/>
+  <rect x="135" y="60" width="15" height="100" fill="#8B5CF6" rx="2"/>
+
+  <!-- Trend Line -->
+  <path d="M 67 125 L 92 105 L 117 80 L 142 55"
+        stroke="#A78BFA"
+        stroke-width="3"
+        stroke-dasharray="4 4"/>
+
+  <!-- Arrow at the end of trend line -->
+  <path d="M 142 55 L 137 62 M 142 55 L 149 60"
+        stroke="#A78BFA"
+        stroke-width="3"
+        stroke-linecap="round"/>
+</svg>

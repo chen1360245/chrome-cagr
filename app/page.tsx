@@ -4,6 +4,7 @@
  */
 'use client'
 
+import { Suspense } from 'react'
 import { useSmartCalculator } from '@/hooks/useSmartCalculator'
 import { SmartInput } from '@/components/calculator/SmartInput'
 import { ModeIndicator } from '@/components/calculator/ModeIndicator'
@@ -20,7 +21,7 @@ import { HowToUse } from '@/components/educational/HowToUse'
 import { About } from '@/components/educational/About'
 import { BookOpen, Calculator as CalculatorIcon, Lightbulb, BarChart, HelpCircle, Info } from 'lucide-react'
 
-export default function HomePage() {
+function CalculatorContent() {
   const {
     inputs,
     result,
@@ -45,7 +46,7 @@ export default function HomePage() {
             Input any 3 values, get the 4th instantly
           </p>
           <p className="text-sm text-gray-500 mt-2">
-            The world's first intelligent 4-parameter CAGR calculator
+            The world&apos;s first intelligent 4-parameter CAGR calculator
           </p>
         </div>
 
@@ -229,5 +230,20 @@ export default function HomePage() {
         </div>
       </section>
     </div>
+  )
+}
+
+export default function HomePage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-hero flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin text-6xl mb-4">⏳</div>
+          <p className="text-gray-600">Loading calculator...</p>
+        </div>
+      </div>
+    }>
+      <CalculatorContent />
+    </Suspense>
   )
 }

@@ -1,0 +1,33 @@
+<svg width="240" height="50" viewBox="0 0 240 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon Circle -->
+  <circle cx="25" cy="25" r="23" fill="#3B82F6" opacity="0.1"/>
+  <circle cx="25" cy="25" r="20" stroke="#3B82F6" stroke-width="2"/>
+
+  <!-- Growth Curve in Icon -->
+  <path d="M 12 35 Q 16 30, 20 25 T 28 15 L 35 10"
+        stroke="#3B82F6"
+        stroke-width="2.5"
+        fill="none"
+        stroke-linecap="round"/>
+
+  <!-- Arrow Head -->
+  <path d="M 35 10 L 31 13 L 33 16 Z" fill="#3B82F6"/>
+
+  <!-- Data Points -->
+  <circle cx="12" cy="35" r="2" fill="#3B82F6"/>
+  <circle cx="20" cy="25" r="2" fill="#3B82F6"/>
+  <circle cx="28" cy="15" r="2" fill="#3B82F6"/>
+
+  <!-- Text: CAGR Calculator -->
+  <text x="58" y="22" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="18" font-weight="700" fill="#1F2937">
+    CAGR
+  </text>
+  <text x="58" y="38" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="500" fill="#6B7280">
+    Calculator
+  </text>
+
+  <!-- Accent: Percentage symbol -->
+  <text x="110" y="22" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#3B82F6">
+    %
+  </text>
+</svg>

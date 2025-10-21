@@ -7,7 +7,7 @@
 import * as React from 'react'
 import { cn } from '@/lib/utils/cn'
 import { formatPercentage, formatCurrency } from '@/lib/utils/formatters'
-import { compareToBenchmark, type BenchmarkName } from '@/lib/constants/benchmarks'
+import { compareToBenchmark } from '@/lib/constants/benchmarks'
 import type { CalculationResult } from '@/types/calculator'
 import { SmartCAGRCalculator } from '@/lib/calculator/SmartCAGRCalculator'
 import {
@@ -148,7 +148,7 @@ export function SmartInsights({ result, className }: SmartInsightsProps) {
               <div className="pt-2 border-t border-gray-200">
                 {sp500Comparison.isBeating ? (
                   <p className="text-success font-medium">
-                    ✅ You're beating the S&P 500 by{' '}
+                    ✅ You&apos;re beating the S&P 500 by{' '}
                     {formatPercentage(sp500Comparison.difference / 100)}!
                   </p>
                 ) : (
@@ -205,9 +205,4 @@ export function SmartInsights({ result, className }: SmartInsightsProps) {
       )}
     </div>
   )
-
-  // Helper function for TIME mode calculations
-  function calculateTime(pv: number, fv: number, r: number): number {
-    return Math.log(fv / pv) / Math.log(1 + r)
-  }
 }

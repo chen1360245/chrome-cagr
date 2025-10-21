@@ -7,9 +7,9 @@ const nextConfig = {
   // Optimize for production
   swcMinify: true,
   // Enable experimental features for better performance
-  experimental: {
-    optimizeCss: true,
-  },
+  // experimental: {
+  //   optimizeCss: true, // Disabled: requires 'critters' package
+  // },
 }
 
 module.exports = nextConfig

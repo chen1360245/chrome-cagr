@@ -4,11 +4,15 @@
  */
 'use client'
 
-import { useState, useCallback, useMemo } from 'react'
+import { useState, useCallback, useMemo, useEffect, useRef } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { SmartCAGRCalculator } from '@/lib/calculator/SmartCAGRCalculator'
 import type { CalculatorInputs, CalculationResult, ModeDetection } from '@/types/calculator'
 
 export function useSmartCalculator() {
+  const searchParams = useSearchParams()
+  const hasAutoCalculated = useRef(false)
+
   const [inputs, setInputs] = useState<CalculatorInputs>({
     pv: undefined,
     fv: undefined,
@@ -75,6 +79,54 @@ export function useSmartCalculator() {
   const canCalculate = useMemo(() => {
     return modeDetection.isValid && modeDetection.filledCount === 3
   }, [modeDetection])
+
+  // Load URL parameters on mount and auto-calculate
+  useEffect(() => {
+    if (hasAutoCalculated.current) return
+
+    const pv = searchParams.get('pv')
+    const fv = searchParams.get('fv')
+    const n = searchParams.get('n')
+    const r = searchParams.get('r')
+
+    // Check if we have URL parameters
+    const hasParams = pv || fv || n || r
+
+    if (hasParams) {
+      const urlInputs: CalculatorInputs = {
+        pv: pv ? parseFloat(pv) : undefined,
+        fv: fv ? parseFloat(fv) : undefined,
+        n: n ? parseFloat(n) : undefined,
+        r: r ? parseFloat(r) * 100 : undefined, // Convert decimal to percentage for display
+      }
+
+      // Set inputs from URL
+      setInputs(urlInputs)
+
+      // Count how many valid inputs we have
+      const filledCount = Object.values(urlInputs).filter(
+        (v) => v !== undefined && !isNaN(v)
+      ).length
+
+      // Auto-calculate if we have 3 or more parameters
+      if (filledCount >= 3) {
+        // Small delay to allow state to update
+        setTimeout(() => {
+          try {
+            const calculationInputs: CalculatorInputs = {
+              ...urlInputs,
+              r: urlInputs.r !== undefined ? urlInputs.r / 100 : undefined,
+            }
+            const calculationResult = SmartCAGRCalculator.calculate(calculationInputs)
+            setResult(calculationResult)
+            hasAutoCalculated.current = true
+          } catch (err) {
+            setError(err instanceof Error ? err.message : 'Calculation failed')
+          }
+        }, 100)
+      }
+    }
+  }, [searchParams])
 
   return {
     // State

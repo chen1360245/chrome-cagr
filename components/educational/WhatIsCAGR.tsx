@@ -21,7 +21,7 @@ export function WhatIsCAGR() {
         <li className="flex items-start gap-2">
           <span className="text-primary font-bold">✓</span>
           <span>
-            <strong>Smoothens volatility:</strong> CAGR effectively "smoothens" growth rates over
+            <strong>Smoothens volatility:</strong> CAGR effectively &quot;smoothens&quot; growth rates over
             multiple periods into a single annualized growth rate
           </span>
         </li>
@@ -53,7 +53,7 @@ export function WhatIsCAGR() {
         <p className="text-gray-700">
           If you invested $10,000 and it grew to $20,000 over 5 years, the CAGR would be
           approximately 14.87% per year. This means your investment grew by an average of 14.87%
-          annually over that period. Use our calculator above to find your investment's CAGR instantly.
+          annually over that period. Use our calculator above to find your investment&apos;s CAGR instantly.
         </p>
       </div>
     </div>

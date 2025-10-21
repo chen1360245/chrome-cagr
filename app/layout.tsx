@@ -3,10 +3,13 @@ import { Inter } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics'
+import { CookieConsent } from '@/components/CookieConsent'
+import { Logo } from '@/components/Logo'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://cagrcalculator.app'),
   title: 'CAGR Calculator - Free Online Compound Annual Growth Rate Calculator',
   description:
     'Free online CAGR calculator - Calculate compound annual growth rate, final value, initial value, or time period. Learn how to calculate CAGR with formulas, examples, and step-by-step guide. Mobile-friendly and accurate.',
@@ -29,6 +32,9 @@ export const metadata: Metadata = {
     'ROI calculator',
   ],
   authors: [{ name: 'CAGR Calculator Team' }],
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: 'CAGR Calculator - Free Online Compound Annual Growth Rate Calculator',
     description:
@@ -68,8 +74,8 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Additional meta tags */}
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="canonical" href="https://cagrcalculator.app" />
+        <link rel="icon" type="image/svg+xml" href="/logo-favicon.svg" />
+        <link rel="apple-touch-icon" href="/logo-variant-1.svg" />
 
         {/* Microsoft Clarity */}
         <Script
@@ -98,9 +104,7 @@ export default function RootLayout({
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex items-center justify-between h-16">
                 <div className="flex items-center">
-                  <h1 className="text-xl font-bold text-gray-900">
-                    <span className="text-primary">Smart</span> CAGR Calculator
-                  </h1>
+                  <Logo variant="full" width={180} height={40} className="cursor-pointer" />
                 </div>
                 <nav className="hidden md:flex space-x-6">
                   <a href="#what-is-cagr" className="text-gray-600 hover:text-primary transition">
@@ -127,7 +131,7 @@ export default function RootLayout({
                 <div>
                   <h3 className="text-white font-semibold mb-4">About</h3>
                   <p className="text-sm">
-                    The world's first intelligent 4-parameter CAGR calculator. Calculate growth
+                    The world&apos;s first intelligent 4-parameter CAGR calculator. Calculate growth
                     rate, final value, initial investment, or time period instantly.
                   </p>
                 </div>
@@ -183,6 +187,9 @@ export default function RootLayout({
             </div>
           </footer>
         </div>
+
+        {/* Cookie Consent Banner */}
+        <CookieConsent />
       </body>
     </html>
   )

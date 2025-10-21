@@ -7,8 +7,6 @@
 
 import * as React from 'react'
 import {
-  LineChart as RechartsLineChart,
-  Line,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -40,7 +38,7 @@ export function LineChart({ data, initialValue, className }: LineChartProps) {
   ]
 
   // Custom tooltip
-  const CustomTooltip = ({ active, payload }: any) => {
+  const CustomTooltip = ({ active, payload }: { active?: boolean; payload?: Array<{ payload: { year: number; value: number; isStart?: boolean; isEnd?: boolean } }> }) => {
     if (active && payload && payload.length) {
       const data = payload[0].payload
       return (

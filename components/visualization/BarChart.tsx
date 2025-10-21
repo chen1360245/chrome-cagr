@@ -33,7 +33,7 @@ export function BarChart({ data, className }: BarChartProps) {
   }))
 
   // Custom tooltip
-  const CustomTooltip = ({ active, payload }: any) => {
+  const CustomTooltip = ({ active, payload }: { active?: boolean; payload?: Array<{ payload: { year: string; value: number; growth: number } }> }) => {
     if (active && payload && payload.length) {
       const data = payload[0].payload
       return (

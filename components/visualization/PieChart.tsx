@@ -14,7 +14,7 @@ import {
   Legend,
   Tooltip,
 } from 'recharts'
-import { formatCurrency, formatPercentage } from '@/lib/utils/formatters'
+import { formatCurrency } from '@/lib/utils/formatters'
 
 export interface PieChartProps {
   principal: number
@@ -40,7 +40,7 @@ export function PieChart({ principal, profit, className }: PieChartProps) {
   ]
 
   // Custom tooltip
-  const CustomTooltip = ({ active, payload }: any) => {
+  const CustomTooltip = ({ active, payload }: { active?: boolean; payload?: Array<{ name: string; value: number; payload: { percentage: number } }> }) => {
     if (active && payload && payload.length) {
       const data = payload[0]
       return (
@@ -59,7 +59,7 @@ export function PieChart({ principal, profit, className }: PieChartProps) {
   }
 
   // Custom label
-  const renderLabel = (entry: any) => {
+  const renderLabel = (entry: { percentage: number }) => {
     return `${entry.percentage.toFixed(1)}%`
   }
 
@@ -87,11 +87,11 @@ export function PieChart({ principal, profit, className }: PieChartProps) {
           <Legend
             verticalAlign="bottom"
             height={36}
-            formatter={(value, entry: any) => {
+            formatter={(value, entry) => {
               const item = entry.payload
               return (
                 <span className="text-sm text-gray-700">
-                  {value}: <span className="font-semibold">{formatCurrency(item.value)}</span>
+                  {value}: <span className="font-semibold">{item?.value !== undefined ? formatCurrency(item.value) : 'N/A'}</span>
                 </span>
               )
             }}

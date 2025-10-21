@@ -7,28 +7,34 @@ import type { CalculationResult } from '@/types/calculator'
 
 /**
  * Build shareable URL with calculation parameters
+ * Only includes the 3 input parameters (excludes the calculated result)
  */
 export function buildShareUrl(result: CalculationResult): string {
   const params = new URLSearchParams()
 
-  // Add all input parameters
-  if (result.inputs.pv !== undefined) {
+  // Determine which parameter is the calculated result based on mode
+  const calculatedParam = {
+    'CAGR': 'r',   // CAGR mode calculates rate
+    'FV': 'fv',    // FV mode calculates final value
+    'PV': 'pv',    // PV mode calculates present value
+    'TIME': 'n',   // TIME mode calculates time period
+  }[result.mode]
+
+  // Add only the input parameters (exclude the calculated result)
+  if (result.inputs.pv !== undefined && calculatedParam !== 'pv') {
     params.set('pv', result.inputs.pv.toString())
   }
-  if (result.inputs.fv !== undefined) {
+  if (result.inputs.fv !== undefined && calculatedParam !== 'fv') {
     params.set('fv', result.inputs.fv.toString())
   }
-  if (result.inputs.n !== undefined) {
+  if (result.inputs.n !== undefined && calculatedParam !== 'n') {
     params.set('n', result.inputs.n.toString())
   }
-  if (result.inputs.r !== undefined) {
+  if (result.inputs.r !== undefined && calculatedParam !== 'r') {
     params.set('r', result.inputs.r.toString())
   }
 
-  // Add mode for context
-  params.set('mode', result.mode)
-
-  // Build full URL
+  // Build full URL (no need to include mode, it will be auto-detected)
   const baseUrl = typeof window !== 'undefined' ? window.location.origin : ''
   return `${baseUrl}?${params.toString()}`
 }
@@ -67,9 +73,21 @@ export function generateShareText(result: CalculationResult): string {
 
 /**
  * Check if Web Share API is supported
+ * Disabled on localhost due to browser limitations
  */
 export function isWebShareSupported(): boolean {
-  return typeof navigator !== 'undefined' && 'share' in navigator
+  if (typeof navigator === 'undefined') return false
+  if (!('share' in navigator)) return false
+
+  // Disable Web Share API on localhost (unreliable in development)
+  if (typeof window !== 'undefined') {
+    const hostname = window.location.hostname
+    if (hostname === 'localhost' || hostname === '127.0.0.1') {
+      return false
+    }
+  }
+
+  return true
 }
 
 /**

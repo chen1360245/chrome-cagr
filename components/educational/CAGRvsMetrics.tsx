@@ -2,7 +2,7 @@ export function CAGRvsMetrics() {
   return (
     <div className="space-y-6">
       <p className="text-lg text-gray-700">
-        While CAGR is a powerful metric, it's important to understand how it compares to other
+        While CAGR is a powerful metric, it&apos;s important to understand how it compares to other
         commonly used financial metrics. Each has its strengths and limitations.
       </p>
 
@@ -103,11 +103,11 @@ export function CAGRvsMetrics() {
             </li>
             <li className="flex items-start gap-2">
               <span>•</span>
-              <span>Doesn't account for volatility or risk</span>
+              <span>Doesn&apos;t account for volatility or risk</span>
             </li>
             <li className="flex items-start gap-2">
               <span>•</span>
-              <span>Doesn't consider intermediate cash flows</span>
+              <span>Doesn&apos;t consider intermediate cash flows</span>
             </li>
             <li className="flex items-start gap-2">
               <span>•</span>
@@ -115,7 +115,7 @@ export function CAGRvsMetrics() {
             </li>
             <li className="flex items-start gap-2">
               <span>•</span>
-              <span>Past CAGR doesn't guarantee future returns</span>
+              <span>Past CAGR doesn&apos;t guarantee future returns</span>
             </li>
           </ul>
         </div>

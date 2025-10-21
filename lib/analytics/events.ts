@@ -2,16 +2,15 @@
 
 declare global {
   interface Window {
-    gtag?: (...args: any[]) => void
+    gtag?: (command: string, targetId: string, config?: Record<string, unknown>) => void
   }
 }
 
 /**
  * Track when a user completes a calculation
  * @param mode - The calculation mode (CAGR, FV, PV, or Time)
- * @param inputs - The input parameters used
  */
-export const trackCalculation = (mode: string, inputs: any) => {
+export const trackCalculation = (mode: string) => {
   if (typeof window !== 'undefined' && window.gtag) {
     window.gtag('event', 'calculation_complete', {
       calculation_mode: mode,

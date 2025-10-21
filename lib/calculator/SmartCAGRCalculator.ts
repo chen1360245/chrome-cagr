@@ -32,8 +32,8 @@ export class SmartCAGRCalculator {
       r: inputs.r,
     }
 
-    const filled = Object.entries(fields).filter(([_, value]) => value !== undefined && value !== null)
-    const missing = Object.entries(fields).filter(([_, value]) => value === undefined || value === null)
+    const filled = Object.entries(fields).filter(([, value]) => value !== undefined && value !== null)
+    const missing = Object.entries(fields).filter(([, value]) => value === undefined || value === null)
 
     const filledCount = filled.length
     const errors: ValidationError[] = []
@@ -172,7 +172,8 @@ export class SmartCAGRCalculator {
   /**
    * Calculate result metrics
    */
-  static calculateMetrics(pv: number, fv: number, r: number, n: number): ResultMetrics {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  static calculateMetrics(pv: number, fv: number, r: number, _n: number): ResultMetrics {
     const cagr = r * 100 // Convert to percentage
     const totalGrowth = ((fv - pv) / pv) * 100
     const absoluteReturn = fv - pv

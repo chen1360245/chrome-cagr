@@ -8,7 +8,7 @@
 import * as React from 'react'
 import { cn } from '@/lib/utils/cn'
 import { formatCurrency } from '@/lib/utils/formatters'
-import { Check, Circle } from 'lucide-react'
+import { Check } from 'lucide-react'
 
 export interface TimelineProps {
   totalYears: number

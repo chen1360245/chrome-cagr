@@ -25,31 +25,31 @@ export function ShareButton({ result, variant = 'secondary', className = '' }: S
     const shareUrl = buildShareUrl(result)
     const shareText = generateShareText(result)
 
-    try {
-      // 1. Try Web Share API first (mobile native share)
-      if (isWebShareSupported()) {
-        try {
-          await navigator.share({
-            title: 'Smart CAGR Calculator Result',
-            text: shareText,
-            url: shareUrl,
-          })
-          // Successfully shared
+    // 1. Try Web Share API first (mobile native share)
+    if (isWebShareSupported()) {
+      try {
+        await navigator.share({
+          title: 'Smart CAGR Calculator Result',
+          text: shareText,
+          url: shareUrl,
+        })
+        // Successfully shared
+        setIsSharing(false)
+        return
+      } catch (err) {
+        // User cancelled sharing or share failed
+        if (err instanceof Error && err.name === 'AbortError') {
+          // User cancelled, not an error
           setIsSharing(false)
           return
-        } catch (err: any) {
-          // User cancelled sharing or share failed
-          if (err.name === 'AbortError') {
-            // User cancelled, not an error
-            setIsSharing(false)
-            return
-          }
-          // Other error, fall through to clipboard
-          console.log('Web Share failed, falling back to clipboard:', err)
         }
+        // Other error, fall through to clipboard
+        console.log('Web Share failed, falling back to clipboard:', err)
       }
+    }
 
-      // 2. Fallback: Copy to clipboard
+    // 2. Fallback: Copy to clipboard
+    try {
       const success = await copyToClipboard(shareUrl)
       if (success) {
         setCopied(true)
@@ -59,7 +59,9 @@ export function ShareButton({ result, variant = 'secondary', className = '' }: S
         prompt('Copy this link:', shareUrl)
       }
     } catch (err) {
-      console.error('Share failed:', err)
+      console.error('Copy to clipboard failed:', err)
+      // Final fallback: Show prompt
+      prompt('Copy this link:', shareUrl)
     } finally {
       setIsSharing(false)
     }
