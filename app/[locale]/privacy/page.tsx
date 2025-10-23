@@ -13,22 +13,34 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const titles = {
     en: 'Privacy Policy - CAGR Calculator',
     'zh-CN': '隐私政策 - CAGR计算器',
+    es: 'Política de Privacidad - Calculadora CAGR',
+    de: 'Datenschutzrichtlinie - CAGR Rechner',
+    ja: 'プライバシーポリシー - CAGR計算機',
+    ar: 'سياسة الخصوصية - حاسبة CAGR',
   }
 
   const descriptions = {
     en: 'Privacy Policy for CAGR Calculator - Learn how we collect, use, and protect your data.',
     'zh-CN': 'CAGR计算器隐私政策 - 了解我们如何收集、使用和保护您的数据。',
+    es: 'Política de Privacidad para la Calculadora CAGR - Aprenda cómo recopilamos, usamos y protegemos sus datos.',
+    de: 'Datenschutzrichtlinie für CAGR Rechner - Erfahren Sie, wie wir Ihre Daten sammeln, verwenden und schützen.',
+    ja: 'CAGR計算機のプライバシーポリシー - データの収集、使用、保護方法について学びます。',
+    ar: 'سياسة الخصوصية لحاسبة CAGR - تعرف على كيفية جمع بياناتك واستخدامها وحمايتها.',
   }
 
   return {
     title: titles[locale as Locale] || titles.en,
     description: descriptions[locale as Locale] || descriptions.en,
     alternates: {
-      canonical: `/${locale}/privacy`,
+      canonical: `https://cagrcalculator.app/${locale}/privacy`,
       languages: {
-        'en': '/en/privacy',
-        'zh-CN': '/zh-CN/privacy',
-        'x-default': '/en/privacy',
+        'en': 'https://cagrcalculator.app/en/privacy',
+        'zh-CN': 'https://cagrcalculator.app/zh-CN/privacy',
+        'es': 'https://cagrcalculator.app/es/privacy',
+        'de': 'https://cagrcalculator.app/de/privacy',
+        'ja': 'https://cagrcalculator.app/ja/privacy',
+        'ar': 'https://cagrcalculator.app/ar/privacy',
+        'x-default': 'https://cagrcalculator.app/en/privacy',
       },
     },
     robots: {
@@ -45,11 +57,20 @@ export default async function PrivacyPolicyPage({ params }: Props) {
     notFound()
   }
 
-  if (locale === 'zh-CN') {
-    return <PrivacyPolicyZH />
+  switch (locale) {
+    case 'zh-CN':
+      return <PrivacyPolicyZH />
+    case 'es':
+      return <PrivacyPolicyES />
+    case 'de':
+      return <PrivacyPolicyDE />
+    case 'ja':
+      return <PrivacyPolicyJA />
+    case 'ar':
+      return <PrivacyPolicyAR />
+    default:
+      return <PrivacyPolicyEN />
   }
-
-  return <PrivacyPolicyEN />
 }
 
 function PrivacyPolicyEN() {
@@ -788,6 +809,325 @@ function PrivacyPolicyZH() {
             className="inline-block bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition"
           >
             返回CAGR计算器
+          </Link>
+        </div>
+      </div>
+    </div>
+  )
+}
+function PrivacyPolicyES() {
+  return (
+    <div className="min-h-screen bg-gray-50 py-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
+          <Link href="/" className="inline-flex items-center text-primary hover:text-primary/80 transition mb-6">
+            ← Volver a la Calculadora
+          </Link>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Política de Privacidad</h1>
+          <p className="text-gray-600">Última actualización: <strong>21 de octubre de 2025</strong></p>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 prose prose-gray max-w-none">
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Introducción</h2>
+            <p className="text-gray-700 leading-relaxed">
+              Bienvenido a CAGR Calculator. Estamos comprometidos con la protección de su privacidad. Esta Política de Privacidad explica cómo recopilamos, usamos y protegemos su información cuando utiliza nuestra herramienta de calculadora CAGR gratuita en línea.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">2. Información que Recopilamos</h2>
+            <h3 className="text-xl font-semibold text-gray-800 mb-3">2.1 Información que Usted Proporciona</h3>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              <strong>No se Requiere Información Personal:</strong> Nuestra Calculadora CAGR no requiere que cree una cuenta o proporcione información personal.
+            </p>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              <strong>Entradas de Cálculo:</strong> Los datos financieros que ingresa se procesan completamente en su navegador y <strong>no se almacenan en nuestros servidores</strong>.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">3. Cómo Usamos Su Información</h2>
+            <p className="text-gray-700 leading-relaxed">Utilizamos la información recopilada para mejorar la experiencia del usuario, analizar el rendimiento y detectar problemas.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">4. Análisis y Tecnologías de Seguimiento</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">Utilizamos Google Analytics 4 y Microsoft Clarity para comprender el comportamiento del usuario y optimizar la experiencia.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">5. Cookies</h2>
+            <p className="text-gray-700 leading-relaxed">Utilizamos cookies para mejorar su experiencia en nuestro sitio web.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">6. Seguridad de Datos</h2>
+            <p className="text-gray-700 leading-relaxed">Implementamos medidas de seguridad estándar de la industria, incluido el cifrado HTTPS y el procesamiento del lado del cliente.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">7. Sus Derechos de Privacidad</h2>
+            <p className="text-gray-700 leading-relaxed">Dependiendo de su ubicación, puede tener derecho a acceder, eliminar o excluirse del seguimiento de análisis.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">8. Contáctenos</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">Si tiene preguntas sobre esta Política de Privacidad, contáctenos:</p>
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
+              <p className="text-gray-700 mb-2">
+                <strong>Email:</strong> <a href="mailto:toneychan2025@gmail.com" className="text-primary hover:underline">toneychan2025@gmail.com</a>
+              </p>
+              <p className="text-gray-700">
+                <strong>Sitio web:</strong> <a href="https://cagrcalculator.app" className="text-primary hover:underline">https://cagrcalculator.app</a>
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <div className="text-center mt-8">
+          <Link href="/" className="inline-block bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition">
+            Volver a la Calculadora CAGR
+          </Link>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function PrivacyPolicyDE() {
+  return (
+    <div className="min-h-screen bg-gray-50 py-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
+          <Link href="/" className="inline-flex items-center text-primary hover:text-primary/80 transition mb-6">
+            ← Zurück zum Rechner
+          </Link>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Datenschutzrichtlinie</h1>
+          <p className="text-gray-600">Letzte Aktualisierung: <strong>21. Oktober 2025</strong></p>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 prose prose-gray max-w-none">
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Einführung</h2>
+            <p className="text-gray-700 leading-relaxed">
+              Willkommen bei CAGR Calculator. Wir sind bestrebt, Ihre Privatsphäre zu schützen. Diese Datenschutzrichtlinie erklärt, wie wir Ihre Informationen sammeln, verwenden und schützen, wenn Sie unser kostenloses Online-CAGR-Rechner-Tool verwenden.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">2. Informationen, die Wir Sammeln</h2>
+            <h3 className="text-xl font-semibold text-gray-800 mb-3">2.1 Von Ihnen Bereitgestellte Informationen</h3>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              <strong>Keine Persönlichen Informationen Erforderlich:</strong> Unser CAGR-Rechner erfordert nicht, dass Sie ein Konto erstellen oder persönliche Informationen bereitstellen.
+            </p>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              <strong>Berechnungseingaben:</strong> Die von Ihnen eingegebenen Finanzdaten werden vollständig in Ihrem Browser verarbeitet und <strong>nicht auf unseren Servern gespeichert</strong>.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">3. Wie Wir Ihre Informationen Verwenden</h2>
+            <p className="text-gray-700 leading-relaxed">Wir verwenden die gesammelten Informationen, um die Benutzererfahrung zu verbessern, die Leistung zu analysieren und Probleme zu erkennen.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">4. Analyse und Tracking-Technologien</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">Wir verwenden Google Analytics 4 und Microsoft Clarity, um das Benutzerverhalten zu verstehen und die Erfahrung zu optimieren.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">5. Cookies</h2>
+            <p className="text-gray-700 leading-relaxed">Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">6. Datensicherheit</h2>
+            <p className="text-gray-700 leading-relaxed">Wir implementieren branchenübliche Sicherheitsmaßnahmen, einschließlich HTTPS-Verschlüsselung und clientseitiger Verarbeitung.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">7. Ihre Datenschutzrechte</h2>
+            <p className="text-gray-700 leading-relaxed">Abhängig von Ihrem Standort haben Sie möglicherweise das Recht auf Zugriff, Löschung oder Opt-out vom Analytics-Tracking.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">8. Kontaktieren Sie Uns</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">Wenn Sie Fragen zu dieser Datenschutzrichtlinie haben, kontaktieren Sie uns:</p>
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
+              <p className="text-gray-700 mb-2">
+                <strong>E-Mail:</strong> <a href="mailto:toneychan2025@gmail.com" className="text-primary hover:underline">toneychan2025@gmail.com</a>
+              </p>
+              <p className="text-gray-700">
+                <strong>Website:</strong> <a href="https://cagrcalculator.app" className="text-primary hover:underline">https://cagrcalculator.app</a>
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <div className="text-center mt-8">
+          <Link href="/" className="inline-block bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition">
+            Zurück zum CAGR-Rechner
+          </Link>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function PrivacyPolicyJA() {
+  return (
+    <div className="min-h-screen bg-gray-50 py-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
+          <Link href="/" className="inline-flex items-center text-primary hover:text-primary/80 transition mb-6">
+            ← 計算機に戻る
+          </Link>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">プライバシーポリシー</h1>
+          <p className="text-gray-600">最終更新日：<strong>2025年10月21日</strong></p>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 prose prose-gray max-w-none">
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. はじめに</h2>
+            <p className="text-gray-700 leading-relaxed">
+              CAGR Calculatorへようこそ。当社はお客様のプライバシー保護に努めています。このプライバシーポリシーは、お客様が当社の無料オンラインCAGR計算ツールを使用する際に、当社がお客様の情報をどのように収集、使用、保護するかを説明します。
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">2. 収集する情報</h2>
+            <h3 className="text-xl font-semibold text-gray-800 mb-3">2.1 お客様が提供する情報</h3>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              <strong>個人情報は不要：</strong>当社のCAGR計算機は、アカウントの作成や個人情報の提供を必要としません。
+            </p>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              <strong>計算入力：</strong>入力した財務データはお客様のブラウザで完全に処理され、<strong>当社のサーバーには保存されません</strong>。
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">3. 情報の使用方法</h2>
+            <p className="text-gray-700 leading-relaxed">収集した情報は、ユーザーエクスペリエンスの向上、パフォーマンスの分析、問題の検出に使用されます。</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">4. 分析およびトラッキング技術</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">Google Analytics 4とMicrosoft Clarityを使用して、ユーザーの行動を理解し、エクスペリエンスを最適化します。</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">5. Cookie</h2>
+            <p className="text-gray-700 leading-relaxed">当社はCookieを使用して、当社のウェブサイトでのエクスペリエンスを向上させます。</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">6. データセキュリティ</h2>
+            <p className="text-gray-700 leading-relaxed">HTTPS暗号化やクライアント側の処理など、業界標準のセキュリティ対策を実施しています。</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">7. プライバシー権</h2>
+            <p className="text-gray-700 leading-relaxed">お客様の所在地によっては、アクセス、削除、または分析トラッキングのオプトアウトの権利がある場合があります。</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">8. お問い合わせ</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">このプライバシーポリシーに関するご質問がある場合は、お問い合わせください：</p>
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
+              <p className="text-gray-700 mb-2">
+                <strong>メール：</strong> <a href="mailto:toneychan2025@gmail.com" className="text-primary hover:underline">toneychan2025@gmail.com</a>
+              </p>
+              <p className="text-gray-700">
+                <strong>ウェブサイト：</strong> <a href="https://cagrcalculator.app" className="text-primary hover:underline">https://cagrcalculator.app</a>
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <div className="text-center mt-8">
+          <Link href="/" className="inline-block bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition">
+            CAGR計算機に戻る
+          </Link>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function PrivacyPolicyAR() {
+  return (
+    <div className="min-h-screen bg-gray-50 py-12" dir="rtl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
+          <Link href="/" className="inline-flex items-center text-primary hover:text-primary/80 transition mb-6">
+            → العودة إلى الحاسبة
+          </Link>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">سياسة الخصوصية</h1>
+          <p className="text-gray-600">آخر تحديث: <strong>21 أكتوبر 2025</strong></p>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 prose prose-gray max-w-none">
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. مقدمة</h2>
+            <p className="text-gray-700 leading-relaxed">
+              مرحباً بك في حاسبة CAGR. نحن ملتزمون بحماية خصوصيتك. توضح سياسة الخصوصية هذه كيفية جمع معلوماتك واستخدامها وحمايتها عند استخدام أداة حاسبة CAGR المجانية عبر الإنترنت.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">2. المعلومات التي نجمعها</h2>
+            <h3 className="text-xl font-semibold text-gray-800 mb-3">2.1 المعلومات التي تقدمها</h3>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              <strong>لا حاجة لمعلومات شخصية:</strong> حاسبة CAGR الخاصة بنا لا تتطلب منك إنشاء حساب أو تقديم معلومات شخصية.
+            </p>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              <strong>مدخلات الحساب:</strong> البيانات المالية التي تدخلها تتم معالجتها بالكامل في متصفحك <strong>ولا يتم تخزينها على خوادمنا</strong>.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">3. كيفية استخدام معلوماتك</h2>
+            <p className="text-gray-700 leading-relaxed">نستخدم المعلومات المجمعة لتحسين تجربة المستخدم وتحليل الأداء واكتشاف المشكلات.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">4. التحليلات وتقنيات التتبع</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">نستخدم Google Analytics 4 و Microsoft Clarity لفهم سلوك المستخدم وتحسين التجربة.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">5. ملفات تعريف الارتباط</h2>
+            <p className="text-gray-700 leading-relaxed">نستخدم ملفات تعريف الارتباط لتحسين تجربتك على موقعنا.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">6. أمن البيانات</h2>
+            <p className="text-gray-700 leading-relaxed">نطبق تدابير أمنية قياسية في الصناعة، بما في ذلك تشفير HTTPS والمعالجة من جانب العميل.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">7. حقوق الخصوصية الخاصة بك</h2>
+            <p className="text-gray-700 leading-relaxed">اعتماداً على موقعك، قد يكون لديك الحق في الوصول أو الحذف أو إلغاء الاشتراك في تتبع التحليلات.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">8. اتصل بنا</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">إذا كانت لديك أسئلة حول سياسة الخصوصية هذه، اتصل بنا:</p>
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
+              <p className="text-gray-700 mb-2">
+                <strong>البريد الإلكتروني:</strong> <a href="mailto:toneychan2025@gmail.com" className="text-primary hover:underline">toneychan2025@gmail.com</a>
+              </p>
+              <p className="text-gray-700">
+                <strong>الموقع:</strong> <a href="https://cagrcalculator.app" className="text-primary hover:underline">https://cagrcalculator.app</a>
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <div className="text-center mt-8">
+          <Link href="/" className="inline-block bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition">
+            العودة إلى حاسبة CAGR
           </Link>
         </div>
       </div>

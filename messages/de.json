@@ -1,0 +1,411 @@
+{
+  "metadata": {
+    "title": "CAGR Rechner - Kostenloser Online Rechner für durchschnittliche jährliche Wachstumsrate",
+    "description": "Kostenloser Online CAGR-Rechner - Berechnen Sie die durchschnittliche jährliche Wachstumsrate, Endwert, Anfangswert oder Zeitraum. Lernen Sie, wie Sie CAGR mit Formeln, Beispielen und Schritt-für-Schritt-Anleitung berechnen. Mobilfreundlich und präzise.",
+    "keywords": "CAGR Rechner,durchschnittliche jährliche Wachstumsrate,CAGR berechnen,CAGR Rechner online,wie berechnet man CAGR,CAGR Formel,Investitionsrechner,Wachstumsraten Rechner"
+  },
+  "layout": {
+    "nav": {
+      "whatIsCAGR": "Was ist CAGR?",
+      "howToUse": "Anwendung",
+      "faq": "Häufige Fragen"
+    },
+    "footer": {
+      "about": "Über uns",
+      "aboutText": "Der weltweit erste intelligente 4-Parameter-CAGR-Rechner. Berechnen Sie Wachstumsrate, Endwert, Anfangsinvestition oder Zeitraum sofort.",
+      "quickLinks": "Schnellzugriff",
+      "whatIsCAGR": "Was ist CAGR?",
+      "formula": "Formel",
+      "useCases": "Anwendungsfälle",
+      "howToUse": "Anwendung",
+      "faq": "Häufige Fragen",
+      "legal": "Rechtliches",
+      "privacyPolicy": "Datenschutz",
+      "termsOfService": "Nutzungsbedingungen",
+      "copyright": "© 2025 CAGRCalculator.app. Alle Rechte vorbehalten."
+    }
+  },
+  "page": {
+    "hero": {
+      "title": "🧠 Intelligenter CAGR-Rechner",
+      "subtitle": "Geben Sie 3 beliebige Werte ein, erhalten Sie den 4. sofort",
+      "description": "Der weltweit erste intelligente 4-Parameter-CAGR-Rechner"
+    },
+    "calculator": {
+      "initialValue": "Anfangswert",
+      "finalValue": "Endwert",
+      "timePeriod": "Zeitraum (Jahre)",
+      "cagrRate": "CAGR-Rate (%)",
+      "calculateNow": "⚡ Jetzt Berechnen",
+      "calculating": "Berechne...",
+      "clearAll": "Alles Löschen",
+      "placeholders": {
+        "initialValue": "10.000",
+        "finalValue": "40.000",
+        "timePeriod": "10",
+        "cagrRate": "15"
+      },
+      "helperText": {
+        "currency": "Betrag in Euro eingeben",
+        "number": "Anzahl der Jahre eingeben",
+        "percentage": "Als Prozentsatz eingeben (z.B. 15 für 15%)"
+      }
+    },
+    "modeIndicator": {
+      "fillAnyThree": "Füllen Sie beliebige 3 Felder aus, um zu beginnen",
+      "fillMore": "Füllen Sie noch {count} Feld{plural} aus",
+      "exactlyThree": "Bitte genau 3 Felder ausfüllen",
+      "currentlyFilled": "Aktuell ausgefüllt: {count}",
+      "modeDetected": "Modus Erkannt",
+      "formula": "Formel:",
+      "unableToDetect": "Berechnungsmodus kann nicht erkannt werden. Bitte überprüfen Sie Ihre Eingaben.",
+      "modes": {
+        "CAGR": "Wachstumsrate Berechnen (CAGR)",
+        "FV": "Endwert Berechnen",
+        "PV": "Anfangsinvestition Berechnen",
+        "TIME": "Zeitraum Berechnen"
+      }
+    },
+    "collapsible": {
+      "collapse": "Einklappen",
+      "expand": "Ausklappen"
+    },
+    "sections": {
+      "learnTitle": "📚 Über CAGR Lernen",
+      "learnSubtitle": "Alles, was Sie wissen müssen, um fundierte Investitionsentscheidungen zu treffen",
+      "whatIsCAGR": "Was ist CAGR?",
+      "formula": "CAGR Berechnen - Formel Erklärt",
+      "useCases": "CAGR-Rechner Anwendungsfälle & Beispiele",
+      "cagrVsMetrics": "CAGR vs. Andere Metriken",
+      "howToUse": "So Verwenden Sie Diesen CAGR-Rechner",
+      "faq": "CAGR-Rechner Häufig Gestellte Fragen",
+      "about": "Über Unseren Kostenlosen Online-CAGR-Rechner"
+    },
+    "loading": "Rechner wird geladen...",
+    "educational": {
+      "whatIsCAGR": {
+        "intro": "CAGR (Compound Annual Growth Rate - Durchschnittliche jährliche Wachstumsrate) ist die annualisierte Wachstumsrate des Wertes einer Investition oder finanziellen Kennzahl über einen bestimmten Zeitraum. Sie misst, was eine Investition jährlich erbringen würde, unter der Annahme, dass die Gewinne am Ende jedes Jahres reinvestiert werden.",
+        "highlight": "Im Gegensatz zu einfachen jährlichen Wachstumsraten, die von kurzfristigen Marktschwankungen beeinflusst werden können, berücksichtigt CAGR den Zinseszinseffekt der Renditen und bietet ein genaueres Maß für langfristiges Wachstum.",
+        "whyTitle": "Warum CAGR Verwenden?",
+        "advantages": {
+          "smoothens": {
+            "title": "Glättet Volatilität:",
+            "text": "CAGR glättet effektiv Wachstumsraten über mehrere Perioden zu einer einzigen annualisierten Wachstumsrate"
+          },
+          "comparison": {
+            "title": "Einfacher Vergleich:",
+            "text": "Vergleichen Sie die Performance verschiedener Investitionen über unterschiedliche Zeiträume"
+          },
+          "compound": {
+            "title": "Zinseszinseffekt:",
+            "text": "Berücksichtigt die Kraft des Zinseszinses, im Gegensatz zu einfachen Durchschnitten"
+          },
+          "forecast": {
+            "title": "Zukunftsprognosen:",
+            "text": "Nützlich für Prognosen basierend auf historischen Wachstumsmustern"
+          }
+        },
+        "keyInsightTitle": "Wichtige Erkenntnis",
+        "keyInsightText": "Wenn Sie 10.000€ investiert haben und diese in 5 Jahren auf 20.000€ gewachsen sind, würde die CAGR etwa 14,87% pro Jahr betragen. Das bedeutet, dass Ihre Investition über diesen Zeitraum durchschnittlich um 14,87% jährlich gewachsen ist. Verwenden Sie unseren Rechner oben, um die CAGR Ihrer Investition sofort zu ermitteln."
+      },
+      "formula": {
+        "title": "Die CAGR-Formel",
+        "whereTitle": "Wobei:",
+        "variables": {
+          "fv": {
+            "term": "EW (Endwert)",
+            "definition": "Der Endwert der Investition"
+          },
+          "pv": {
+            "term": "BW (Barwert)",
+            "definition": "Der Anfangswert oder die anfängliche Investitionssumme"
+          },
+          "n": {
+            "term": "n (Anzahl der Jahre)",
+            "definition": "Der Investitionszeitraum in Jahren"
+          }
+        },
+        "stepByStepTitle": "Schritt-für-Schritt-Berechnung",
+        "steps": [
+          "Den Endwert (EW) durch den Anfangswert (BW) teilen",
+          "Das Ergebnis zur Potenz von 1 geteilt durch die Anzahl der Jahre (n) erheben",
+          "1 vom Ergebnis subtrahieren",
+          "Mit 100 multiplizieren, um in Prozent umzuwandeln"
+        ],
+        "exampleTitle": "Berechnungsbeispiel",
+        "example": {
+          "given": "Gegeben: BW = 10.000€, EW = 20.000€, n = 5 Jahre",
+          "step1": "Schritt 1: 20.000 / 10.000 = 2",
+          "step2": "Schritt 2: 2^((1/5)) = 2^(0,2) = 1,1487",
+          "step3": "Schritt 3: 1,1487 - 1 = 0,1487",
+          "result": "Ergebnis: 0,1487 × 100 = 14,87%"
+        },
+        "smartCalcTitle": "Unser CAGR-Rechner Löst Jede Variable",
+        "smartCalcIntro": "Unser intelligenter CAGR-Rechner ist vielseitig - Sie können beliebige 3 der 4 Variablen eingeben, und der Rechner berechnet automatisch die fehlende. Diese Flexibilität macht unseren Rechner perfekt für verschiedene Investitionsszenarien:",
+        "modes": {
+          "cagr": "CAGR Berechnen: Gegeben BW, EW und n",
+          "fv": "EW Berechnen: Gegeben BW, CAGR und n",
+          "pv": "BW Berechnen: Gegeben EW, CAGR und n",
+          "time": "Zeit Berechnen: Gegeben BW, EW und CAGR"
+        }
+      },
+      "useCases": {
+        "intro": "CAGR wird in Finanzen und Wirtschaft für verschiedene Zwecke weit verbreitet eingesetzt. Unser CAGR-Rechner hilft Ihnen, all diese Szenarien sofort zu lösen. Hier sind die häufigsten Anwendungsfälle:",
+        "cases": [
+          {
+            "title": "Wachstum des Investmentportfolios",
+            "description": "Messen Sie, wie sich Ihr Investmentportfolio über mehrere Jahre entwickelt hat. Wenn Ihr Portfolio beispielsweise von 100.000€ auf 300.000€ in 10 Jahren gewachsen ist, zeigt die CAGR von 11,6% Ihre durchschnittliche jährliche Wachstumsrate.",
+            "example": "Beispiel: 100.000€ → 300.000€ in 10 Jahren = 11,6% CAGR"
+          },
+          {
+            "title": "Verdopplungszeit der Investition",
+            "description": "Berechnen Sie, wie lange es dauern wird, bis sich Ihre Investition bei einer bestimmten Wachstumsrate verdoppelt. Wenn Sie 10.000€ investieren und möchten, dass sie auf 20.000€ wachsen, hilft Ihnen die Kenntnis Ihrer erwarteten CAGR, den Zeitrahmen abzuschätzen.",
+            "example": "Beispiel: 10.000€ → 20.000€ bei 14,87% CAGR = 5 Jahre"
+          },
+          {
+            "title": "Unternehmenseinnahmenanalyse",
+            "description": "Analysieren Sie das Umsatzwachstum eines Unternehmens über mehrere Jahre, um seine langfristige Leistung zu verstehen. Dies hilft Stakeholdern, fundierte Entscheidungen über die finanzielle Gesundheit des Unternehmens zu treffen.",
+            "example": "Beispiel: Umsatz 5 Mio.€ → 12 Mio.€ in 7 Jahren = 13,2% CAGR"
+          },
+          {
+            "title": "Vergleich von Investmentfonds",
+            "description": "Bei der Auswahl von Investmentfonds ermöglicht CAGR den Anlegern, die historische Performance verschiedener Fonds über denselben Zeitraum zu vergleichen und bietet einen direkten Vergleich.",
+            "example": "Beispiel: Vergleich Fonds A (12% CAGR) vs. Fonds B (9% CAGR)"
+          },
+          {
+            "title": "Wachstumsprognose",
+            "description": "Verwenden Sie historische CAGR, um zukünftiges Wachstum zu projizieren. Wenn ein Unternehmen in den letzten 5 Jahren eine CAGR von 15% aufrechterhalten hat, können Sie diese Rate verwenden, um die potenzielle zukünftige Leistung zu prognostizieren.",
+            "example": "Beispiel: Aktueller Wert 50.000€ bei 15% CAGR = 100.000€ in ~5 Jahren"
+          }
+        ],
+        "whenToUseTitle": "Wann den CAGR-Rechner Verwenden",
+        "whenToUse": [
+          "Wenn Sie langfristige Investitionsperformance verstehen möchten",
+          "Beim Vergleich verschiedener Investitionen über denselben Zeitraum",
+          "Beim Glätten der Jahr-für-Jahr-Volatilität",
+          "Bei der Prognose zukünftigen Wachstums basierend auf historischen Trends"
+        ],
+        "footer": "Verwenden Sie unseren kostenlosen Online-Rechner oben, um eine dieser Berechnungen sofort durchzuführen."
+      },
+      "howToUse": {
+        "intro": "Unser Intelligenter CAGR-Rechner kann jede der 4 Variablen lösen. Geben Sie einfach beliebige 3 Werte ein, und der Rechner erkennt automatisch, welcher Modus zu verwenden ist, und berechnet den fehlenden Wert.",
+        "modes": [
+          {
+            "number": "1",
+            "title": "CAGR Berechnen (Wachstumsrate)",
+            "description": "Finden Sie heraus, welche Wachstumsrate Ihre Investition erreicht hat.",
+            "enterLabel": "Eingabe:",
+            "inputs": [
+              "Anfangswert: 10.000€",
+              "Endwert: 20.000€",
+              "Zeitraum: 5 Jahre"
+            ],
+            "result": "Ergebnis: 14,87% CAGR"
+          },
+          {
+            "number": "2",
+            "title": "Endwert Berechnen",
+            "description": "Prognostizieren Sie, auf welchen Wert Ihre Investition wachsen wird.",
+            "enterLabel": "Eingabe:",
+            "inputs": [
+              "Anfangswert: 10.000€",
+              "CAGR-Rate: 15%",
+              "Zeitraum: 10 Jahre"
+            ],
+            "result": "Ergebnis: 40.455,58€"
+          },
+          {
+            "number": "3",
+            "title": "Anfangswert Berechnen",
+            "description": "Finden Sie heraus, wie viel Sie investieren müssen, um Ihr Ziel zu erreichen.",
+            "enterLabel": "Eingabe:",
+            "inputs": [
+              "Endwert: 500.000€",
+              "CAGR-Rate: 15%",
+              "Zeitraum: 10 Jahre"
+            ],
+            "result": "Ergebnis: 123.589,71€"
+          },
+          {
+            "number": "4",
+            "title": "Zeitraum Berechnen",
+            "description": "Bestimmen Sie, wie lange es dauern wird, Ihr Ziel zu erreichen.",
+            "enterLabel": "Eingabe:",
+            "inputs": [
+              "Anfangswert: 100€",
+              "Endwert: 200€",
+              "CAGR-Rate: 50%"
+            ],
+            "result": "Ergebnis: 1,7 Jahre"
+          }
+        ],
+        "validationTitle": "Eingabevalidierungsregeln",
+        "validationRules": [
+          "Genau 3 Felder erforderlich: Der Rechner erkennt automatisch, welche Variable berechnet werden soll",
+          "CAGR-Ratenformat: Als Prozentsatz eingeben (z.B. 15 für 15%)",
+          "Nur positive Werte: Anfangs- und Endwerte müssen größer als 0 sein",
+          "Zeitraum: Muss größer als 0 Jahre sein (kann dezimal sein, z.B. 2,5 Jahre)",
+          "CAGR-Bereich: Zwischen -100% und 1000% für praktische Berechnungen"
+        ],
+        "interpretingTitle": "Interpretation Ihrer Ergebnisse",
+        "interpretingItems": [
+          "CAGR (%): Ihre annualisierte Wachstumsrate - höher ist besser (aber berücksichtigen Sie das Risiko)",
+          "Gesamtwachstum (%): Die Gesamtprozentsteigerung von Anfang bis Ende",
+          "Absoluter Ertrag (€): Der tatsächliche Eurobetrag, der gewonnen oder verloren wurde",
+          "Verdopplungszeit: Wie lange es dauert, bis sich Ihr Geld bei dieser Wachstumsrate verdoppelt",
+          "Benchmark-Vergleich: Wie Ihr Ergebnis im Vergleich zu Marktdurchschnitten abschneidet (S&P 500, Anleihen usw.)"
+        ]
+      },
+      "faq": {
+        "intro": "Hier sind Antworten auf die häufigsten Fragen zu CAGR und unserem kostenlosen Online-CAGR-Rechner:",
+        "questions": [
+          {
+            "question": "Was ist der Unterschied zwischen CAGR und durchschnittlicher Rendite?",
+            "answer": "CAGR ist ein geometrisches Mittel, das die Aufzinsung berücksichtigt, während die durchschnittliche Rendite ein arithmetisches Mittel ist. CAGR ist genauer für die Messung der Investitionsperformance im Laufe der Zeit, da es die tatsächliche Wachstumsrate widerspiegelt, wenn Renditen jährlich aufgezinst würden."
+          },
+          {
+            "question": "Kann CAGR negativ sein?",
+            "answer": "Ja, CAGR kann negativ sein, wenn der Endwert kleiner als der Anfangswert ist. Eine negative CAGR zeigt an, dass die Investition über den Zeitraum an Wert verloren hat. Wenn beispielsweise 10.000€ in 5 Jahren zu 8.000€ werden, würde die CAGR etwa -4,4% betragen."
+          },
+          {
+            "question": "Ist eine höhere CAGR immer besser?",
+            "answer": "Nicht unbedingt. Während eine höhere CAGR schnelleres Wachstum anzeigt, berücksichtigt sie kein Risiko oder Volatilität. Eine Investition mit 25% CAGR, aber hoher Volatilität könnte riskanter sein als eine mit 15% CAGR und stabilem Wachstum. Berücksichtigen Sie CAGR immer zusammen mit anderen Kennzahlen wie Volatilität, Sharpe Ratio und maximalem Drawdown."
+          },
+          {
+            "question": "Wie genau ist CAGR für kurze Zeiträume?",
+            "answer": "CAGR kann für sehr kurze Zeiträume (weniger als 1 Jahr) irreführend sein, da es die Renditen annualisiert, was die tatsächliche Leistung übertreiben oder verzerren kann. Für Zeiträume unter einem Jahr ist die absolute Rendite oft angemessener."
+          },
+          {
+            "question": "Wann sollte ich CAGR vs. absolute Rendite verwenden?",
+            "answer": "Verwenden Sie CAGR beim Vergleich von Investitionen über verschiedene Zeiträume oder wenn Sie annualisierte Wachstumsraten verstehen möchten (typischerweise 3+ Jahre). Verwenden Sie absolute Rendite für kürzere Zeiträume, Einzelperiodenleistung oder wenn der Zeitraum für Ihre Analyse weniger relevant ist."
+          },
+          {
+            "question": "Berücksichtigt CAGR die Volatilität?",
+            "answer": "Nein, CAGR berücksichtigt keine Volatilität. Es zeigt nur die geglättete Wachstumsrate von Anfang bis Ende und ignoriert die Höhen und Tiefen auf dem Weg. Zwei Investitionen können dieselbe CAGR haben, aber sehr unterschiedliche Volatilitätsprofile. Erwägen Sie die Verwendung zusätzlicher Kennzahlen wie Standardabweichung oder Sharpe Ratio zur Risikobewertung."
+          },
+          {
+            "question": "Kann ich CAGR für monatliche Daten verwenden?",
+            "answer": "Ja, aber Sie müssen den Zeitraum entsprechend anpassen. Wenn Sie monatliche Daten über 3 Jahre haben, verwenden Sie n = 36 Monate statt 3 Jahre. Die Formel bleibt dieselbe: (EW/BW)^(1/n) - 1, aber denken Sie daran, das Ergebnis mit 12 zu multiplizieren, wenn Sie eine jährliche Rate möchten."
+          },
+          {
+            "question": "Was ist eine gute CAGR für Aktien, Anleihen und Immobilien?",
+            "answer": "Historisch gesehen: S&P 500 Aktien ~10-11% CAGR, Unternehmensanleihen ~5-6% CAGR, Immobilien ~8-9% CAGR und Gold ~7% CAGR. Die vergangene Performance garantiert jedoch keine zukünftigen Renditen. Eine \"gute\" CAGR hängt von Ihrer Risikotoleranz, Ihren Investitionszielen und dem breiteren wirtschaftlichen Kontext ab."
+          },
+          {
+            "question": "Wie berechne ich CAGR in Excel?",
+            "answer": "Verwenden Sie in Excel diese Formel: =(EW/BW)^(1/n)-1 oder =POTENZ(EW/BW, 1/n)-1. Sie können auch die ZINS-Funktion verwenden: =ZINS(n, 0, -BW, EW). Zum Beispiel für 10.000€, die in 5 Jahren auf 20.000€ wachsen: =POTENZ(20000/10000, 1/5)-1 gibt 0,1487 oder 14,87% zurück. Unser kostenloser Online-Rechner ist jedoch viel schneller und eliminiert das Risiko von Formelfehlern."
+          },
+          {
+            "question": "Was sind die Haupteinschränkungen von CAGR?",
+            "answer": "CAGR geht von konstantem Wachstum aus, was in der Realität selten vorkommt. Es berücksichtigt keine Volatilität, kein Risiko oder zwischenzeitliche Cashflows (Dividenden, Einzahlungen, Abhebungen). Es spiegelt auch nicht den Zeitpunkt der Renditen wider – Sie könnten 4 Jahre lang negative Renditen haben und einen Anstieg im Jahr 5, und zeigen immer noch eine positive CAGR. Verwenden Sie CAGR immer zusammen mit anderen Kennzahlen für ein vollständiges Bild."
+          }
+        ],
+        "stillHaveQuestionsTitle": "Haben Sie noch Fragen?",
+        "stillHaveQuestionsText": "Dieser Rechner wurde entwickelt, um so genau und hilfreich wie möglich zu sein. Alle Berechnungen basieren auf allgemein anerkannten Finanzformeln. Wenn Sie zusätzliche Fragen zu CAGR haben oder Hilfe bei der Interpretation Ihrer Ergebnisse benötigen, ziehen Sie in Betracht, einen Finanzberater zu konsultieren."
+      },
+      "about": {
+        "mainTitle": "Über Unseren Kostenlosen Online-CAGR-Rechner",
+        "mainDescription": "Unser Intelligenter CAGR-Rechner ist ein kostenloses Online-Tool, präzise und benutzerfreundlich, entwickelt, um Investoren, Unternehmensanalysten und Finanzexperten bei der Berechnung durchschnittlicher jährlicher Wachstumsraten und fundierten Investitionsentscheidungen zu helfen. Dieser Rechner liefert sofortige Ergebnisse mit visuellen Einblicken und detaillierten Aufschlüsselungen.",
+        "features": [
+          {
+            "emoji": "🎯",
+            "title": "Intelligent",
+            "description": "Erkennt automatisch, welche Variable basierend auf Ihren Eingaben berechnet werden soll. Keine Modusauswahl erforderlich."
+          },
+          {
+            "emoji": "📊",
+            "title": "Visuell",
+            "description": "Enthält interaktive Diagramme, jährliche Aufschlüsselungen und intelligente Einblicke, um Ihnen zu helfen, Ihre Ergebnisse zu verstehen."
+          },
+          {
+            "emoji": "✨",
+            "title": "Präzise",
+            "description": "Verwendet präzise mathematische Formeln basierend auf allgemein anerkannten Finanzstandards."
+          }
+        ],
+        "keyFeaturesTitle": "Hauptmerkmale",
+        "keyFeatures": [
+          "4-in-1 intelligenter Rechner (CAGR, EW, BW, Zeit)",
+          "Echtzeitvalidierung und Fehlerprüfung",
+          "Interaktive Visualisierungen (Diagramme und Tabellen)",
+          "Intelligente Einblicke mit Markt-Benchmarks",
+          "Ergebnisse über URL oder natives Teilen teilen",
+          "Mobile-First responsives Design",
+          "100% kostenlos zu verwenden, keine Registrierung erforderlich",
+          "Bildungsinhalte und Beispiele"
+        ],
+        "accuracyTitle": "Genauigkeit & Haftungsausschluss",
+        "accuracyText": "Unser CAGR-Rechner verwendet präzise mathematische Formeln, um Genauigkeit zu gewährleisten. Alle von diesem Rechner durchgeführten Berechnungen basieren auf der Standard-CAGR-Formel: `(EW/BW)^((1/n)) - 1`. Dieses Rechnertool wird jedoch nur zu Bildungs- und Informationszwecken bereitgestellt. Investitionsentscheidungen sollten nach Rücksprache mit qualifizierten Finanzberatern getroffen werden. Die vergangene Performance garantiert keine zukünftigen Ergebnisse.",
+        "technologyTitle": "Technologie",
+        "technologyIntro": "Erstellt mit modernen Webtechnologien für schnelle Leistung und hervorragende Benutzererfahrung:",
+        "technologies": [
+          "Next.js 14",
+          "TypeScript",
+          "React",
+          "Tailwind CSS",
+          "Recharts"
+        ],
+        "madeWith": "Mit ❤️ für Investoren weltweit gemacht",
+        "copyright": "© {year} CAGRCalculator.app | Alle Rechte vorbehalten"
+      },
+      "cagrVsMetrics": {
+        "intro": "Obwohl CAGR eine leistungsstarke Kennzahl ist, ist es wichtig zu verstehen, wie sie sich mit anderen häufig verwendeten Finanzkennzahlen vergleicht. Jede hat ihre Stärken und Einschränkungen.",
+        "tableHeaders": {
+          "metric": "Kennzahl",
+          "description": "Beschreibung",
+          "bestFor": "Am Besten Für"
+        },
+        "metrics": [
+          {
+            "name": "CAGR",
+            "description": "Geglättete annualisierte Wachstumsrate unter Annahme von Aufzinsung",
+            "bestFor": "Langfristige Investitionsperformance"
+          },
+          {
+            "name": "Einfache Durchschnittsrendite",
+            "description": "Arithmetisches Mittel der jährlichen Renditen (kann irreführend sein)",
+            "bestFor": "Nur schnelle grobe Schätzungen"
+          },
+          {
+            "name": "Absolute Rendite",
+            "description": "Gesamtprozentuale Veränderung von Anfang bis Ende",
+            "bestFor": "Kurzfristige oder Einzelperiodenleistung"
+          },
+          {
+            "name": "IZF (Interner Zinsfuß)",
+            "description": "Berücksichtigt den Zeitpunkt von Cashflows ein/aus",
+            "bestFor": "Investitionen mit mehreren Cashflows"
+          },
+          {
+            "name": "TWR (Zeitgewichtete Rendite)",
+            "description": "Entfernt den Einfluss externer Cashflows",
+            "bestFor": "Bewertung der Fondsmanager-Performance"
+          }
+        ],
+        "advantagesTitle": "✅ Vorteile von CAGR",
+        "advantages": [
+          "Berücksichtigt Zinseszinseffekte",
+          "Leicht zu verstehen und zu kommunizieren",
+          "Glättet kurzfristige Volatilität",
+          "Ermöglicht Vergleich über verschiedene Zeitrahmen",
+          "Wird nicht durch extreme prozentuale Veränderungen verzerrt"
+        ],
+        "limitationsTitle": "⚠️ Einschränkungen von CAGR",
+        "limitations": [
+          "Geht von konstantem Wachstum aus (was selten passiert)",
+          "Berücksichtigt keine Volatilität oder kein Risiko",
+          "Berücksichtigt keine zwischenzeitlichen Cashflows",
+          "Kann für sehr kurze Zeiträume irreführend sein",
+          "Vergangene CAGR garantiert keine zukünftigen Renditen"
+        ],
+        "exampleTitle": "Beispiel: CAGR vs. Einfacher Durchschnitt",
+        "exampleIntro": "Betrachten Sie eine Investition, die verläuft: 100€ → 150€ → 120€ → 180€ über 3 Jahre",
+        "simpleAverageTitle": "Einfache Durchschnittsrendite:",
+        "simpleAverageCalc": "Jahr 1: +50% | Jahr 2: -20% | Jahr 3: +50% Durchschnitt = (50 - 20 + 50) / 3 = 26,67%",
+        "cagrTitle": "CAGR:",
+        "cagrCalc": "(180 / 100)^((1/3)) - 1 CAGR = 21,7%",
+        "exampleNotice": "Hinweis: CAGR (21,7%) ist genauer, weil es die Aufzinsung berücksichtigt, während der einfache Durchschnitt (26,67%) das wahre annualisierte Wachstum überschätzt."
+      }
+    }
+  }
+}

@@ -36,11 +36,15 @@ export async function generateMetadata({
       apple: '/logo-variant-1.svg',
     },
     alternates: {
-      canonical: `/${locale}`,
+      canonical: `https://cagrcalculator.app/${locale}`,
       languages: {
-        'en': '/en',
-        'zh-CN': '/zh-CN',
-        'x-default': '/en', // 默认语言，告诉搜索引擎当没有匹配语言时使用英文
+        'en': 'https://cagrcalculator.app/en',
+        'zh-CN': 'https://cagrcalculator.app/zh-CN',
+        'es': 'https://cagrcalculator.app/es',
+        'de': 'https://cagrcalculator.app/de',
+        'ja': 'https://cagrcalculator.app/ja',
+        'ar': 'https://cagrcalculator.app/ar',
+        'x-default': 'https://cagrcalculator.app/en', // 默认语言,告诉搜索引擎当没有匹配语言时使用英文
       },
     },
     openGraph: {
