@@ -25,6 +25,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: descriptions[locale as Locale] || descriptions.en,
     alternates: {
       canonical: `/${locale}/terms`,
+      languages: {
+        'en': '/en/terms',
+        'zh-CN': '/zh-CN/terms',
+        'x-default': '/en/terms',
+      },
     },
     robots: {
       index: true,

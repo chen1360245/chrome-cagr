@@ -36,10 +36,11 @@ export async function generateMetadata({
       apple: '/logo-variant-1.svg',
     },
     alternates: {
-      canonical: locale === 'en' ? '/' : `/${locale}`,
+      canonical: `/${locale}`,
       languages: {
         'en': '/en',
         'zh-CN': '/zh-CN',
+        'x-default': '/en', // 默认语言，告诉搜索引擎当没有匹配语言时使用英文
       },
     },
     openGraph: {
