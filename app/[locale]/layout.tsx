@@ -92,7 +92,7 @@ export async function generateMetadata({
     verification: {
       google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '',
       yandex: '',
-      bing: '',
+      bing: '1E055CC085BE2BFE4794E9E43E119166',
     },
   }
 }
