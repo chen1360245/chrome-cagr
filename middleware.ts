@@ -18,6 +18,8 @@ export const config = {
   // - _next/static (静态文件)
   // - _next/image (图片优化)
   // - favicon.ico
+  // - robots.txt (SEO文件)
+  // - sitemap.xml (SEO文件)
   // - 所有静态资源文件 (.svg, .png, .jpg, .jpeg, .gif, .webp, .ico, .css, .js)
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico|.*\\.svg|.*\\.png|.*\\.jpg|.*\\.jpeg|.*\\.gif|.*\\.webp|.*\\.ico).*)']
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|.*\\.svg|.*\\.png|.*\\.jpg|.*\\.jpeg|.*\\.gif|.*\\.webp|.*\\.ico).*)']
 }

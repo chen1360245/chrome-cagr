@@ -36,7 +36,7 @@ export async function generateMetadata({
       apple: '/logo-variant-1.svg',
     },
     alternates: {
-      canonical: `/${locale}`,
+      canonical: locale === 'en' ? '/' : `/${locale}`,
       languages: {
         'en': '/en',
         'zh-CN': '/zh-CN',
@@ -45,15 +45,24 @@ export async function generateMetadata({
     openGraph: {
       title: t('title'),
       description: t('description'),
-      url: 'https://cagrcalculator.app',
+      url: `https://cagrcalculator.app/${locale}`,
       siteName: 'CAGR Calculator',
       locale: locale,
       type: 'website',
+      images: [
+        {
+          url: '/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: 'CAGR Calculator',
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: t('title'),
       description: t('description'),
+      images: ['/og-image.png'],
     },
     robots: {
       index: true,
@@ -67,7 +76,9 @@ export async function generateMetadata({
       },
     },
     verification: {
-      google: 'YOUR_GOOGLE_VERIFICATION_CODE',
+      google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '',
+      yandex: '',
+      bing: '',
     },
   }
 }

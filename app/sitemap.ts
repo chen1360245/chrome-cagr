@@ -10,24 +10,50 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://cagrcalculator.app'
   const currentDate = new Date()
 
-  return [
-    {
-      url: baseUrl,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 1.0, // Highest priority - Homepage
-    },
-    {
-      url: `${baseUrl}/privacy`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.5, // Lower priority - Legal page
-    },
-    {
-      url: `${baseUrl}/terms`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.5, // Lower priority - Legal page
-    },
+  // Define supported languages
+  const locales = ['en', 'zh-CN']
+
+  // Pages that exist for each locale
+  const pages = [
+    { path: '', priority: 1.0, changeFrequency: 'weekly' as const }, // Homepage
+    { path: '/privacy', priority: 0.5, changeFrequency: 'monthly' as const },
+    { path: '/terms', priority: 0.5, changeFrequency: 'monthly' as const },
   ]
+
+  // Generate sitemap entries for each locale
+  const sitemapEntries: MetadataRoute.Sitemap = []
+
+  // Add root URL (will redirect to default locale)
+  sitemapEntries.push({
+    url: baseUrl,
+    lastModified: currentDate,
+    changeFrequency: 'weekly',
+    priority: 1.0,
+    alternates: {
+      languages: {
+        'en': `${baseUrl}/en`,
+        'zh-CN': `${baseUrl}/zh-CN`,
+      }
+    }
+  })
+
+  // Add all locale-specific URLs
+  for (const locale of locales) {
+    for (const page of pages) {
+      sitemapEntries.push({
+        url: `${baseUrl}/${locale}${page.path}`,
+        lastModified: currentDate,
+        changeFrequency: page.changeFrequency,
+        priority: page.priority,
+        alternates: {
+          languages: {
+            'en': `${baseUrl}/en${page.path}`,
+            'zh-CN': `${baseUrl}/zh-CN${page.path}`,
+          }
+        }
+      })
+    }
+  }
+
+  return sitemapEntries
 }

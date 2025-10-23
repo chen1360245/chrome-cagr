@@ -7,12 +7,78 @@ import { MetadataRoute } from 'next'
  * Documentation: https://nextjs.org/docs/app/api-reference/file-conventions/metadata/robots
  */
 export default function robots(): MetadataRoute.Robots {
+  const baseUrl = 'https://cagrcalculator.app'
+
   return {
-    rules: {
-      userAgent: '*',
-      allow: '/', // Allow all pages
-      disallow: ['/api/', '/admin/'], // Disallow API routes and admin (if any)
-    },
-    sitemap: 'https://cagrcalculator.app/sitemap.xml',
+    rules: [
+      {
+        // Default rule for all crawlers
+        userAgent: '*',
+        allow: [
+          '/',
+          '/en',
+          '/zh-CN',
+          '/en/*',
+          '/zh-CN/*',
+        ],
+        disallow: [
+          '/api/',
+          '/admin/',
+          '/_next/',
+          '/*.json$',
+        ],
+        crawlDelay: 1, // Be respectful to avoid overloading
+      },
+      {
+        // Specific rules for Googlebot (no delay for faster indexing)
+        userAgent: 'Googlebot',
+        allow: [
+          '/',
+          '/en',
+          '/zh-CN',
+          '/en/*',
+          '/zh-CN/*',
+        ],
+        disallow: [
+          '/api/',
+          '/_next/',
+        ],
+        crawlDelay: 0,
+      },
+      {
+        // Specific rules for Bingbot
+        userAgent: 'Bingbot',
+        allow: [
+          '/',
+          '/en',
+          '/zh-CN',
+          '/en/*',
+          '/zh-CN/*',
+        ],
+        disallow: [
+          '/api/',
+          '/_next/',
+        ],
+        crawlDelay: 0,
+      },
+      {
+        // Specific rules for Baidu (Chinese search engine)
+        userAgent: 'Baiduspider',
+        allow: [
+          '/',
+          '/zh-CN',
+          '/zh-CN/*',
+          '/en',
+          '/en/*',
+        ],
+        disallow: [
+          '/api/',
+          '/_next/',
+        ],
+        crawlDelay: 1,
+      },
+    ],
+    sitemap: `${baseUrl}/sitemap.xml`,
+    host: baseUrl,
   }
 }
