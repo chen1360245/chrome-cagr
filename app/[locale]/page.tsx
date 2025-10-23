@@ -5,6 +5,7 @@
 'use client'
 
 import { Suspense } from 'react'
+import { useTranslations } from 'next-intl'
 import { useSmartCalculator } from '@/hooks/useSmartCalculator'
 import { SmartInput } from '@/components/calculator/SmartInput'
 import { ModeIndicator } from '@/components/calculator/ModeIndicator'
@@ -22,6 +23,7 @@ import { About } from '@/components/educational/About'
 import { BookOpen, Calculator as CalculatorIcon, Lightbulb, BarChart, HelpCircle, Info } from 'lucide-react'
 
 function CalculatorContent() {
+  const t = useTranslations('page')
   const {
     inputs,
     result,
@@ -40,13 +42,13 @@ function CalculatorContent() {
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            🧠 Smart CAGR Calculator
+            {t('hero.title')}
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            Input any 3 values, get the 4th instantly
+            {t('hero.subtitle')}
           </p>
           <p className="text-sm text-gray-500 mt-2">
-            The world&apos;s first intelligent 4-parameter CAGR calculator
+            {t('hero.description')}
           </p>
         </div>
 
@@ -56,38 +58,38 @@ function CalculatorContent() {
             {/* Input Fields Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <SmartInput
-                label="Initial Value"
+                label={t('calculator.initialValue')}
                 type="currency"
                 value={inputs.pv}
                 onChange={(value) => updateInput('pv', value)}
-                placeholder="10,000"
+                placeholder={t('calculator.placeholders.initialValue')}
                 icon={<DollarSign className="w-4 h-4 text-primary" />}
               />
 
               <SmartInput
-                label="Final Value"
+                label={t('calculator.finalValue')}
                 type="currency"
                 value={inputs.fv}
                 onChange={(value) => updateInput('fv', value)}
-                placeholder="40,000"
+                placeholder={t('calculator.placeholders.finalValue')}
                 icon={<Target className="w-4 h-4 text-accent-blue" />}
               />
 
               <SmartInput
-                label="Time Period (Years)"
+                label={t('calculator.timePeriod')}
                 type="number"
                 value={inputs.n}
                 onChange={(value) => updateInput('n', value)}
-                placeholder="10"
+                placeholder={t('calculator.placeholders.timePeriod')}
                 icon={<Clock className="w-4 h-4 text-accent-orange" />}
               />
 
               <SmartInput
-                label="CAGR Rate (%)"
+                label={t('calculator.cagrRate')}
                 type="percentage"
                 value={inputs.r}
                 onChange={(value) => updateInput('r', value)}
-                placeholder="15"
+                placeholder={t('calculator.placeholders.cagrRate')}
                 icon={<TrendingUp className="w-4 h-4 text-accent-purple" />}
               />
             </div>
@@ -117,10 +119,10 @@ function CalculatorContent() {
                 {isCalculating ? (
                   <>
                     <span className="animate-spin mr-2">⏳</span>
-                    Calculating...
+                    {t('calculator.calculating')}
                   </>
                 ) : (
-                  <>⚡ Calculate Now</>
+                  <>{t('calculator.calculateNow')}</>
                 )}
               </Button>
 
@@ -131,7 +133,7 @@ function CalculatorContent() {
                 className="sm:flex-none sm:w-auto"
               >
                 <RotateCcw className="w-4 h-4 mr-2" />
-                Clear All
+                {t('calculator.clearAll')}
               </Button>
             </div>
           </div>
@@ -151,17 +153,17 @@ function CalculatorContent() {
           {/* Section Divider */}
           <div className="border-t-2 border-gray-200 pt-8">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-2">
-              📚 Learn About CAGR
+              {t('sections.learnTitle')}
             </h2>
             <p className="text-center text-gray-600 mb-8">
-              Everything you need to know to make informed investment decisions
+              {t('sections.learnSubtitle')}
             </p>
           </div>
 
           {/* What is CAGR - Default Expanded */}
           <CollapsibleSection
             id="what-is-cagr"
-            title="What is CAGR?"
+            title={t('sections.whatIsCAGR')}
             icon={<BookOpen className="w-6 h-6" />}
             defaultExpanded={true}
           >
@@ -171,7 +173,7 @@ function CalculatorContent() {
           {/* How to Calculate CAGR - Formula Explained */}
           <CollapsibleSection
             id="formula"
-            title="How to Calculate CAGR - Formula Explained"
+            title={t('sections.formula')}
             icon={<CalculatorIcon className="w-6 h-6" />}
             defaultExpanded={false}
           >
@@ -181,7 +183,7 @@ function CalculatorContent() {
           {/* CAGR Calculator Use Cases & Examples */}
           <CollapsibleSection
             id="use-cases"
-            title="CAGR Calculator Use Cases & Examples"
+            title={t('sections.useCases')}
             icon={<Lightbulb className="w-6 h-6" />}
             defaultExpanded={false}
           >
@@ -191,7 +193,7 @@ function CalculatorContent() {
           {/* CAGR vs Other Metrics */}
           <CollapsibleSection
             id="cagr-vs-metrics"
-            title="CAGR vs Other Metrics"
+            title={t('sections.cagrVsMetrics')}
             icon={<BarChart className="w-6 h-6" />}
             defaultExpanded={false}
           >
@@ -201,7 +203,7 @@ function CalculatorContent() {
           {/* How to Use This CAGR Calculator */}
           <CollapsibleSection
             id="how-to-use"
-            title="How to Use This CAGR Calculator"
+            title={t('sections.howToUse')}
             icon={<HelpCircle className="w-6 h-6" />}
             defaultExpanded={false}
           >
@@ -211,7 +213,7 @@ function CalculatorContent() {
           {/* CAGR Calculator FAQ */}
           <CollapsibleSection
             id="faq"
-            title="CAGR Calculator FAQ"
+            title={t('sections.faq')}
             icon={<HelpCircle className="w-6 h-6" />}
             defaultExpanded={false}
           >
@@ -221,7 +223,7 @@ function CalculatorContent() {
           {/* About Our Free Online CAGR Calculator */}
           <CollapsibleSection
             id="about"
-            title="About Our Free Online CAGR Calculator"
+            title={t('sections.about')}
             icon={<Info className="w-6 h-6" />}
             defaultExpanded={false}
           >

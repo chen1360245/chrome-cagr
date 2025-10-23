@@ -5,6 +5,7 @@
 'use client'
 
 import * as React from 'react'
+import { useTranslations } from 'next-intl'
 import { cn } from '@/lib/utils/cn'
 import { Lightbulb, Target, DollarSign, Clock, TrendingUp } from 'lucide-react'
 import type { CalculationMode } from '@/types/calculator'
@@ -15,38 +16,30 @@ export interface ModeIndicatorProps {
   className?: string
 }
 
-const MODE_CONFIG = {
-  CAGR: {
-    icon: TrendingUp,
-    label: 'Calculate Growth Rate (CAGR)',
-    formula: 'CAGR = (FV / PV)^(1/n) - 1',
-    color: 'text-primary',
-    bgColor: 'bg-primary/10',
-  },
-  FV: {
-    icon: Target,
-    label: 'Calculate Final Value',
-    formula: 'FV = PV × (1 + r)^n',
-    color: 'text-accent-blue',
-    bgColor: 'bg-accent-blue/10',
-  },
-  PV: {
-    icon: DollarSign,
-    label: 'Calculate Initial Investment',
-    formula: 'PV = FV / (1 + r)^n',
-    color: 'text-accent-purple',
-    bgColor: 'bg-accent-purple/10',
-  },
-  TIME: {
-    icon: Clock,
-    label: 'Calculate Time Period',
-    formula: 'n = log(FV / PV) / log(1 + r)',
-    color: 'text-accent-orange',
-    bgColor: 'bg-accent-orange/10',
-  },
-}
+const MODE_FORMULAS = {
+  CAGR: 'CAGR = (FV / PV)^(1/n) - 1',
+  FV: 'FV = PV × (1 + r)^n',
+  PV: 'PV = FV / (1 + r)^n',
+  TIME: 'n = log(FV / PV) / log(1 + r)',
+} as const
+
+const MODE_ICONS = {
+  CAGR: TrendingUp,
+  FV: Target,
+  PV: DollarSign,
+  TIME: Clock,
+} as const
+
+const MODE_COLORS = {
+  CAGR: { text: 'text-primary', bg: 'bg-primary/10' },
+  FV: { text: 'text-accent-blue', bg: 'bg-accent-blue/10' },
+  PV: { text: 'text-accent-purple', bg: 'bg-accent-purple/10' },
+  TIME: { text: 'text-accent-orange', bg: 'bg-accent-orange/10' },
+} as const
 
 export function ModeIndicator({ mode, filledCount, className }: ModeIndicatorProps) {
+  const t = useTranslations('page.modeIndicator')
+
   if (filledCount === 0) {
     return (
       <div
@@ -57,12 +50,13 @@ export function ModeIndicator({ mode, filledCount, className }: ModeIndicatorPro
         )}
       >
         <Lightbulb className="w-5 h-5 mx-auto mb-2 text-gray-400" />
-        <p>Fill any 3 fields to start calculating</p>
+        <p>{t('fillAnyThree')}</p>
       </div>
     )
   }
 
   if (filledCount < 3) {
+    const count = 3 - filledCount
     return (
       <div
         className={cn(
@@ -73,7 +67,7 @@ export function ModeIndicator({ mode, filledCount, className }: ModeIndicatorPro
       >
         <Lightbulb className="w-5 h-5 mx-auto mb-2" />
         <p>
-          Fill <span className="font-semibold">{3 - filledCount} more field{3 - filledCount > 1 ? 's' : ''}</span> to calculate
+          {t('fillMore', { count })}
         </p>
       </div>
     )
@@ -90,7 +84,7 @@ export function ModeIndicator({ mode, filledCount, className }: ModeIndicatorPro
       >
         <Lightbulb className="w-5 h-5 mx-auto mb-2" />
         <p>
-          Please fill <span className="font-semibold">exactly 3 fields</span>. Currently filled: {filledCount}
+          {t('exactlyThree')}. {t('currentlyFilled', { count: filledCount })}
         </p>
       </div>
     )
@@ -106,13 +100,15 @@ export function ModeIndicator({ mode, filledCount, className }: ModeIndicatorPro
         )}
       >
         <Lightbulb className="w-5 h-5 mx-auto mb-2" />
-        <p>Unable to detect calculation mode. Please check your inputs.</p>
+        <p>{t('unableToDetect')}</p>
       </div>
     )
   }
 
-  const config = MODE_CONFIG[mode]
-  const Icon = config.icon
+  const Icon = MODE_ICONS[mode]
+  const colors = MODE_COLORS[mode]
+  const formula = MODE_FORMULAS[mode]
+  const label = t(`modes.${mode}`)
 
   return (
     <div
@@ -124,18 +120,18 @@ export function ModeIndicator({ mode, filledCount, className }: ModeIndicatorPro
       )}
     >
       <div className="flex items-start gap-3">
-        <div className={cn('p-2 rounded-lg', config.bgColor)}>
-          <Icon className={cn('w-5 h-5', config.color)} />
+        <div className={cn('p-2 rounded-lg', colors.bg)}>
+          <Icon className={cn('w-5 h-5', colors.text)} />
         </div>
         <div className="flex-1">
           <div className="flex items-center gap-2 mb-1">
             <Lightbulb className="w-4 h-4 text-primary animate-pulse" />
-            <span className="text-xs font-medium text-gray-500 uppercase">Mode Detected</span>
+            <span className="text-xs font-medium text-gray-500 uppercase">{t('modeDetected')}</span>
           </div>
-          <h3 className={cn('text-base font-semibold mb-2', config.color)}>{config.label}</h3>
+          <h3 className={cn('text-base font-semibold mb-2', colors.text)}>{label}</h3>
           <div className="bg-gray-50 rounded px-3 py-2 border border-gray-200">
-            <p className="text-xs text-gray-500 mb-1">Formula:</p>
-            <code className="text-sm font-mono text-gray-900">{config.formula}</code>
+            <p className="text-xs text-gray-500 mb-1">{t('formula')}</p>
+            <code className="text-sm font-mono text-gray-900">{formula}</code>
           </div>
         </div>
       </div>

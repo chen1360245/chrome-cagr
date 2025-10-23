@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, type ReactNode } from 'react'
+import { useTranslations } from 'next-intl'
 import { ChevronDown, ChevronUp } from 'lucide-react'
 
 interface CollapsibleSectionProps {
@@ -21,6 +22,7 @@ export function CollapsibleSection({
   className = '',
 }: CollapsibleSectionProps) {
   const [isExpanded, setIsExpanded] = useState(defaultExpanded)
+  const t = useTranslations('page.collapsible')
 
   return (
     <section id={id} className={`scroll-mt-20 ${className}`}>
@@ -40,12 +42,12 @@ export function CollapsibleSection({
           <div className="flex items-center gap-2">
             {isExpanded ? (
               <>
-                <span className="text-sm text-gray-500 hidden sm:inline">Collapse</span>
+                <span className="text-sm text-gray-500 hidden sm:inline">{t('collapse')}</span>
                 <ChevronUp className="w-5 h-5 text-gray-600" />
               </>
             ) : (
               <>
-                <span className="text-sm text-gray-500 hidden sm:inline">Expand</span>
+                <span className="text-sm text-gray-500 hidden sm:inline">{t('expand')}</span>
                 <ChevronDown className="w-5 h-5 text-gray-600" />
               </>
             )}

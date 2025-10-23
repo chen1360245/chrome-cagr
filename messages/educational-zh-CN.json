@@ -1,0 +1,319 @@
+{
+  "whatIsCAGR": {
+    "intro": "<strong>CAGR(复合年增长率)</strong>是投资或财务指标价值在一定时期内的年化增长率。它衡量投资每年的收益率，假设利润在每年年底进行再投资。",
+    "highlight": "与受短期市场波动影响的简单年增长率不同，CAGR 考虑了收益的<strong>复利效应</strong>，提供了更准确的长期增长衡量标准。",
+    "whyTitle": "为什么使用 CAGR？",
+    "advantages": {
+      "smoothens": {
+        "title": "平滑波动：",
+        "text": "CAGR 有效地将多个时期的增长率\"平滑\"为单一的年化增长率"
+      },
+      "comparison": {
+        "title": "易于比较：",
+        "text": "比较不同时间段内不同投资的表现"
+      },
+      "compound": {
+        "title": "复利效应：",
+        "text": "与简单平均值不同，它考虑了复利的力量"
+      },
+      "forecast": {
+        "title": "未来预测：",
+        "text": "基于历史增长模式进行预测非常有用"
+      }
+    },
+    "keyInsightTitle": "关键见解",
+    "keyInsightText": "如果您投资了 $10,000，5 年后增长到 $20,000，CAGR 约为每年 14.87%。这意味着您的投资在该时期内平均每年增长 14.87%。使用上面的计算器立即找到您投资的 CAGR。"
+  },
+  "formula": {
+    "title": "CAGR 公式",
+    "whereTitle": "其中：",
+    "variables": {
+      "fv": {
+        "term": "FV（最终值）",
+        "definition": "投资的结束价值"
+      },
+      "pv": {
+        "term": "PV（现值）",
+        "definition": "起始价值或初始投资金额"
+      },
+      "n": {
+        "term": "n（年数）",
+        "definition": "投资时间段（年）"
+      }
+    },
+    "stepByStepTitle": "分步计算",
+    "steps": [
+      "将最终值 (FV) 除以初始值 (PV)",
+      "将结果提升到 1 除以年数 (n) 的幂",
+      "从结果中减去 1",
+      "乘以 100 转换为百分比"
+    ],
+    "exampleTitle": "计算示例",
+    "example": {
+      "given": "<strong>给定：</strong>PV = $10,000，FV = $20,000，n = 5 年",
+      "step1": "<strong>步骤 1：</strong>20,000 / 10,000 = 2",
+      "step2": "<strong>步骤 2：</strong>2<sup>(1/5)</sup> = 2<sup>0.2</sup> = 1.1487",
+      "step3": "<strong>步骤 3：</strong>1.1487 - 1 = 0.1487",
+      "result": "<strong>结果：</strong>0.1487 × 100 = <strong class=\"text-primary\">14.87%</strong>"
+    },
+    "smartCalcTitle": "我们的 CAGR 计算器可求解任何变量",
+    "smartCalcIntro": "我们的智能 CAGR 计算器非常智能 - 您可以输入 4 个变量中的任意 3 个，计算器将自动计算缺失的一个。这种灵活性使我们的计算器非常适合各种投资场景：",
+    "modes": {
+      "cagr": "<strong class=\"text-primary\">计算 CAGR：</strong>给定 PV、FV 和 n",
+      "fv": "<strong class=\"text-accent-blue\">计算最终值：</strong>给定 PV、CAGR 和 n",
+      "pv": "<strong class=\"text-accent-purple\">计算初始值：</strong>给定 FV、CAGR 和 n",
+      "time": "<strong class=\"text-accent-orange\">计算时间：</strong>给定 PV、FV 和 CAGR"
+    }
+  },
+  "useCases": {
+    "intro": "CAGR 在金融和商业中被广泛用于各种目的。我们的 CAGR 计算器可帮助您立即解决所有这些场景。以下是最常见的用例：",
+    "cases": [
+      {
+        "title": "投资组合增长",
+        "description": "衡量您的投资组合在多年内的表现。例如，如果您的投资组合在 10 年内从 $100,000 增长到 $300,000，11.6% 的 CAGR 显示了您的平均年增长率。",
+        "example": "示例：$100K → $300K，10 年 = 11.6% CAGR"
+      },
+      {
+        "title": "投资翻倍时间",
+        "description": "计算您的投资在一定增长率下翻倍需要多长时间。如果您投资 $10,000 并希望它增长到 $20,000，了解您的预期 CAGR 可以帮助您估算时间范围。",
+        "example": "示例：$10K → $20K，14.87% CAGR = 5 年"
+      },
+      {
+        "title": "公司收入分析",
+        "description": "分析公司多年的收入增长以了解其长期表现。这有助于利益相关者对公司的财务健康状况做出明智的决策。",
+        "example": "示例：收入 $5M → $12M，7 年 = 13.2% CAGR"
+      },
+      {
+        "title": "共同基金比较",
+        "description": "在选择共同基金时，CAGR 允许投资者在同一时间段内比较不同方案的历史表现，提供了一个苹果对苹果的比较。",
+        "example": "示例：比较基金 A（12% CAGR）与基金 B（9% CAGR）"
+      },
+      {
+        "title": "增长预测",
+        "description": "使用历史 CAGR 预测未来增长。如果一家企业在过去 5 年中保持了 15% 的 CAGR，您可以使用此比率来预测潜在的未来表现。",
+        "example": "示例：当前值 $50K，15% CAGR = 约 5 年后 $100K"
+      }
+    ],
+    "whenToUseTitle": "何时使用 CAGR 计算器",
+    "whenToUse": [
+      "当您想了解长期投资表现时",
+      "在同一时间段内比较不同投资时",
+      "平滑年度波动时",
+      "基于历史趋势预测未来增长时"
+    ],
+    "footer": "使用我们上面的免费在线计算器立即执行任何这些计算。"
+  },
+  "howToUse": {
+    "intro": "我们的智能 CAGR 计算器可以求解 4 个变量中的任何一个。只需输入任意 3 个值，计算器将自动检测使用哪种模式并计算缺失的值。",
+    "modes": [
+      {
+        "number": "1",
+        "title": "计算 CAGR（增长率）",
+        "description": "找出您的投资实现了什么增长率。",
+        "enterLabel": "输入：",
+        "inputs": [
+          "初始值：$10,000",
+          "最终值：$20,000",
+          "时间段：5 年"
+        ],
+        "result": "结果：14.87% CAGR"
+      },
+      {
+        "number": "2",
+        "title": "计算最终值",
+        "description": "预测您的投资将增长到多少。",
+        "enterLabel": "输入：",
+        "inputs": [
+          "初始值：$10,000",
+          "CAGR 率：15%",
+          "时间段：10 年"
+        ],
+        "result": "结果：$40,455.58"
+      },
+      {
+        "number": "3",
+        "title": "计算初始值",
+        "description": "找出您需要投资多少才能达到目标。",
+        "enterLabel": "输入：",
+        "inputs": [
+          "最终值：$500,000",
+          "CAGR 率：15%",
+          "时间段：10 年"
+        ],
+        "result": "结果：$123,589.71"
+      },
+      {
+        "number": "4",
+        "title": "计算时间段",
+        "description": "确定达到目标需要多长时间。",
+        "enterLabel": "输入：",
+        "inputs": [
+          "初始值：$100",
+          "最终值：$200",
+          "CAGR 率：50%"
+        ],
+        "result": "结果：1.7 年"
+      }
+    ],
+    "validationTitle": "输入验证规则",
+    "validationRules": [
+      "<strong>恰好需要 3 个字段：</strong>计算器将自动检测要计算哪个变量",
+      "<strong>CAGR 率格式：</strong>以百分比形式输入（例如，15 表示 15%）",
+      "<strong>仅正值：</strong>初始值和最终值必须大于 0",
+      "<strong>时间段：</strong>必须大于 0 年（可以是小数，例如 2.5 年）",
+      "<strong>CAGR 范围：</strong>实际计算在 -100% 到 1000% 之间"
+    ],
+    "interpretingTitle": "解释您的结果",
+    "interpretingItems": [
+      "<strong>CAGR (%)：</strong>您的年化增长率 - 越高越好（但要考虑风险）",
+      "<strong>总增长 (%)：</strong>从开始到结束的总体百分比增长",
+      "<strong>绝对回报 ($)：</strong>获得或损失的实际美元金额",
+      "<strong>翻倍时间：</strong>在此增长率下您的资金翻倍需要多长时间",
+      "<strong>基准比较：</strong>您的结果与市场平均值（标普 500、债券等）的比较"
+    ]
+  },
+  "faq": {
+    "intro": "以下是有关 CAGR 和我们的免费在线 CAGR 计算器最常见问题的答案：",
+    "questions": [
+      {
+        "question": "CAGR 和平均回报之间有什么区别？",
+        "answer": "CAGR 是考虑复利的几何平均值，而平均回报是算术平均值。CAGR 更准确地衡量投资随时间的表现，因为它反映了如果回报每年复利的实际增长率。"
+      },
+      {
+        "question": "CAGR 可以为负吗？",
+        "answer": "是的，如果最终值小于初始值，CAGR 可以为负。负 CAGR 表示投资在该时期内贬值。例如，如果 $10,000 在 5 年内变成 $8,000，CAGR 约为 -4.4%。"
+      },
+      {
+        "question": "更高的 CAGR 总是更好吗？",
+        "answer": "不一定。虽然更高的 CAGR 表示更快的增长，但它不考虑风险或波动性。CAGR 为 25% 但波动性高的投资可能比 CAGR 为 15% 但增长稳定的投资风险更大。始终将 CAGR 与波动性、夏普比率和最大回撤等其他指标一起考虑。"
+      },
+      {
+        "question": "CAGR 对短期有多准确？",
+        "answer": "CAGR 对于非常短的时期（少于 1 年）可能会产生误导，因为它将回报年化，这可能会夸大或扭曲实际表现。对于短于一年的时期，绝对回报通常更合适。"
+      },
+      {
+        "question": "我应该何时使用 CAGR 与绝对回报？",
+        "answer": "在比较不同时间段的投资或想了解年化增长率（通常 3 年以上）时使用 CAGR。对于较短时期、单期表现或时间段与您的分析不太相关时，使用绝对回报。"
+      },
+      {
+        "question": "CAGR 是否考虑波动性？",
+        "answer": "不，CAGR 不考虑波动性。它只显示从开始到结束的平滑增长率，忽略了途中的起伏。两个投资可能具有相同的 CAGR，但波动性特征却大不相同。考虑使用标准差或夏普比率等附加指标来评估风险。"
+      },
+      {
+        "question": "我可以对月度数据使用 CAGR 吗？",
+        "answer": "可以，但您需要相应地调整时间段。如果您有 3 年的月度数据，请使用 n = 36 个月而不是 3 年。公式保持不变：(FV/PV)^(1/n) - 1，但如果您想要年率，请记住通过乘以 12 来年化结果。"
+      },
+      {
+        "question": "股票、债券和房地产的良好 CAGR 是多少？",
+        "answer": "历史上：标普 500 股票约 10-11% CAGR，企业债券约 5-6% CAGR，房地产约 8-9% CAGR，黄金约 7% CAGR。然而，过去的表现并不保证未来的回报。\"好\" CAGR 取决于您的风险承受能力、投资目标和更广泛的经济背景。"
+      },
+      {
+        "question": "如何在 Excel 中计算 CAGR？",
+        "answer": "在 Excel 中，使用此公式：=(FV/PV)^(1/n)-1 或 =POWER(FV/PV, 1/n)-1。您还可以使用 RATE 函数：=RATE(n, 0, -PV, FV)。例如，对于 $10,000 在 5 年内增长到 $20,000：=POWER(20000/10000, 1/5)-1 返回 0.1487 或 14.87%。然而，我们的免费在线计算器要快得多，并且消除了公式错误的风险。"
+      },
+      {
+        "question": "CAGR 的主要局限性是什么？",
+        "answer": "CAGR 假设恒定增长，这在现实中很少发生。它不考虑波动性、风险或中间现金流（股息、存款、提款）。它也不反映回报的时间 - 您可能在 4 年内有负回报，在第 5 年有峰值，仍然显示正 CAGR。始终将 CAGR 与其他指标一起使用以获得完整的图景。"
+      }
+    ],
+    "stillHaveQuestionsTitle": "还有问题吗？",
+    "stillHaveQuestionsText": "此计算器旨在尽可能准确和有用。所有计算都基于广泛接受的财务公式。如果您对 CAGR 有其他问题或需要帮助解释结果，请考虑咨询财务顾问。"
+  },
+  "about": {
+    "mainTitle": "关于我们的免费在线 CAGR 计算器",
+    "mainDescription": "我们的智能 CAGR 计算器是一款免费、准确且易于使用的在线工具，旨在帮助投资者、业务分析师和金融专业人士计算复合年增长率并做出明智的投资决策。此计算器提供即时结果以及可视化洞察和详细分解。",
+    "features": [
+      {
+        "emoji": "🎯",
+        "title": "智能",
+        "description": "根据您的输入自动检测要计算的变量。无需选择模式。"
+      },
+      {
+        "emoji": "📊",
+        "title": "可视化",
+        "description": "包括交互式图表、年度细分和智能洞察，帮助您了解结果。"
+      },
+      {
+        "emoji": "✨",
+        "title": "准确",
+        "description": "使用基于广泛接受的金融标准的精确数学公式。"
+      }
+    ],
+    "keyFeaturesTitle": "主要功能",
+    "keyFeatures": [
+      "4 合 1 智能计算器（CAGR、FV、PV、时间）",
+      "实时验证和错误检查",
+      "交互式可视化（图表和表格）",
+      "带有市场基准的智能洞察",
+      "通过 URL 或本机共享共享结果",
+      "移动优先响应式设计",
+      "100% 免费使用，无需注册",
+      "教育内容和示例"
+    ],
+    "accuracyTitle": "准确性和免责声明",
+    "accuracyText": "我们的 CAGR 计算器使用精确的数学公式来确保准确性。此计算器执行的所有计算都基于标准 CAGR 公式：<code class=\"bg-white px-2 py-1 rounded\">(FV/PV)<sup>(1/n)</sup> - 1</code>。但是，此计算器工具仅供教育和信息目的提供。投资决策应在咨询合格的财务顾问后做出。过去的表现并不保证未来的结果。",
+    "technologyTitle": "技术",
+    "technologyIntro": "使用现代网络技术构建，以确保快速性能和出色的用户体验：",
+    "technologies": ["Next.js 14", "TypeScript", "React", "Tailwind CSS", "Recharts"],
+    "madeWith": "用 ❤️ 为全球投资者打造",
+    "copyright": "© {year} CAGRCalculator.app | 保留所有权利"
+  },
+  "cagrVsMetrics": {
+    "intro": "虽然 CAGR 是一个强大的指标，但了解它与其他常用财务指标的比较很重要。每个都有其优势和局限性。",
+    "tableHeaders": {
+      "metric": "指标",
+      "description": "描述",
+      "bestFor": "最适合"
+    },
+    "metrics": [
+      {
+        "name": "CAGR",
+        "description": "假设复利的平滑年化增长率",
+        "bestFor": "长期投资表现"
+      },
+      {
+        "name": "简单平均回报",
+        "description": "年回报的算术平均值（可能具有误导性）",
+        "bestFor": "仅快速粗略估计"
+      },
+      {
+        "name": "绝对回报",
+        "description": "从开始到结束的总百分比变化",
+        "bestFor": "短期或单期表现"
+      },
+      {
+        "name": "IRR（内部收益率）",
+        "description": "考虑现金流入/流出的时间",
+        "bestFor": "具有多个现金流的投资"
+      },
+      {
+        "name": "TWR（时间加权回报）",
+        "description": "消除外部现金流的影响",
+        "bestFor": "评估基金经理表现"
+      }
+    ],
+    "advantagesTitle": "✅ CAGR 的优势",
+    "advantages": [
+      "考虑复利效应",
+      "易于理解和沟通",
+      "平滑短期波动",
+      "能够在不同时间框架内进行比较",
+      "不受极端百分比变化的扭曲"
+    ],
+    "limitationsTitle": "⚠️ CAGR 的局限性",
+    "limitations": [
+      "假设恒定增长（这很少发生）",
+      "不考虑波动性或风险",
+      "不考虑中间现金流",
+      "对于非常短的时期可能具有误导性",
+      "过去的 CAGR 并不保证未来的回报"
+    ],
+    "exampleTitle": "示例：CAGR 与简单平均",
+    "exampleIntro": "考虑一项投资：$100 → $150 → $120 → $180，3 年",
+    "simpleAverageTitle": "简单平均回报：",
+    "simpleAverageCalc": "第 1 年：+50% | 第 2 年：-20% | 第 3 年：+50%<br />平均 = (50 - 20 + 50) / 3 = <strong>26.67%</strong>",
+    "cagrTitle": "CAGR：",
+    "cagrCalc": "(180 / 100)<sup>(1/3)</sup> - 1<br />CAGR = <strong>21.7%</strong>",
+    "exampleNotice": "<strong>注意：</strong>CAGR (21.7%) 更准确，因为它考虑了复利，而简单平均值 (26.67%) 高估了真实的年化增长。"
+  }
+}

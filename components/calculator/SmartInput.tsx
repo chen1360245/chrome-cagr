@@ -5,6 +5,7 @@
 'use client'
 
 import * as React from 'react'
+import { useTranslations } from 'next-intl'
 import { Input } from '@/components/ui/input'
 import { cn } from '@/lib/utils/cn'
 import { formatInputNumber, formatPercentageInput } from '@/lib/utils/formatters'
@@ -33,6 +34,7 @@ export function SmartInput({
   disabled,
   className,
 }: SmartInputProps) {
+  const t = useTranslations('page.calculator.helperText')
   const [displayValue, setDisplayValue] = React.useState<string>('')
   const [isFocused, setIsFocused] = React.useState(false)
 
@@ -158,9 +160,9 @@ export function SmartInput({
       {/* Helper Text */}
       {!hasError && !isFilled && (
         <p className="mt-1 text-xs text-gray-400">
-          {type === 'currency' && 'Enter amount in dollars'}
-          {type === 'number' && 'Enter number of years'}
-          {type === 'percentage' && 'Enter as percentage (e.g., 15 for 15%)'}
+          {type === 'currency' && t('currency')}
+          {type === 'number' && t('number')}
+          {type === 'percentage' && t('percentage')}
         </p>
       )}
     </div>
