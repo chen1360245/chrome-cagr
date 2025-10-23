@@ -10,7 +10,7 @@ export function CookieConsent() {
 
   useEffect(() => {
     // Check if user has already consented
-    const consent = localStorage.getItem('cookie-consent')
+    const consent = localStorage.getItem('cookieConsent')
     if (!consent) {
       // Show banner after a short delay for better UX
       setTimeout(() => setShowBanner(true), 1000)
@@ -18,13 +18,15 @@ export function CookieConsent() {
   }, [])
 
   const handleAccept = () => {
-    localStorage.setItem('cookie-consent', 'accepted')
+    localStorage.setItem('cookieConsent', 'accepted')
     localStorage.setItem('cookie-consent-date', new Date().toISOString())
+    // Trigger event to notify Analytics components to load
+    window.dispatchEvent(new CustomEvent('analyticsConsent', { detail: 'accepted' }))
     closeBanner()
   }
 
   const handleDecline = () => {
-    localStorage.setItem('cookie-consent', 'declined')
+    localStorage.setItem('cookieConsent', 'declined')
     localStorage.setItem('cookie-consent-date', new Date().toISOString())
     closeBanner()
   }

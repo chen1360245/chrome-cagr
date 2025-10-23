@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics'
+import { ClarityScript } from '@/components/analytics/ClarityScript'
 import { CookieConsent } from '@/components/CookieConsent'
 import { Logo } from '@/components/Logo'
 import { LanguageSwitcher } from '@/components/LanguageSwitcher'
@@ -11,7 +12,11 @@ import { locales, type Locale } from '@/i18n/config'
 import { getAllSchemas } from '@/lib/schema'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+})
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
@@ -127,6 +132,15 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
+      <head>
+        {/* Resource preconnection optimization */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="preconnect" href="https://www.clarity.ms" />
+        <link rel="dns-prefetch" href="https://www.clarity.ms" />
+      </head>
       <body className={inter.className} suppressHydrationWarning>
         {/* Schema.org JSON-LD Structured Data for SEO */}
         {schemas.map((schema, index) => (
@@ -141,25 +155,13 @@ export default async function LocaleLayout({
           />
         ))}
 
-        {/* Microsoft Clarity */}
-        <Script
-          id="microsoft-clarity"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-              })(window, document, "clarity", "script", "ttnln3bgvt");
-            `,
-          }}
-        />
-
         {/* Google Analytics */}
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
           <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
         )}
+
+        {/* Microsoft Clarity */}
+        <ClarityScript />
 
         <NextIntlClientProvider messages={messages} locale={locale}>
           <div className="min-h-screen flex flex-col">
