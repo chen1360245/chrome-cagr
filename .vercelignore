@@ -1,0 +1,31 @@
+# Documentation (keep in GitHub, exclude from Vercel deployment)
+docs/
+*.md
+!README.md
+
+# Development tools
+kill_ports.bat
+kill_ports.py
+kill_all_node.py
+clean_ports.py
+
+# Test files
+tests/
+test-*.mjs
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+
+# Development configuration
+.vscode/
+.idea/
+.claude/
+
+# Git files
+.git/
+.gitignore
+.gitattributes
+
+# Project management
+PRD.md

@@ -1,5 +1,5 @@
-// 支持的语言配置（阶段2：英语 + 简体中文 + 西班牙语 + 德语 + 日语 + 阿拉伯语）
-export const locales = ['en', 'zh-CN', 'es', 'de', 'ja', 'ar'] as const
+// 支持的语言配置（阶段3：9种语言覆盖全球市场）
+export const locales = ['en', 'zh-CN', 'es', 'de', 'ja', 'ar', 'fr', 'pt-BR', 'ko'] as const
 export type Locale = (typeof locales)[number]
 
 export const defaultLocale: Locale = 'en'
@@ -12,6 +12,9 @@ export const localeNames: Record<Locale, string> = {
   de: 'Deutsch',
   ja: '日本語',
   ar: 'العربية',
+  fr: 'Français',
+  'pt-BR': 'Português (Brasil)',
+  ko: '한국어',
 }
 
 // 语言国旗emoji
@@ -22,4 +25,7 @@ export const localeFlags: Record<Locale, string> = {
   de: '🇩🇪',
   ja: '🇯🇵',
   ar: '🇸🇦',
+  fr: '🇫🇷',
+  'pt-BR': '🇧🇷',
+  ko: '🇰🇷',
 }

@@ -1,0 +1,411 @@
+{
+  "metadata": {
+    "title": "Calculadora CAGR - Calculadora Gratuita Online de Taxa de Crescimento Anual Composta",
+    "description": "Calculadora CAGR gratuita online - Calcule taxa de crescimento anual composta, valor final, valor inicial ou período. Aprenda a calcular CAGR com fórmulas, exemplos e guia passo a passo. Otimizada para mobile e precisa.",
+    "keywords": "calculadora CAGR,taxa de crescimento anual composta,calcular cagr,calculadora cagr online,como calcular cagr,fórmula cagr,calculadora de investimento,calculadora de taxa de crescimento"
+  },
+  "layout": {
+    "nav": {
+      "whatIsCAGR": "O que é CAGR?",
+      "howToUse": "Como Usar",
+      "faq": "Perguntas Frequentes"
+    },
+    "footer": {
+      "about": "Sobre",
+      "aboutText": "A primeira calculadora CAGR inteligente de 4 parâmetros do mundo. Calcule taxa de crescimento, valor final, investimento inicial ou período instantaneamente.",
+      "quickLinks": "Links Rápidos",
+      "whatIsCAGR": "O que é CAGR?",
+      "formula": "Fórmula",
+      "useCases": "Casos de Uso",
+      "howToUse": "Como Usar",
+      "faq": "Perguntas Frequentes",
+      "legal": "Legal",
+      "privacyPolicy": "Política de Privacidade",
+      "termsOfService": "Termos de Serviço",
+      "copyright": "© 2025 CAGRCalculator.app. Todos os direitos reservados."
+    }
+  },
+  "page": {
+    "hero": {
+      "title": "🧠 Calculadora CAGR Inteligente",
+      "subtitle": "Insira 3 valores, obtenha o 4º instantaneamente",
+      "description": "A primeira calculadora CAGR inteligente de 4 parâmetros do mundo"
+    },
+    "calculator": {
+      "initialValue": "Valor Inicial",
+      "finalValue": "Valor Final",
+      "timePeriod": "Período (Anos)",
+      "cagrRate": "Taxa CAGR (%)",
+      "calculateNow": "⚡ Calcular Agora",
+      "calculating": "Calculando...",
+      "clearAll": "Limpar Tudo",
+      "placeholders": {
+        "initialValue": "10.000",
+        "finalValue": "40.000",
+        "timePeriod": "10",
+        "cagrRate": "15"
+      },
+      "helperText": {
+        "currency": "Insira o valor em reais",
+        "number": "Insira o número de anos",
+        "percentage": "Insira como porcentagem (ex: 15 para 15%)"
+      }
+    },
+    "modeIndicator": {
+      "fillAnyThree": "Preencha 3 campos para começar a calcular",
+      "fillMore": "Preencha mais {count} campo{plural} para calcular",
+      "exactlyThree": "Por favor, preencha exatamente 3 campos",
+      "currentlyFilled": "Atualmente preenchidos: {count}",
+      "modeDetected": "Modo Detectado",
+      "formula": "Fórmula:",
+      "unableToDetect": "Não foi possível detectar o modo de cálculo. Por favor, verifique suas entradas.",
+      "modes": {
+        "CAGR": "Calcular Taxa de Crescimento (CAGR)",
+        "FV": "Calcular Valor Final",
+        "PV": "Calcular Investimento Inicial",
+        "TIME": "Calcular Período"
+      }
+    },
+    "collapsible": {
+      "collapse": "Recolher",
+      "expand": "Expandir"
+    },
+    "sections": {
+      "learnTitle": "📚 Aprenda Sobre CAGR",
+      "learnSubtitle": "Tudo o que você precisa saber para tomar decisões de investimento informadas",
+      "whatIsCAGR": "O que é CAGR?",
+      "formula": "Como Calcular CAGR - Fórmula Explicada",
+      "useCases": "Casos de Uso e Exemplos da Calculadora CAGR",
+      "cagrVsMetrics": "CAGR vs Outras Métricas",
+      "howToUse": "Como Usar Esta Calculadora CAGR",
+      "faq": "Perguntas Frequentes sobre Calculadora CAGR",
+      "about": "Sobre Nossa Calculadora CAGR Gratuita Online"
+    },
+    "loading": "Carregando calculadora...",
+    "educational": {
+      "whatIsCAGR": {
+        "intro": "CAGR (Taxa de Crescimento Anual Composta) é a taxa anualizada de crescimento no valor de um investimento ou métrica financeira durante um período declarado. Ela mede o que um investimento renderia anualmente, assumindo que os lucros são reinvestidos no final de cada ano.",
+        "highlight": "Ao contrário das taxas de crescimento anuais simples que podem ser influenciadas por flutuações de mercado de curto prazo, o CAGR considera o efeito composto dos retornos, fornecendo uma medida mais precisa do crescimento a longo prazo.",
+        "whyTitle": "Por que usar CAGR?",
+        "advantages": {
+          "smoothens": {
+            "title": "Suaviza a volatilidade:",
+            "text": "O CAGR efetivamente \"suaviza\" as taxas de crescimento ao longo de múltiplos períodos em uma única taxa de crescimento anualizada"
+          },
+          "comparison": {
+            "title": "Comparação fácil:",
+            "text": "Compare o desempenho de diferentes investimentos ao longo de períodos variados"
+          },
+          "compound": {
+            "title": "Efeito composto:",
+            "text": "Leva em conta o poder da composição, ao contrário das médias simples"
+          },
+          "forecast": {
+            "title": "Projeções futuras:",
+            "text": "Útil para previsões baseadas em padrões históricos de crescimento"
+          }
+        },
+        "keyInsightTitle": "Insight Principal",
+        "keyInsightText": "Se você investiu R$ 10.000 e cresceu para R$ 20.000 ao longo de 5 anos, o CAGR seria aproximadamente 14,87% ao ano. Isso significa que seu investimento cresceu em média 14,87% anualmente durante esse período. Use nossa calculadora acima para encontrar o CAGR do seu investimento instantaneamente."
+      },
+      "formula": {
+        "title": "A Fórmula CAGR",
+        "whereTitle": "Onde:",
+        "variables": {
+          "fv": {
+            "term": "VF (Valor Final)",
+            "definition": "O valor final do investimento"
+          },
+          "pv": {
+            "term": "VI (Valor Inicial)",
+            "definition": "O valor inicial ou montante do investimento inicial"
+          },
+          "n": {
+            "term": "n (Número de Anos)",
+            "definition": "O período de investimento em anos"
+          }
+        },
+        "stepByStepTitle": "Cálculo Passo a Passo",
+        "steps": [
+          "Divida o valor final (VF) pelo valor inicial (VI)",
+          "Eleve o resultado à potência de 1 dividido pelo número de anos (n)",
+          "Subtraia 1 do resultado",
+          "Multiplique por 100 para converter em porcentagem"
+        ],
+        "exampleTitle": "Exemplo de Cálculo",
+        "example": {
+          "given": "Dados: VI = R$ 10.000, VF = R$ 20.000, n = 5 anos",
+          "step1": "Passo 1: 20.000 / 10.000 = 2",
+          "step2": "Passo 2: 2^((1/5)) = 2^(0,2) = 1,1487",
+          "step3": "Passo 3: 1,1487 - 1 = 0,1487",
+          "result": "Resultado: 0,1487 × 100 = 14,87%"
+        },
+        "smartCalcTitle": "Nossa Calculadora CAGR Resolve para Qualquer Variável",
+        "smartCalcIntro": "Nossa calculadora CAGR inteligente é flexível - você pode inserir quaisquer 3 das 4 variáveis, e a calculadora calculará automaticamente a que está faltando. Essa flexibilidade torna nossa calculadora perfeita para vários cenários de investimento:",
+        "modes": {
+          "cagr": "Calcular CAGR: Com VI, VF e n",
+          "fv": "Calcular VF: Com VI, CAGR e n",
+          "pv": "Calcular VI: Com VF, CAGR e n",
+          "time": "Calcular Tempo: Com VI, VF e CAGR"
+        }
+      },
+      "useCases": {
+        "intro": "O CAGR é amplamente usado em finanças e negócios para vários propósitos. Nossa calculadora CAGR ajuda você a resolver todos esses cenários instantaneamente. Aqui estão os casos de uso mais comuns:",
+        "cases": [
+          {
+            "title": "Crescimento de Portfólio de Investimento",
+            "description": "Meça como seu portfólio de investimento se comportou ao longo de vários anos. Por exemplo, se seu portfólio cresceu de R$ 100.000 para R$ 300.000 ao longo de 10 anos, o CAGR de 11,6% mostra sua taxa média de crescimento anual.",
+            "example": "Exemplo: R$ 100K → R$ 300K em 10 anos = 11,6% CAGR"
+          },
+          {
+            "title": "Tempo para Dobrar o Investimento",
+            "description": "Calcule quanto tempo levará para seu investimento dobrar a uma certa taxa de crescimento. Se você investir R$ 10.000 e quiser que cresça para R$ 20.000, saber seu CAGR esperado ajuda a estimar o prazo.",
+            "example": "Exemplo: R$ 10K → R$ 20K a 14,87% CAGR = 5 anos"
+          },
+          {
+            "title": "Análise de Receita da Empresa",
+            "description": "Analise o crescimento da receita de uma empresa ao longo de vários anos para entender seu desempenho a longo prazo. Isso ajuda os stakeholders a tomar decisões informadas sobre a saúde financeira da empresa.",
+            "example": "Exemplo: Receita R$ 5M → R$ 12M em 7 anos = 13,2% CAGR"
+          },
+          {
+            "title": "Comparação de Fundos Mútuos",
+            "description": "Ao selecionar fundos mútuos, o CAGR permite que investidores comparem o desempenho histórico de diferentes fundos no mesmo período, fornecendo uma comparação justa.",
+            "example": "Exemplo: Comparar Fundo A (12% CAGR) vs Fundo B (9% CAGR)"
+          },
+          {
+            "title": "Previsão de Crescimento",
+            "description": "Use o CAGR histórico para projetar crescimento futuro. Se uma empresa manteve um CAGR de 15% nos últimos 5 anos, você pode usar essa taxa para prever o desempenho futuro potencial.",
+            "example": "Exemplo: Valor atual R$ 50K a 15% CAGR = R$ 100K em ~5 anos"
+          }
+        ],
+        "whenToUseTitle": "Quando Usar a Calculadora CAGR",
+        "whenToUse": [
+          "Quando você quer entender o desempenho de investimento a longo prazo",
+          "Ao comparar diferentes investimentos no mesmo período",
+          "Para suavizar a volatilidade ano a ano",
+          "Ao prever crescimento futuro baseado em tendências históricas"
+        ],
+        "footer": "Use nossa calculadora gratuita online acima para realizar qualquer um desses cálculos instantaneamente."
+      },
+      "howToUse": {
+        "intro": "Nossa Calculadora CAGR Inteligente pode resolver para qualquer uma das 4 variáveis. Simplesmente insira quaisquer 3 valores, e a calculadora detectará automaticamente qual modo usar e calculará o valor faltante.",
+        "modes": [
+          {
+            "number": "1",
+            "title": "Calcular CAGR (Taxa de Crescimento)",
+            "description": "Descubra qual taxa de crescimento seu investimento alcançou.",
+            "enterLabel": "Insira:",
+            "inputs": [
+              "Valor Inicial: R$ 10.000",
+              "Valor Final: R$ 20.000",
+              "Período: 5 anos"
+            ],
+            "result": "Resultado: 14,87% CAGR"
+          },
+          {
+            "number": "2",
+            "title": "Calcular Valor Final",
+            "description": "Projete quanto seu investimento crescerá.",
+            "enterLabel": "Insira:",
+            "inputs": [
+              "Valor Inicial: R$ 10.000",
+              "Taxa CAGR: 15%",
+              "Período: 10 anos"
+            ],
+            "result": "Resultado: R$ 40.455,58"
+          },
+          {
+            "number": "3",
+            "title": "Calcular Valor Inicial",
+            "description": "Descubra quanto você precisa investir para alcançar sua meta.",
+            "enterLabel": "Insira:",
+            "inputs": [
+              "Valor Final: R$ 500.000",
+              "Taxa CAGR: 15%",
+              "Período: 10 anos"
+            ],
+            "result": "Resultado: R$ 123.589,71"
+          },
+          {
+            "number": "4",
+            "title": "Calcular Período",
+            "description": "Determine quanto tempo levará para alcançar seu objetivo.",
+            "enterLabel": "Insira:",
+            "inputs": [
+              "Valor Inicial: R$ 100",
+              "Valor Final: R$ 200",
+              "Taxa CAGR: 50%"
+            ],
+            "result": "Resultado: 1,7 anos"
+          }
+        ],
+        "validationTitle": "Regras de Validação de Entrada",
+        "validationRules": [
+          "Exatamente 3 campos necessários: A calculadora detectará automaticamente qual variável calcular",
+          "Formato da Taxa CAGR: Insira como porcentagem (ex: 15 para 15%)",
+          "Apenas valores positivos: Valores Inicial e Final devem ser maiores que 0",
+          "Período: Deve ser maior que 0 anos (pode ser decimal, ex: 2,5 anos)",
+          "Faixa CAGR: Entre -100% e 1000% para cálculos práticos"
+        ],
+        "interpretingTitle": "Interpretando Seus Resultados",
+        "interpretingItems": [
+          "CAGR (%): Sua taxa de crescimento anualizada - quanto maior, melhor (mas considere o risco)",
+          "Crescimento Total (%): O aumento percentual geral do início ao fim",
+          "Retorno Absoluto (R$): O valor real ganho ou perdido",
+          "Tempo para Dobrar: Quanto tempo leva para seu dinheiro dobrar a essa taxa de crescimento",
+          "Comparação com Benchmark: Como seu resultado se compara às médias do mercado (S&P 500, títulos, etc.)"
+        ]
+      },
+      "faq": {
+        "intro": "Aqui estão respostas para as perguntas mais comuns sobre CAGR e nossa calculadora CAGR gratuita online:",
+        "questions": [
+          {
+            "question": "Qual é a diferença entre CAGR e retorno médio?",
+            "answer": "CAGR é uma média geométrica que considera a composição, enquanto o retorno médio é uma média aritmética. O CAGR é mais preciso para medir o desempenho de investimento ao longo do tempo porque reflete a taxa real de crescimento se os retornos fossem compostos anualmente."
+          },
+          {
+            "question": "O CAGR pode ser negativo?",
+            "answer": "Sim, o CAGR pode ser negativo se o valor final for menor que o valor inicial. Um CAGR negativo indica que o investimento perdeu valor ao longo do período. Por exemplo, se R$ 10.000 se tornam R$ 8.000 ao longo de 5 anos, o CAGR seria aproximadamente -4,4%."
+          },
+          {
+            "question": "Um CAGR maior é sempre melhor?",
+            "answer": "Não necessariamente. Embora um CAGR maior indique crescimento mais rápido, ele não leva em conta risco ou volatilidade. Um investimento com 25% de CAGR mas alta volatilidade pode ser mais arriscado do que um com 15% de CAGR e crescimento estável. Sempre considere o CAGR junto com outras métricas como volatilidade, índice de Sharpe e drawdown máximo."
+          },
+          {
+            "question": "Quão preciso é o CAGR para períodos curtos?",
+            "answer": "O CAGR pode ser enganoso para períodos muito curtos (menos de 1 ano) porque anualiza os retornos, o que pode exagerar ou distorcer o desempenho real. Para períodos menores que um ano, o retorno absoluto é frequentemente mais apropriado."
+          },
+          {
+            "question": "Quando devo usar CAGR vs retorno absoluto?",
+            "answer": "Use CAGR ao comparar investimentos em diferentes períodos ou quando você quer entender taxas de crescimento anualizadas (normalmente 3+ anos). Use retorno absoluto para períodos mais curtos, desempenho de período único, ou quando o período é menos relevante para sua análise."
+          },
+          {
+            "question": "O CAGR leva em conta a volatilidade?",
+            "answer": "Não, o CAGR não leva em conta a volatilidade. Ele mostra apenas a taxa de crescimento suavizada do início ao fim, ignorando os altos e baixos ao longo do caminho. Dois investimentos podem ter o mesmo CAGR mas perfis de volatilidade vastamente diferentes. Considere usar métricas adicionais como desvio padrão ou índice de Sharpe para avaliar o risco."
+          },
+          {
+            "question": "Posso usar CAGR para dados mensais?",
+            "answer": "Sim, mas você precisa ajustar o período de acordo. Se você tem dados mensais ao longo de 3 anos, use n = 36 meses em vez de 3 anos. A fórmula permanece a mesma: (VF/VI)^(1/n) - 1, mas lembre-se de anualizar o resultado multiplicando por 12 se quiser uma taxa anual."
+          },
+          {
+            "question": "Qual é um bom CAGR para ações, títulos e imóveis?",
+            "answer": "Historicamente: Ações S&P 500 ~10-11% CAGR, Títulos corporativos ~5-6% CAGR, Imóveis ~8-9% CAGR, e Ouro ~7% CAGR. No entanto, o desempenho passado não garante retornos futuros. Um \"bom\" CAGR depende de sua tolerância ao risco, objetivos de investimento e do contexto econômico mais amplo."
+          },
+          {
+            "question": "Como calcular CAGR no Excel?",
+            "answer": "No Excel, use esta fórmula: =(VF/VI)^(1/n)-1 ou =POTÊNCIA(VF/VI, 1/n)-1. Você também pode usar a função TAXA: =TAXA(n, 0, -VI, VF). Por exemplo, para R$ 10.000 crescendo para R$ 20.000 ao longo de 5 anos: =POTÊNCIA(20000/10000, 1/5)-1 retorna 0,1487 ou 14,87%. No entanto, nossa calculadora gratuita online é muito mais rápida e elimina o risco de erros de fórmula."
+          },
+          {
+            "question": "Quais são as principais limitações do CAGR?",
+            "answer": "O CAGR assume crescimento constante, o que raramente ocorre na realidade. Ele não leva em conta volatilidade, risco ou fluxos de caixa intermediários (dividendos, depósitos, retiradas). Também não reflete o timing dos retornos - você poderia ter retornos negativos por 4 anos e um pico no ano 5, ainda mostrando um CAGR positivo. Sempre use o CAGR junto com outras métricas para uma imagem completa."
+          }
+        ],
+        "stillHaveQuestionsTitle": "Ainda tem dúvidas?",
+        "stillHaveQuestionsText": "Esta calculadora é projetada para ser o mais precisa e útil possível. Todos os cálculos são baseados em fórmulas financeiras amplamente aceitas. Se você tiver dúvidas adicionais sobre CAGR ou precisar de ajuda para interpretar seus resultados, considere consultar um consultor financeiro."
+      },
+      "about": {
+        "mainTitle": "Sobre Nossa Calculadora CAGR Gratuita Online",
+        "mainDescription": "Nossa Calculadora CAGR Inteligente é uma ferramenta online gratuita, precisa e fácil de usar, projetada para ajudar investidores, analistas de negócios e profissionais financeiros a calcular taxas de crescimento anual compostas e tomar decisões de investimento informadas. Esta calculadora fornece resultados instantâneos com insights visuais e detalhamentos detalhados.",
+        "features": [
+          {
+            "emoji": "🎯",
+            "title": "Inteligente",
+            "description": "Detecta automaticamente qual variável calcular com base em suas entradas. Nenhuma seleção de modo necessária."
+          },
+          {
+            "emoji": "📊",
+            "title": "Visual",
+            "description": "Inclui gráficos interativos, detalhamentos anuais e insights inteligentes para ajudá-lo a entender seus resultados."
+          },
+          {
+            "emoji": "✨",
+            "title": "Precisa",
+            "description": "Usa fórmulas matemáticas precisas baseadas em padrões financeiros amplamente aceitos."
+          }
+        ],
+        "keyFeaturesTitle": "Recursos Principais",
+        "keyFeatures": [
+          "Calculadora inteligente 4-em-1 (CAGR, VF, VI, Tempo)",
+          "Validação em tempo real e verificação de erros",
+          "Visualizações interativas (gráficos e tabelas)",
+          "Insights inteligentes com benchmarks de mercado",
+          "Compartilhe resultados via URL ou compartilhamento nativo",
+          "Design responsivo otimizado para mobile",
+          "100% gratuito, sem necessidade de registro",
+          "Conteúdo educacional e exemplos"
+        ],
+        "accuracyTitle": "Precisão e Aviso Legal",
+        "accuracyText": "Nossa calculadora CAGR usa fórmulas matemáticas precisas para garantir a precisão. Todos os cálculos realizados por esta calculadora são baseados na fórmula CAGR padrão: `(VF/VI)^((1/n)) - 1`. No entanto, esta ferramenta de cálculo é fornecida apenas para fins educacionais e informativos. As decisões de investimento devem ser tomadas após consultar consultores financeiros qualificados. O desempenho passado não garante resultados futuros.",
+        "technologyTitle": "Tecnologia",
+        "technologyIntro": "Construída com tecnologias web modernas para garantir desempenho rápido e excelente experiência do usuário:",
+        "technologies": [
+          "Next.js 14",
+          "TypeScript",
+          "React",
+          "Tailwind CSS",
+          "Recharts"
+        ],
+        "madeWith": "Feito com ❤️ para investidores em todo o mundo",
+        "copyright": "© {year} CAGRCalculator.app | Todos os direitos reservados"
+      },
+      "cagrVsMetrics": {
+        "intro": "Embora o CAGR seja uma métrica poderosa, é importante entender como ele se compara a outras métricas financeiras comumente usadas. Cada uma tem seus pontos fortes e limitações.",
+        "tableHeaders": {
+          "metric": "Métrica",
+          "description": "Descrição",
+          "bestFor": "Melhor Para"
+        },
+        "metrics": [
+          {
+            "name": "CAGR",
+            "description": "Taxa de crescimento anualizada suavizada assumindo composição",
+            "bestFor": "Desempenho de investimento a longo prazo"
+          },
+          {
+            "name": "Retorno Médio Simples",
+            "description": "Média aritmética dos retornos anuais (pode ser enganoso)",
+            "bestFor": "Apenas estimativas rápidas aproximadas"
+          },
+          {
+            "name": "Retorno Absoluto",
+            "description": "Mudança percentual total do início ao fim",
+            "bestFor": "Desempenho de curto prazo ou período único"
+          },
+          {
+            "name": "TIR (Taxa Interna de Retorno)",
+            "description": "Considera o timing dos fluxos de caixa entrada/saída",
+            "bestFor": "Investimentos com múltiplos fluxos de caixa"
+          },
+          {
+            "name": "TWR (Retorno Ponderado pelo Tempo)",
+            "description": "Remove o impacto de fluxos de caixa externos",
+            "bestFor": "Avaliação do desempenho do gestor de fundos"
+          }
+        ],
+        "advantagesTitle": "✅ Vantagens do CAGR",
+        "advantages": [
+          "Considera efeitos de composição",
+          "Fácil de entender e comunicar",
+          "Suaviza a volatilidade de curto prazo",
+          "Permite comparação entre diferentes períodos",
+          "Não é distorcido por mudanças percentuais extremas"
+        ],
+        "limitationsTitle": "⚠️ Limitações do CAGR",
+        "limitations": [
+          "Assume crescimento constante (o que raramente acontece)",
+          "Não considera volatilidade ou risco",
+          "Não considera fluxos de caixa intermediários",
+          "Pode ser enganoso para períodos muito curtos",
+          "O CAGR passado não garante retornos futuros"
+        ],
+        "exampleTitle": "Exemplo: CAGR vs Média Simples",
+        "exampleIntro": "Considere um investimento que vai: R$ 100 → R$ 150 → R$ 120 → R$ 180 ao longo de 3 anos",
+        "simpleAverageTitle": "Retorno Médio Simples:",
+        "simpleAverageCalc": "Ano 1: +50% | Ano 2: -20% | Ano 3: +50% Média = (50 - 20 + 50) / 3 = 26,67%",
+        "cagrTitle": "CAGR:",
+        "cagrCalc": "(180 / 100)^((1/3)) - 1 CAGR = 21,7%",
+        "exampleNotice": "Observe: O CAGR (21,7%) é mais preciso porque considera a composição, enquanto a média simples (26,67%) superestima o verdadeiro crescimento anualizado."
+      }
+    }
+  }
+}

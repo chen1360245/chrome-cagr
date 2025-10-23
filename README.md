@@ -1,12 +1,14 @@
 # 📈 智能 CAGR 计算器
 
-> 全球首款智能四参数 CAGR 计算器，包含全面的教育内容
+> 全球首款智能四参数 CAGR 计算器 • 支持9种语言 • 包含全面的教育内容
 
-**输入任意 3 个值，立即计算第 4 个** • **7 个教育板块** • **专业数据可视化**
+**输入任意 3 个值，立即计算第 4 个** • **9种语言** • **7 个教育板块** • **专业数据可视化**
 
 [![Next.js](https://img.shields.io/badge/Next.js-14.2-black)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8)](https://tailwindcss.com/)
+[![next-intl](https://img.shields.io/badge/next--intl-4.3-brightgreen)](https://next-intl-docs.vercel.app/)
+[![Languages](https://img.shields.io/badge/Languages-9-success)](/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![PRD](https://img.shields.io/badge/PRD-Available-orange)](PRD.md)
 
@@ -41,12 +43,16 @@
 - ℹ️ **关于**：计算器功能和免责声明
 
 #### 🚀 高级功能
+- 🌍 **多语言支持**：9种语言覆盖全球96%+流量
+  - 🇺🇸 English • 🇨🇳 简体中文 • 🇪🇸 Español
+  - 🇩🇪 Deutsch • 🇯🇵 日本語 • 🇸🇦 العربية
+  - 🇫🇷 Français • 🇧🇷 Português • 🇰🇷 한국어
 - 📱 **移动优先设计**：针对移动设备优化
 - 🔗 **分享功能**：原生分享 + 剪贴板备用方案
-- 🌍 **SEO 优化**：包含 16+ 关键词的专业 SEO
+- 🌐 **SEO 优化**：Schema.org结构化数据 + 16+ 关键词
 - 📊 **分析集成**：Google Analytics 4 + Microsoft Clarity
 - 🍪 **GDPR/CCPA 合规**：Cookie 同意横幅
-- 🔒 **隐私与条款**：全面的法律页面
+- 🔒 **隐私与条款**：全面的法律页面（9种语言）
 - 🎨 **专业 LOGO**：5 种设计变体
 
 ---
@@ -165,6 +171,7 @@ npx tsc --noEmit
 |------------|---------|---------|
 | **Next.js** | 14.2 | React 框架（App Router）|
 | **TypeScript** | 5.9 | 类型安全 |
+| **next-intl** | 4.3 | 国际化（i18n） |
 | **Tailwind CSS** | 3.4 | 实用优先的 CSS |
 | **Recharts** | 2.15 | 数据可视化 |
 | **Lucide React** | 0.445 | 图标库 |
@@ -179,22 +186,23 @@ npx tsc --noEmit
 ```
 cagr-calculator/
 ├── app/                              # Next.js App Router
-│   ├── layout.tsx                    # 根布局（包含 SEO、分析、LOGO）
-│   ├── page.tsx                      # 主页（SPA）
-│   ├── privacy/                      # 隐私政策页面
-│   │   └── page.tsx
-│   ├── terms/                        # 服务条款页面
-│   │   └── page.tsx
-│   ├── sitemap.ts                    # 动态网站地图生成
-│   ├── robots.ts                     # 动态 robots.txt 生成
+│   ├── [locale]/                     # 多语言路由 (en, zh-CN, es, de, ja, ar, fr, pt-BR, ko)
+│   │   ├── layout.tsx                # 语言布局（SEO、分析、Schema.org）
+│   │   ├── page.tsx                  # 主页（SPA）
+│   │   ├── privacy/                  # 隐私政策页面（9种语言）
+│   │   │   └── page.tsx
+│   │   └── terms/                    # 服务条款页面（9种语言）
+│   │       └── page.tsx
+│   ├── sitemap.ts                    # 动态网站地图生成（多语言）
+│   ├── robots.ts                     # 动态 robots.txt 生成（多语言）
 │   └── globals.css                   # 全局样式
 ├── components/                       # React 组件
 │   ├── calculator/                   # 计算器组件
 │   │   ├── SmartInput.tsx            # 智能输入框
 │   │   ├── ModeIndicator.tsx         # 模式指示器
 │   │   ├── ResultPanelEnhanced.tsx   # 增强结果面板（带图表）
-│   │   └── ShareButton.tsx           # 分享功能
-│   ├── educational/                  # 教育组件
+│   │   └── ShareButton.tsx           # 分享功能（多语言）
+│   ├── educational/                  # 教育组件（多语言）
 │   │   ├── CollapsibleSection.tsx    # 可展开部分包装器
 │   │   ├── WhatIsCAGR.tsx            # CAGR 介绍
 │   │   ├── FormulaExplained.tsx      # 公式解析
@@ -210,18 +218,40 @@ cagr-calculator/
 │   │   ├── card.tsx
 │   │   ├── input.tsx
 │   │   └── ...
-│   ├── CookieConsent.tsx             # GDPR/CCPA Cookie 横幅
+│   ├── LanguageSwitcher.tsx          # 语言切换器（9种语言）
+│   ├── CookieConsent.tsx             # GDPR/CCPA Cookie 横幅（多语言）
 │   └── Logo.tsx                      # Logo 组件
 ├── lib/                              # 核心逻辑
 │   ├── calculator/
 │   │   └── SmartCAGRCalculator.ts    # 计算引擎
 │   ├── analytics/
 │   │   └── events.ts                 # 自定义事件跟踪
+│   ├── schema/                       # Schema.org 结构化数据
+│   │   ├── types.ts                  # TypeScript 类型定义
+│   │   ├── web-application.ts        # WebApplication Schema
+│   │   ├── faq-page.ts               # FAQPage Schema
+│   │   ├── breadcrumb.ts             # BreadcrumbList Schema
+│   │   ├── how-to.ts                 # HowTo Schema
+│   │   └── index.ts                  # Schema 导出
 │   └── utils/
 │       ├── cn.ts                     # 样式工具
 │       └── formatters.ts             # 数字格式化器
 ├── hooks/                            # 自定义 Hooks
 │   └── useSmartCalculator.ts         # 计算器 Hook
+├── i18n/                             # 国际化配置
+│   ├── config.ts                     # i18n 配置（9种语言）
+│   └── request.ts                    # next-intl 请求配置
+├── messages/                         # 翻译文件（JSON）
+│   ├── en.json                       # 英文
+│   ├── zh-CN.json                    # 简体中文
+│   ├── es.json                       # 西班牙语
+│   ├── de.json                       # 德语
+│   ├── ja.json                       # 日语
+│   ├── ar.json                       # 阿拉伯语
+│   ├── fr.json                       # 法语
+│   ├── pt-BR.json                    # 葡萄牙语（巴西）
+│   └── ko.json                       # 韩语
+├── middleware.ts                     # next-intl 中间件（语言检测）
 ├── types/                            # TypeScript 类型
 │   └── calculator.ts
 ├── public/                           # 静态资源
@@ -231,11 +261,11 @@ cagr-calculator/
 │   ├── logo-variant-3.svg            # LOGO 变体 3
 │   └── logo-favicon.svg              # 网站图标
 ├── docs/                             # 文档
-│   ├── SEO_QUICK_START.md            # SEO 快速入门指南
-│   ├── SEO_DEPLOYMENT_GUIDE.md       # SEO 部署指南
-│   ├── CANONICAL_URL_SETUP.md        # 规范 URL 指南
-│   ├── LOGO_DESIGN_GUIDE.md          # LOGO 使用指南
-│   ├── LEGAL_PAGES_SUMMARY.md        # 法律页面摘要
+│   ├── i18n-strategy.md              # 多语言策略文档
+│   ├── i18n-development-guide.md     # 多语言开发指南
+│   ├── SCHEMA_ORG_IMPLEMENTATION_SUMMARY.md  # Schema.org 实施总结
+│   ├── SCHEMA_ORG_VALIDATION_GUIDE.md        # Schema.org 验证指南
+│   ├── SEO_OPTIMIZATION_GUIDE.md     # SEO 优化指南
 │   └── ...
 ├── PRD.md                            # 产品需求文档
 ├── REVIEW.md                         # 代码审查报告
@@ -341,6 +371,37 @@ cagr-calculator/
 - [x] Apple Touch 图标
 - [x] 品牌颜色系统
 
+### ✅ 阶段 7 - 国际化（已完成）
+
+- [x] next-intl 集成（v4.3.12）
+- [x] 9种语言完整翻译
+  - [x] English (en)
+  - [x] 简体中文 (zh-CN)
+  - [x] Español (es)
+  - [x] Deutsch (de)
+  - [x] 日本語 (ja)
+  - [x] العربية (ar)
+  - [x] Français (fr)
+  - [x] Português (pt-BR)
+  - [x] 한국어 (ko)
+- [x] 语言切换器组件
+- [x] 多语言路由（[locale]）
+- [x] Privacy和Terms页面多语言组件
+- [x] 多语言SEO优化（Hreflang、Canonical）
+- [x] 动态Sitemap和Robots.txt（多语言支持）
+
+### ✅ 阶段 8 - SEO增强（已完成）
+
+- [x] Schema.org结构化数据实施
+  - [x] WebApplication Schema
+  - [x] FAQPage Schema（10个问题）
+  - [x] BreadcrumbList Schema
+  - [x] HowTo Schema（4个步骤）
+- [x] 自动从翻译文件读取FAQ数据
+- [x] Rich Snippets优化（提升CTR 2-3倍）
+- [x] Schema验证指南文档
+- [x] Copy Link按钮美化（accent variant）
+
 ---
 
 ## 🌐 SEO 优化
@@ -360,12 +421,20 @@ cagr-calculator/
 
 ### 技术 SEO
 
-- ✅ **网站地图**：自动生成在 `/sitemap.xml`
-- ✅ **Robots.txt**：自动生成在 `/robots.txt`
-- ✅ **规范 URL**：为所有页面设置
-- ✅ **Meta 标签**：标题、描述、关键词
-- ✅ **OpenGraph**：社交媒体优化
-- ✅ **结构化数据**：即将推出
+- ✅ **多语言SEO**：9种语言完整支持
+  - Canonical URLs（规范URL）
+  - Hreflang标签（语言关联）
+  - x-default配置
+- ✅ **Schema.org 结构化数据**：Rich Snippets优化
+  - WebApplication（Web应用）
+  - FAQPage（FAQ页面）- **最重要**
+  - BreadcrumbList（面包屑导航）
+  - HowTo（操作指南）
+- ✅ **网站地图**：自动生成在 `/sitemap.xml`（28个URL，9种语言）
+- ✅ **Robots.txt**：自动生成在 `/robots.txt`（多语言路径）
+- ✅ **规范 URL**：为所有页面设置（绝对URL）
+- ✅ **Meta 标签**：标题、描述、关键词（9种语言）
+- ✅ **OpenGraph**：社交媒体优化（9种语言）
 
 ### Google Search Console
 
@@ -469,11 +538,19 @@ See [docs/CLOUDFLARE_DEPLOYMENT.md](docs/CLOUDFLARE_DEPLOYMENT.md) for instructi
 |----------|-------------|
 | [PRD.md](PRD.md) | Product Requirements Document |
 | [REVIEW.md](REVIEW.md) | Code Review Report |
-| [SEO_QUICK_START.md](docs/SEO_QUICK_START.md) | SEO Quick Start Guide (5 mins) |
-| [SEO_DEPLOYMENT_GUIDE.md](docs/SEO_DEPLOYMENT_GUIDE.md) | Complete SEO Deployment Guide |
-| [CANONICAL_URL_SETUP.md](docs/CANONICAL_URL_SETUP.md) | Canonical URL Setup Guide |
-| [LOGO_DESIGN_GUIDE.md](docs/LOGO_DESIGN_GUIDE.md) | LOGO Design & Usage Guide |
-| [LEGAL_PAGES_SUMMARY.md](docs/LEGAL_PAGES_SUMMARY.md) | Legal Pages Documentation |
+| **国际化文档** | |
+| [i18n-strategy.md](docs/i18n-strategy.md) | 多语言策略文档（3阶段规划） |
+| [i18n-development-guide.md](docs/i18n-development-guide.md) | 多语言开发指南 |
+| [i18n-checklist.md](docs/i18n-checklist.md) | 多语言检查清单 |
+| **SEO优化文档** | |
+| [SEO_OPTIMIZATION_GUIDE.md](docs/SEO_OPTIMIZATION_GUIDE.md) | SEO优化完全指南（小白版） |
+| [SCHEMA_ORG_IMPLEMENTATION_SUMMARY.md](docs/SCHEMA_ORG_IMPLEMENTATION_SUMMARY.md) | Schema.org实施总结 |
+| [SCHEMA_ORG_VALIDATION_GUIDE.md](docs/SCHEMA_ORG_VALIDATION_GUIDE.md) | Schema.org验证指南 |
+| [SEO_DEPLOYMENT_GUIDE.md](docs/SEO_DEPLOYMENT_GUIDE.md) | SEO部署指南 |
+| [CANONICAL_URL_SETUP.md](docs/CANONICAL_URL_SETUP.md) | 规范URL设置指南 |
+| **其他文档** | |
+| [LOGO_DESIGN_GUIDE.md](docs/LOGO_DESIGN_GUIDE.md) | LOGO设计和使用指南 |
+| [LEGAL_PAGES_SUMMARY.md](docs/LEGAL_PAGES_SUMMARY.md) | 法律页面文档 |
 
 ---
 

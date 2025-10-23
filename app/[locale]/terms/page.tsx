@@ -17,6 +17,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     de: 'Nutzungsbedingungen - CAGR Rechner',
     ja: '利用規約 - CAGR計算機',
     ar: 'شروط الخدمة - حاسبة CAGR',
+    fr: 'Conditions d\'Utilisation - Calculateur CAGR',
+    'pt-BR': 'Termos de Serviço - Calculadora CAGR',
+    ko: '서비스 약관 - CAGR 계산기',
   }
 
   const descriptions = {
@@ -26,6 +29,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     de: 'Nutzungsbedingungen für CAGR Rechner - Lesen Sie unsere Geschäftsbedingungen für die Nutzung unseres kostenlosen Online-Rechners.',
     ja: 'CAGR計算機の利用規約 - 無料オンライン計算機の利用に関する規約をお読みください。',
     ar: 'شروط الخدمة لحاسبة CAGR - اقرأ الشروط والأحكام الخاصة باستخدام حاسبتنا المجانية عبر الإنترنت.',
+    fr: 'Conditions d\'Utilisation pour le Calculateur CAGR - Lisez nos conditions générales pour utiliser notre calculateur gratuit en ligne.',
+    'pt-BR': 'Termos de Serviço para a Calculadora CAGR - Leia nossos termos e condições para usar nossa calculadora gratuita online.',
+    ko: 'CAGR 계산기 서비스 약관 - 무료 온라인 계산기 사용에 관한 약관을 읽어보세요.',
   }
 
   return {
@@ -40,6 +46,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         'de': 'https://cagrcalculator.app/de/terms',
         'ja': 'https://cagrcalculator.app/ja/terms',
         'ar': 'https://cagrcalculator.app/ar/terms',
+        'fr': 'https://cagrcalculator.app/fr/terms',
+        'pt-BR': 'https://cagrcalculator.app/pt-BR/terms',
+        'ko': 'https://cagrcalculator.app/ko/terms',
         'x-default': 'https://cagrcalculator.app/en/terms',
       },
     },
@@ -68,6 +77,12 @@ export default async function TermsOfServicePage({ params }: Props) {
       return <TermsOfServiceJA />
     case 'ar':
       return <TermsOfServiceAR />
+    case 'fr':
+      return <TermsOfServiceFR />
+    case 'pt-BR':
+      return <TermsOfServicePTBR />
+    case 'ko':
+      return <TermsOfServiceKO />
     default:
       return <TermsOfServiceEN />
   }
@@ -1240,6 +1255,214 @@ function TermsOfServiceAR() {
         <div className="text-center mt-8">
           <Link href="/" className="inline-block bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition">
             العودة إلى حاسبة CAGR
+          </Link>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+
+function TermsOfServiceFR() {
+  return (
+    <div className="min-h-screen bg-gray-50 py-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
+          <Link href="/" className="inline-flex items-center text-primary hover:text-primary/80 transition mb-6">
+            ← Retour au Calculateur
+          </Link>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Conditions d&apos;Utilisation</h1>
+          <p className="text-gray-600">Dernière mise à jour: <strong>23 Octobre 2025</strong></p>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 prose prose-gray max-w-none">
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Accord aux conditions</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Bienvenue sur le Calculateur CAGR. En accédant et en utilisant ce site Web, vous acceptez d&apos;être lié par ces conditions d&apos;utilisation.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">2. Utilisation de notre service</h2>
+            <p className="text-gray-700 leading-relaxed">Notre calculateur CAGR est fourni gratuitement à des fins éducatives et informatives.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">3. Exactitude des calculs</h2>
+            <p className="text-gray-700 leading-relaxed">Bien que nous nous efforcions d&apos;assurer l&apos;exactitude, les résultats sont fournis &quot;tels quels&quot; sans garantie.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">4. Avis de non-responsabilité financière</h2>
+            <p className="text-gray-700 leading-relaxed">Cet outil est fourni à titre éducatif uniquement. Consultez toujours un conseiller financier professionnel.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">5. Droits de propriété intellectuelle</h2>
+            <p className="text-gray-700 leading-relaxed">Tout le contenu de ce site Web est notre propriété et est protégé par les lois sur le droit d&apos;auteur.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">6. Limitation de responsabilité</h2>
+            <p className="text-gray-700 leading-relaxed">Nous ne serons pas responsables des dommages résultant de l&apos;utilisation de ce service.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">7. Contactez-nous</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">Pour toute question concernant ces conditions, contactez-nous:</p>
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
+              <p className="text-gray-700 mb-2">
+                <strong>Email:</strong> <a href="mailto:toneychan2025@gmail.com" className="text-primary hover:underline">toneychan2025@gmail.com</a>
+              </p>
+              <p className="text-gray-700">
+                <strong>Site web:</strong> <a href="https://cagrcalculator.app" className="text-primary hover:underline">https://cagrcalculator.app</a>
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <div className="text-center mt-8">
+          <Link href="/" className="inline-block bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition">
+            Retour au Calculateur CAGR
+          </Link>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function TermsOfServicePTBR() {
+  return (
+    <div className="min-h-screen bg-gray-50 py-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
+          <Link href="/" className="inline-flex items-center text-primary hover:text-primary/80 transition mb-6">
+            ← Voltar para a Calculadora
+          </Link>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Termos de Serviço</h1>
+          <p className="text-gray-600">Última atualização: <strong>23 de Outubro de 2025</strong></p>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 prose prose-gray max-w-none">
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Acordo com os termos</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Bem-vindo à Calculadora CAGR. Ao acessar e usar este site, você concorda em ficar vinculado a estes termos de serviço.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">2. Uso do nosso serviço</h2>
+            <p className="text-gray-700 leading-relaxed">Nossa calculadora CAGR é fornecida gratuitamente para fins educacionais e informativos.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">3. Precisão dos cálculos</h2>
+            <p className="text-gray-700 leading-relaxed">Embora nos esforcemos pela precisão, os resultados são fornecidos &quot;como estão&quot; sem garantia.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">4. Aviso Legal Financeiro</h2>
+            <p className="text-gray-700 leading-relaxed">Esta ferramenta é fornecida apenas para fins educacionais. Sempre consulte um consultor financeiro profissional.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">5. Direitos de propriedade intelectual</h2>
+            <p className="text-gray-700 leading-relaxed">Todo o conteúdo deste site é de nossa propriedade e protegido por leis de direitos autorais.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">6. Limitação de responsabilidade</h2>
+            <p className="text-gray-700 leading-relaxed">Não seremos responsáveis por danos resultantes do uso deste serviço.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">7. Entre em contato</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">Para perguntas sobre estes termos, entre em contato conosco:</p>
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
+              <p className="text-gray-700 mb-2">
+                <strong>Email:</strong> <a href="mailto:toneychan2025@gmail.com" className="text-primary hover:underline">toneychan2025@gmail.com</a>
+              </p>
+              <p className="text-gray-700">
+                <strong>Site:</strong> <a href="https://cagrcalculator.app" className="text-primary hover:underline">https://cagrcalculator.app</a>
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <div className="text-center mt-8">
+          <Link href="/" className="inline-block bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition">
+            Voltar para a Calculadora CAGR
+          </Link>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function TermsOfServiceKO() {
+  return (
+    <div className="min-h-screen bg-gray-50 py-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
+          <Link href="/" className="inline-flex items-center text-primary hover:text-primary/80 transition mb-6">
+            ← 계산기로 돌아가기
+          </Link>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">서비스 약관</h1>
+          <p className="text-gray-600">최종 업데이트: <strong>2025년 10월 23일</strong></p>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 prose prose-gray max-w-none">
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. 약관 동의</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              CAGR 계산기에 오신 것을 환영합니다. 이 웹사이트에 액세스하고 사용함으로써 귀하는 이 서비스 약관에 구속되는 것에 동의합니다.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">2. 서비스 사용</h2>
+            <p className="text-gray-700 leading-relaxed">CAGR 계산기는 교육 및 정보 목적으로 무료로 제공됩니다.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">3. 계산 정확성</h2>
+            <p className="text-gray-700 leading-relaxed">정확성을 위해 노력하지만 결과는 보증 없이 &quot;있는 그대로&quot; 제공됩니다.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">4. 재무 면책 조항</h2>
+            <p className="text-gray-700 leading-relaxed">이 도구는 교육 목적으로만 제공됩니다. 항상 전문 재무 고문과 상담하십시오.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">5. 지적 재산권</h2>
+            <p className="text-gray-700 leading-relaxed">이 웹사이트의 모든 콘텐츠는 우리의 소유이며 저작권법으로 보호됩니다.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">6. 책임의 제한</h2>
+            <p className="text-gray-700 leading-relaxed">이 서비스 사용으로 인한 손해에 대해 책임지지 않습니다.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">7. 문의하기</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">이 약관에 대한 질문이 있으시면 문의하십시오:</p>
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
+              <p className="text-gray-700 mb-2">
+                <strong>이메일:</strong> <a href="mailto:toneychan2025@gmail.com" className="text-primary hover:underline">toneychan2025@gmail.com</a>
+              </p>
+              <p className="text-gray-700">
+                <strong>웹사이트:</strong> <a href="https://cagrcalculator.app" className="text-primary hover:underline">https://cagrcalculator.app</a>
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <div className="text-center mt-8">
+          <Link href="/" className="inline-block bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition">
+            CAGR 계산기로 돌아가기
           </Link>
         </div>
       </div>

@@ -12,7 +12,7 @@ import {
 
 interface ShareButtonProps {
   result: CalculationResult
-  variant?: 'primary' | 'secondary'
+  variant?: 'primary' | 'secondary' | 'accent'
   className?: string
 }
 
@@ -75,6 +75,8 @@ export function ShareButton({ result, variant = 'secondary', className = '' }: S
       'bg-primary text-white hover:bg-primary-dark active:scale-95 shadow-sm hover:shadow-md',
     secondary:
       'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50 hover:border-gray-400 active:scale-95',
+    accent:
+      'bg-gradient-to-r from-primary to-emerald-500 text-white hover:from-primary-dark hover:to-emerald-600 active:scale-95 shadow-lg hover:shadow-xl hover:scale-105 font-semibold',
   }
 
   return (
@@ -86,7 +88,7 @@ export function ShareButton({ result, variant = 'secondary', className = '' }: S
     >
       {copied ? (
         <>
-          <Check className="w-4 h-4 text-green-600" />
+          <Check className={`w-4 h-4 ${variant === 'accent' ? 'text-white' : 'text-green-600'}`} />
           <span>Copied!</span>
         </>
       ) : isSharing ? (

@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date()
 
   // Define supported languages
-  const locales = ['en', 'zh-CN', 'es', 'de', 'ja', 'ar']
+  const locales = ['en', 'zh-CN', 'es', 'de', 'ja', 'ar', 'fr', 'pt-BR', 'ko']
 
   // Pages that exist for each locale
   const pages = [
@@ -37,6 +37,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         'de': `${baseUrl}/de`,
         'ja': `${baseUrl}/ja`,
         'ar': `${baseUrl}/ar`,
+        'fr': `${baseUrl}/fr`,
+        'pt-BR': `${baseUrl}/pt-BR`,
+        'ko': `${baseUrl}/ko`,
       }
     }
   })
@@ -57,6 +60,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
             'de': `${baseUrl}/de${page.path}`,
             'ja': `${baseUrl}/ja${page.path}`,
             'ar': `${baseUrl}/ar${page.path}`,
+            'fr': `${baseUrl}/fr${page.path}`,
+            'pt-BR': `${baseUrl}/pt-BR${page.path}`,
+            'ko': `${baseUrl}/ko${page.path}`,
           }
         }
       })

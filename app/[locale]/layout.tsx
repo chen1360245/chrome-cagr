@@ -8,6 +8,7 @@ import { CookieConsent } from '@/components/CookieConsent'
 import { Logo } from '@/components/Logo'
 import { LanguageSwitcher } from '@/components/LanguageSwitcher'
 import { locales, type Locale } from '@/i18n/config'
+import { getAllSchemas } from '@/lib/schema'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -44,6 +45,9 @@ export async function generateMetadata({
         'de': 'https://cagrcalculator.app/de',
         'ja': 'https://cagrcalculator.app/ja',
         'ar': 'https://cagrcalculator.app/ar',
+        'fr': 'https://cagrcalculator.app/fr',
+        'pt-BR': 'https://cagrcalculator.app/pt-BR',
+        'ko': 'https://cagrcalculator.app/ko',
         'x-default': 'https://cagrcalculator.app/en', // 默认语言,告诉搜索引擎当没有匹配语言时使用英文
       },
     },
@@ -110,9 +114,33 @@ export default async function LocaleLayout({
   const t = await getTranslations({ locale, namespace: 'layout' })
   const messages = await getMessages({ locale })
 
+  // Extract FAQ data from messages for Schema.org
+  const educationalMessages = messages.page?.educational as Record<string, unknown>
+  const faqMessages = educationalMessages?.faq as { questions?: Array<{ question: string; answer: string }> }
+  const faqData = faqMessages?.questions || []
+
+  // Generate all Schema.org structured data
+  const schemas = getAllSchemas(locale as Locale, {
+    path: '/',
+    faqData: faqData,
+  })
+
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={inter.className} suppressHydrationWarning>
+        {/* Schema.org JSON-LD Structured Data for SEO */}
+        {schemas.map((schema, index) => (
+          <Script
+            key={`schema-${index}`}
+            id={`schema-${index}`}
+            type="application/ld+json"
+            strategy="beforeInteractive"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(schema),
+            }}
+          />
+        ))}
+
         {/* Microsoft Clarity */}
         <Script
           id="microsoft-clarity"

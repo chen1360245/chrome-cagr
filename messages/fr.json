@@ -1,0 +1,411 @@
+{
+  "metadata": {
+    "title": "Calculateur TCAC - Calculateur Gratuit du Taux de Croissance Annuel Composé en Ligne",
+    "description": "Calculateur TCAC gratuit en ligne - Calculez le taux de croissance annuel composé, la valeur finale, la valeur initiale ou la période. Apprenez à calculer le TCAC avec des formules, des exemples et un guide étape par étape. Optimisé mobile et précis.",
+    "keywords": "calculateur TCAC,taux de croissance annuel composé,calculer tcac,calculateur tcac en ligne,comment calculer tcac,formule tcac,calculateur d'investissement,calculateur de taux de croissance"
+  },
+  "layout": {
+    "nav": {
+      "whatIsCAGR": "Qu'est-ce que le TCAC?",
+      "howToUse": "Mode d'emploi",
+      "faq": "FAQ"
+    },
+    "footer": {
+      "about": "À propos",
+      "aboutText": "Le premier calculateur TCAC intelligent à 4 paramètres au monde. Calculez le taux de croissance, la valeur finale, l'investissement initial ou la période instantanément.",
+      "quickLinks": "Liens rapides",
+      "whatIsCAGR": "Qu'est-ce que le TCAC?",
+      "formula": "Formule",
+      "useCases": "Cas d'usage",
+      "howToUse": "Mode d'emploi",
+      "faq": "FAQ",
+      "legal": "Mentions légales",
+      "privacyPolicy": "Politique de confidentialité",
+      "termsOfService": "Conditions d'utilisation",
+      "copyright": "© 2025 CAGRCalculator.app. Tous droits réservés."
+    }
+  },
+  "page": {
+    "hero": {
+      "title": "🧠 Calculateur TCAC Intelligent",
+      "subtitle": "Saisissez 3 valeurs, obtenez la 4ème instantanément",
+      "description": "Le premier calculateur TCAC intelligent à 4 paramètres au monde"
+    },
+    "calculator": {
+      "initialValue": "Valeur Initiale",
+      "finalValue": "Valeur Finale",
+      "timePeriod": "Période (Années)",
+      "cagrRate": "Taux TCAC (%)",
+      "calculateNow": "⚡ Calculer maintenant",
+      "calculating": "Calcul en cours...",
+      "clearAll": "Effacer tout",
+      "placeholders": {
+        "initialValue": "10 000",
+        "finalValue": "40 000",
+        "timePeriod": "10",
+        "cagrRate": "15"
+      },
+      "helperText": {
+        "currency": "Entrez le montant en euros",
+        "number": "Entrez le nombre d'années",
+        "percentage": "Entrez en pourcentage (ex: 15 pour 15%)"
+      }
+    },
+    "modeIndicator": {
+      "fillAnyThree": "Remplissez 3 champs pour commencer le calcul",
+      "fillMore": "Remplissez {count} champ{plural} de plus pour calculer",
+      "exactlyThree": "Veuillez remplir exactement 3 champs",
+      "currentlyFilled": "Actuellement remplis: {count}",
+      "modeDetected": "Mode détecté",
+      "formula": "Formule:",
+      "unableToDetect": "Impossible de détecter le mode de calcul. Veuillez vérifier vos entrées.",
+      "modes": {
+        "CAGR": "Calculer le taux de croissance (TCAC)",
+        "FV": "Calculer la valeur finale",
+        "PV": "Calculer l'investissement initial",
+        "TIME": "Calculer la période"
+      }
+    },
+    "collapsible": {
+      "collapse": "Réduire",
+      "expand": "Développer"
+    },
+    "sections": {
+      "learnTitle": "📚 En savoir plus sur le TCAC",
+      "learnSubtitle": "Tout ce que vous devez savoir pour prendre des décisions d'investissement éclairées",
+      "whatIsCAGR": "Qu'est-ce que le TCAC?",
+      "formula": "Comment calculer le TCAC - Explication de la formule",
+      "useCases": "Cas d'usage et exemples du calculateur TCAC",
+      "cagrVsMetrics": "TCAC vs autres indicateurs",
+      "howToUse": "Comment utiliser ce calculateur TCAC",
+      "faq": "FAQ du calculateur TCAC",
+      "about": "À propos de notre calculateur TCAC gratuit en ligne"
+    },
+    "loading": "Chargement du calculateur...",
+    "educational": {
+      "whatIsCAGR": {
+        "intro": "Le TCAC (Taux de Croissance Annuel Composé) est le taux de croissance annualisé de la valeur d'un investissement ou d'une mesure financière sur une période donnée. Il mesure ce qu'un investissement rapporterait sur une base annuelle, en supposant que les bénéfices sont réinvestis à la fin de chaque année.",
+        "highlight": "Contrairement aux taux de croissance annuels simples qui peuvent être influencés par les fluctuations du marché à court terme, le TCAC considère l'effet de composition des rendements, fournissant une mesure plus précise de la croissance à long terme.",
+        "whyTitle": "Pourquoi utiliser le TCAC?",
+        "advantages": {
+          "smoothens": {
+            "title": "Lisse la volatilité:",
+            "text": "Le TCAC « lisse » efficacement les taux de croissance sur plusieurs périodes en un seul taux de croissance annualisé"
+          },
+          "comparison": {
+            "title": "Comparaison facile:",
+            "text": "Comparez la performance de différents investissements sur des périodes variables"
+          },
+          "compound": {
+            "title": "Effet de composition:",
+            "text": "Prend en compte le pouvoir de la composition, contrairement aux moyennes simples"
+          },
+          "forecast": {
+            "title": "Projections futures:",
+            "text": "Utile pour les prévisions basées sur les tendances de croissance historiques"
+          }
+        },
+        "keyInsightTitle": "Insight clé",
+        "keyInsightText": "Si vous avez investi 10 000€ et qu'ils ont atteint 20 000€ sur 5 ans, le TCAC serait d'environ 14,87% par an. Cela signifie que votre investissement a augmenté en moyenne de 14,87% par an sur cette période. Utilisez notre calculateur ci-dessus pour trouver instantanément le TCAC de votre investissement."
+      },
+      "formula": {
+        "title": "La formule du TCAC",
+        "whereTitle": "Où:",
+        "variables": {
+          "fv": {
+            "term": "VF (Valeur Finale)",
+            "definition": "La valeur finale de l'investissement"
+          },
+          "pv": {
+            "term": "VI (Valeur Initiale)",
+            "definition": "La valeur de départ ou le montant initial de l'investissement"
+          },
+          "n": {
+            "term": "n (Nombre d'années)",
+            "definition": "La période d'investissement en années"
+          }
+        },
+        "stepByStepTitle": "Calcul étape par étape",
+        "steps": [
+          "Divisez la valeur finale (VF) par la valeur initiale (VI)",
+          "Élevez le résultat à la puissance de 1 divisé par le nombre d'années (n)",
+          "Soustrayez 1 du résultat",
+          "Multipliez par 100 pour convertir en pourcentage"
+        ],
+        "exampleTitle": "Exemple de calcul",
+        "example": {
+          "given": "Données: VI = 10 000€, VF = 20 000€, n = 5 ans",
+          "step1": "Étape 1: 20 000 / 10 000 = 2",
+          "step2": "Étape 2: 2^((1/5)) = 2^(0,2) = 1,1487",
+          "step3": "Étape 3: 1,1487 - 1 = 0,1487",
+          "result": "Résultat: 0,1487 × 100 = 14,87%"
+        },
+        "smartCalcTitle": "Notre calculateur TCAC résout pour toute variable",
+        "smartCalcIntro": "Notre calculateur TCAC intelligent est flexible - vous pouvez saisir 3 des 4 variables, et le calculateur calculera automatiquement celle manquante. Cette flexibilité rend notre calculateur parfait pour divers scénarios d'investissement:",
+        "modes": {
+          "cagr": "Calculer le TCAC: Avec VI, VF et n",
+          "fv": "Calculer VF: Avec VI, TCAC et n",
+          "pv": "Calculer VI: Avec VF, TCAC et n",
+          "time": "Calculer le temps: Avec VI, VF et TCAC"
+        }
+      },
+      "useCases": {
+        "intro": "Le TCAC est largement utilisé dans la finance et les affaires à diverses fins. Notre calculateur TCAC vous aide à résoudre instantanément tous ces scénarios. Voici les cas d'usage les plus courants:",
+        "cases": [
+          {
+            "title": "Croissance du portefeuille d'investissement",
+            "description": "Mesurez la performance de votre portefeuille d'investissement sur plusieurs années. Par exemple, si votre portefeuille est passé de 100 000€ à 300 000€ sur 10 ans, le TCAC de 11,6% montre votre taux de croissance annuel moyen.",
+            "example": "Exemple: 100K€ → 300K€ en 10 ans = 11,6% TCAC"
+          },
+          {
+            "title": "Temps de doublement de l'investissement",
+            "description": "Calculez combien de temps il faudra pour que votre investissement double à un certain taux de croissance. Si vous investissez 10 000€ et souhaitez atteindre 20 000€, connaître votre TCAC attendu vous aide à estimer le délai.",
+            "example": "Exemple: 10K€ → 20K€ à 14,87% TCAC = 5 ans"
+          },
+          {
+            "title": "Analyse des revenus d'entreprise",
+            "description": "Analysez la croissance des revenus d'une entreprise sur plusieurs années pour comprendre sa performance à long terme. Cela aide les parties prenantes à prendre des décisions éclairées sur la santé financière de l'entreprise.",
+            "example": "Exemple: Revenus 5M€ → 12M€ en 7 ans = 13,2% TCAC"
+          },
+          {
+            "title": "Comparaison de fonds communs",
+            "description": "Lors de la sélection de fonds communs, le TCAC permet aux investisseurs de comparer la performance historique de différents fonds sur la même période, fournissant une comparaison équitable.",
+            "example": "Exemple: Comparer Fonds A (12% TCAC) vs Fonds B (9% TCAC)"
+          },
+          {
+            "title": "Prévision de croissance",
+            "description": "Utilisez le TCAC historique pour projeter la croissance future. Si une entreprise a maintenu un TCAC de 15% au cours des 5 dernières années, vous pouvez utiliser ce taux pour prévoir les performances futures potentielles.",
+            "example": "Exemple: Valeur actuelle 50K€ à 15% TCAC = 100K€ dans ~5 ans"
+          }
+        ],
+        "whenToUseTitle": "Quand utiliser le calculateur TCAC",
+        "whenToUse": [
+          "Lorsque vous souhaitez comprendre la performance d'investissement à long terme",
+          "Lors de la comparaison de différents investissements sur la même période",
+          "Pour lisser la volatilité d'une année sur l'autre",
+          "Pour prévoir la croissance future basée sur les tendances historiques"
+        ],
+        "footer": "Utilisez notre calculateur gratuit en ligne ci-dessus pour effectuer instantanément l'un de ces calculs."
+      },
+      "howToUse": {
+        "intro": "Notre calculateur TCAC intelligent peut résoudre pour l'une des 4 variables. Entrez simplement 3 valeurs, et le calculateur détectera automatiquement quel mode utiliser et calculera la valeur manquante.",
+        "modes": [
+          {
+            "number": "1",
+            "title": "Calculer le TCAC (Taux de croissance)",
+            "description": "Découvrez quel taux de croissance votre investissement a atteint.",
+            "enterLabel": "Entrez:",
+            "inputs": [
+              "Valeur initiale: 10 000€",
+              "Valeur finale: 20 000€",
+              "Période: 5 ans"
+            ],
+            "result": "Résultat: 14,87% TCAC"
+          },
+          {
+            "number": "2",
+            "title": "Calculer la valeur finale",
+            "description": "Projetez la croissance de votre investissement.",
+            "enterLabel": "Entrez:",
+            "inputs": [
+              "Valeur initiale: 10 000€",
+              "Taux TCAC: 15%",
+              "Période: 10 ans"
+            ],
+            "result": "Résultat: 40 455,58€"
+          },
+          {
+            "number": "3",
+            "title": "Calculer la valeur initiale",
+            "description": "Découvrez combien vous devez investir pour atteindre votre objectif.",
+            "enterLabel": "Entrez:",
+            "inputs": [
+              "Valeur finale: 500 000€",
+              "Taux TCAC: 15%",
+              "Période: 10 ans"
+            ],
+            "result": "Résultat: 123 589,71€"
+          },
+          {
+            "number": "4",
+            "title": "Calculer la période",
+            "description": "Déterminez combien de temps il faudra pour atteindre votre objectif.",
+            "enterLabel": "Entrez:",
+            "inputs": [
+              "Valeur initiale: 100€",
+              "Valeur finale: 200€",
+              "Taux TCAC: 50%"
+            ],
+            "result": "Résultat: 1,7 ans"
+          }
+        ],
+        "validationTitle": "Règles de validation des entrées",
+        "validationRules": [
+          "Exactement 3 champs requis: Le calculateur détectera automatiquement quelle variable calculer",
+          "Format du taux TCAC: Entrez en pourcentage (ex: 15 pour 15%)",
+          "Valeurs positives uniquement: Les valeurs initiale et finale doivent être supérieures à 0",
+          "Période: Doit être supérieure à 0 ans (peut être décimale, ex: 2,5 ans)",
+          "Plage TCAC: Entre -100% et 1000% pour des calculs pratiques"
+        ],
+        "interpretingTitle": "Interpréter vos résultats",
+        "interpretingItems": [
+          "TCAC (%): Votre taux de croissance annualisé - plus c'est élevé, mieux c'est (mais considérez le risque)",
+          "Croissance totale (%): L'augmentation globale en pourcentage du début à la fin",
+          "Rendement absolu (€): Le montant réel gagné ou perdu",
+          "Temps de doublement: Le temps nécessaire pour doubler votre argent à ce taux de croissance",
+          "Comparaison de référence: Comment votre résultat se compare aux moyennes du marché (S&P 500, obligations, etc.)"
+        ]
+      },
+      "faq": {
+        "intro": "Voici les réponses aux questions les plus courantes sur le TCAC et notre calculateur TCAC gratuit en ligne:",
+        "questions": [
+          {
+            "question": "Quelle est la différence entre le TCAC et le rendement moyen?",
+            "answer": "Le TCAC est une moyenne géométrique qui tient compte de la composition, tandis que le rendement moyen est une moyenne arithmétique. Le TCAC est plus précis pour mesurer la performance d'investissement dans le temps car il reflète le taux de croissance réel si les rendements étaient composés annuellement."
+          },
+          {
+            "question": "Le TCAC peut-il être négatif?",
+            "answer": "Oui, le TCAC peut être négatif si la valeur finale est inférieure à la valeur initiale. Un TCAC négatif indique que l'investissement a perdu de la valeur sur la période. Par exemple, si 10 000€ deviennent 8 000€ sur 5 ans, le TCAC serait d'environ -4,4%."
+          },
+          {
+            "question": "Un TCAC plus élevé est-il toujours meilleur?",
+            "answer": "Pas nécessairement. Bien qu'un TCAC plus élevé indique une croissance plus rapide, il ne tient pas compte du risque ou de la volatilité. Un investissement avec 25% de TCAC mais une forte volatilité peut être plus risqué qu'un avec 15% de TCAC et une croissance stable. Considérez toujours le TCAC aux côtés d'autres mesures comme la volatilité, le ratio de Sharpe et le drawdown maximum."
+          },
+          {
+            "question": "Quelle est la précision du TCAC pour les courtes périodes?",
+            "answer": "Le TCAC peut être trompeur pour des périodes très courtes (moins d'un an) car il annualise les rendements, ce qui peut exagérer ou déformer la performance réelle. Pour les périodes inférieures à un an, le rendement absolu est souvent plus approprié."
+          },
+          {
+            "question": "Quand dois-je utiliser le TCAC vs le rendement absolu?",
+            "answer": "Utilisez le TCAC lors de la comparaison d'investissements sur différentes périodes ou lorsque vous souhaitez comprendre les taux de croissance annualisés (généralement 3+ ans). Utilisez le rendement absolu pour les périodes plus courtes, la performance sur une seule période, ou lorsque la période est moins pertinente pour votre analyse."
+          },
+          {
+            "question": "Le TCAC tient-il compte de la volatilité?",
+            "answer": "Non, le TCAC ne tient pas compte de la volatilité. Il montre uniquement le taux de croissance lissé du début à la fin, ignorant les hauts et les bas en cours de route. Deux investissements peuvent avoir le même TCAC mais des profils de volatilité très différents. Envisagez d'utiliser des mesures supplémentaires comme l'écart type ou le ratio de Sharpe pour évaluer le risque."
+          },
+          {
+            "question": "Puis-je utiliser le TCAC pour des données mensuelles?",
+            "answer": "Oui, mais vous devez ajuster la période en conséquence. Si vous avez des données mensuelles sur 3 ans, utilisez n = 36 mois au lieu de 3 ans. La formule reste la même: (VF/VI)^(1/n) - 1, mais n'oubliez pas d'annualiser le résultat en multipliant par 12 si vous voulez un taux annuel."
+          },
+          {
+            "question": "Quel est un bon TCAC pour les actions, obligations et immobilier?",
+            "answer": "Historiquement: Actions S&P 500 ~10-11% TCAC, Obligations d'entreprises ~5-6% TCAC, Immobilier ~8-9% TCAC, et Or ~7% TCAC. Cependant, les performances passées ne garantissent pas les rendements futurs. Un « bon » TCAC dépend de votre tolérance au risque, de vos objectifs d'investissement et du contexte économique général."
+          },
+          {
+            "question": "Comment calculer le TCAC dans Excel?",
+            "answer": "Dans Excel, utilisez cette formule: =(VF/VI)^(1/n)-1 ou =PUISSANCE(VF/VI, 1/n)-1. Vous pouvez également utiliser la fonction TAUX: =TAUX(n, 0, -VI, VF). Par exemple, pour 10 000€ devenant 20 000€ sur 5 ans: =PUISSANCE(20000/10000, 1/5)-1 retourne 0,1487 ou 14,87%. Cependant, notre calculateur gratuit en ligne est beaucoup plus rapide et élimine le risque d'erreurs de formule."
+          },
+          {
+            "question": "Quelles sont les principales limitations du TCAC?",
+            "answer": "Le TCAC suppose une croissance constante, ce qui se produit rarement dans la réalité. Il ne tient pas compte de la volatilité, du risque ou des flux de trésorerie intermédiaires (dividendes, dépôts, retraits). Il ne reflète pas non plus le timing des rendements - vous pourriez avoir des rendements négatifs pendant 4 ans et un pic en année 5, montrant toujours un TCAC positif. Utilisez toujours le TCAC avec d'autres mesures pour une image complète."
+          }
+        ],
+        "stillHaveQuestionsTitle": "Vous avez encore des questions?",
+        "stillHaveQuestionsText": "Ce calculateur est conçu pour être aussi précis et utile que possible. Tous les calculs sont basés sur des formules financières largement acceptées. Si vous avez des questions supplémentaires sur le TCAC ou besoin d'aide pour interpréter vos résultats, envisagez de consulter un conseiller financier."
+      },
+      "about": {
+        "mainTitle": "À propos de notre calculateur TCAC gratuit en ligne",
+        "mainDescription": "Notre calculateur TCAC intelligent est un outil en ligne gratuit, précis et facile à utiliser, conçu pour aider les investisseurs, les analystes commerciaux et les professionnels de la finance à calculer les taux de croissance annuels composés et à prendre des décisions d'investissement éclairées. Ce calculateur fournit des résultats instantanés avec des informations visuelles et des ventilations détaillées.",
+        "features": [
+          {
+            "emoji": "🎯",
+            "title": "Intelligent",
+            "description": "Détecte automatiquement quelle variable calculer en fonction de vos entrées. Aucune sélection de mode nécessaire."
+          },
+          {
+            "emoji": "📊",
+            "title": "Visuel",
+            "description": "Inclut des graphiques interactifs, des ventilations annuelles et des informations intelligentes pour vous aider à comprendre vos résultats."
+          },
+          {
+            "emoji": "✨",
+            "title": "Précis",
+            "description": "Utilise des formules mathématiques précises basées sur des normes financières largement acceptées."
+          }
+        ],
+        "keyFeaturesTitle": "Fonctionnalités clés",
+        "keyFeatures": [
+          "Calculateur intelligent 4-en-1 (TCAC, VF, VI, Temps)",
+          "Validation en temps réel et vérification des erreurs",
+          "Visualisations interactives (graphiques et tableaux)",
+          "Informations intelligentes avec références du marché",
+          "Partage des résultats via URL ou partage natif",
+          "Design responsive optimisé mobile",
+          "100% gratuit, aucune inscription requise",
+          "Contenu éducatif et exemples"
+        ],
+        "accuracyTitle": "Précision et avertissement",
+        "accuracyText": "Notre calculateur TCAC utilise des formules mathématiques précises pour garantir l'exactitude. Tous les calculs effectués par ce calculateur sont basés sur la formule TCAC standard: `(VF/VI)^((1/n)) - 1`. Cependant, cet outil de calcul est fourni à des fins éducatives et informatives uniquement. Les décisions d'investissement doivent être prises après consultation avec des conseillers financiers qualifiés. Les performances passées ne garantissent pas les résultats futurs.",
+        "technologyTitle": "Technologie",
+        "technologyIntro": "Construit avec des technologies web modernes pour assurer des performances rapides et une excellente expérience utilisateur:",
+        "technologies": [
+          "Next.js 14",
+          "TypeScript",
+          "React",
+          "Tailwind CSS",
+          "Recharts"
+        ],
+        "madeWith": "Fait avec ❤️ pour les investisseurs du monde entier",
+        "copyright": "© {year} CAGRCalculator.app | Tous droits réservés"
+      },
+      "cagrVsMetrics": {
+        "intro": "Bien que le TCAC soit une mesure puissante, il est important de comprendre comment il se compare à d'autres mesures financières couramment utilisées. Chacune a ses forces et ses limites.",
+        "tableHeaders": {
+          "metric": "Mesure",
+          "description": "Description",
+          "bestFor": "Meilleur pour"
+        },
+        "metrics": [
+          {
+            "name": "TCAC",
+            "description": "Taux de croissance annualisé lissé en supposant la composition",
+            "bestFor": "Performance d'investissement à long terme"
+          },
+          {
+            "name": "Rendement moyen simple",
+            "description": "Moyenne arithmétique des rendements annuels (peut être trompeur)",
+            "bestFor": "Estimations rapides approximatives uniquement"
+          },
+          {
+            "name": "Rendement absolu",
+            "description": "Changement total en pourcentage du début à la fin",
+            "bestFor": "Performance à court terme ou sur une seule période"
+          },
+          {
+            "name": "TRI (Taux de Rendement Interne)",
+            "description": "Tient compte du timing des flux de trésorerie entrants/sortants",
+            "bestFor": "Investissements avec plusieurs flux de trésorerie"
+          },
+          {
+            "name": "TWR (Rendement Pondéré dans le Temps)",
+            "description": "Élimine l'impact des flux de trésorerie externes",
+            "bestFor": "Évaluation de la performance du gestionnaire de fonds"
+          }
+        ],
+        "advantagesTitle": "✅ Avantages du TCAC",
+        "advantages": [
+          "Tient compte des effets de composition",
+          "Facile à comprendre et à communiquer",
+          "Lisse la volatilité à court terme",
+          "Permet la comparaison sur différentes périodes",
+          "Non faussé par les changements de pourcentage extrêmes"
+        ],
+        "limitationsTitle": "⚠️ Limitations du TCAC",
+        "limitations": [
+          "Suppose une croissance constante (ce qui se produit rarement)",
+          "Ne tient pas compte de la volatilité ou du risque",
+          "Ne considère pas les flux de trésorerie intermédiaires",
+          "Peut être trompeur pour des périodes très courtes",
+          "Le TCAC passé ne garantit pas les rendements futurs"
+        ],
+        "exampleTitle": "Exemple: TCAC vs Moyenne simple",
+        "exampleIntro": "Considérez un investissement qui passe: 100€ → 150€ → 120€ → 180€ sur 3 ans",
+        "simpleAverageTitle": "Rendement moyen simple:",
+        "simpleAverageCalc": "Année 1: +50% | Année 2: -20% | Année 3: +50% Moyenne = (50 - 20 + 50) / 3 = 26,67%",
+        "cagrTitle": "TCAC:",
+        "cagrCalc": "(180 / 100)^((1/3)) - 1 TCAC = 21,7%",
+        "exampleNotice": "Remarque: Le TCAC (21,7%) est plus précis car il tient compte de la composition, tandis que la moyenne simple (26,67%) surestime la vraie croissance annualisée."
+      }
+    }
+  }
+}

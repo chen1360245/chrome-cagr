@@ -211,7 +211,7 @@ export function ResultPanelEnhanced({ result, className }: ResultPanelEnhancedPr
 
         {/* Action Buttons */}
         <div className="flex flex-wrap gap-3 pt-2">
-          <ShareButton result={result} variant="secondary" className="flex-1 min-w-[140px]" />
+          <ShareButton result={result} variant="accent" className="flex-1 min-w-[140px]" />
         </div>
 
         {/* Visualizations Section */}
