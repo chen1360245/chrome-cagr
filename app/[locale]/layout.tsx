@@ -140,6 +140,9 @@ export default async function LocaleLayout({
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <link rel="preconnect" href="https://www.clarity.ms" />
         <link rel="dns-prefetch" href="https://www.clarity.ms" />
+
+        {/* Bing Webmaster Verification */}
+        <meta name="msvalidate.01" content="1E055CC085BE2BFE4794E9E43E119166" />
       </head>
       <body className={inter.className} suppressHydrationWarning>
         {/* Schema.org JSON-LD Structured Data for SEO */}
