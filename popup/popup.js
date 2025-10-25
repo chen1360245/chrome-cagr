@@ -78,9 +78,30 @@ function getMessage(key, substitutions) {
   }
 
   let message = translations[key].message || key;
+  const placeholders = translations[key].placeholders;
 
   // Handle placeholders
-  if (substitutions) {
+  if (substitutions && placeholders) {
+    const subs = Array.isArray(substitutions) ? substitutions : [substitutions];
+
+    // Replace named placeholders (Chrome i18n standard format)
+    Object.keys(placeholders).forEach((name) => {
+      const placeholder = placeholders[name];
+      const content = placeholder.content; // e.g., "$1"
+
+      // Extract the parameter index from content (e.g., "$1" -> 0)
+      const match = content.match(/^\$(\d+)$/);
+      if (match) {
+        const index = parseInt(match[1]) - 1; // Convert to zero-based index
+        if (index >= 0 && index < subs.length) {
+          // Replace $NAME$ with the actual value
+          const namedPlaceholder = `$${name.toUpperCase()}$`;
+          message = message.replace(new RegExp(namedPlaceholder.replace(/\$/g, '\\$'), 'g'), subs[index]);
+        }
+      }
+    });
+  } else if (substitutions) {
+    // Fallback: support legacy numeric placeholders ($1$, $2$, etc.)
     const subs = Array.isArray(substitutions) ? substitutions : [substitutions];
     subs.forEach((sub, index) => {
       const placeholder = `$${index + 1}$`;

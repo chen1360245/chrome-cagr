@@ -43,8 +43,9 @@
 
 ### 3. ZIP发布包 ✅
 **文件：** `smart-cagr-calculator.zip`
-**大小：** 27KB
-**位置：** `D:\program files\AIweb\cagr-chrome\smart-cagr-calculator.zip`
+**大小：** 25KB
+**位置：** `D:\program files\AIweb\chrome-cagr\smart-cagr-calculator.zip`
+**最新打包：** 2025-10-25（包含翻译占位符修复）
 
 **包含内容：**
 - ✅ manifest.json

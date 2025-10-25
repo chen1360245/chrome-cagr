@@ -4,7 +4,7 @@
 $ErrorActionPreference = "Stop"
 
 # 切换到项目目录
-Set-Location "D:\program files\AIweb\cagr-chrome"
+Set-Location "D:\program files\AIweb\chrome-cagr"
 
 # 删除旧的ZIP（如果存在）
 if (Test-Path "smart-cagr-calculator.zip") {

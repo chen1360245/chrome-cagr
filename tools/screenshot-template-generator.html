@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screenshot Template Generator - CAGR Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1a2e;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        .info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .screenshot-frame {
+            width: 1280px;
+            height: 800px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            padding: 40px;
+            margin: 20px auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .frame-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .frame-subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .extension-placeholder {
+            width: 400px;
+            height: 600px;
+            background: white;
+            border-radius: 12px;
+            margin: 0 auto;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 16px;
+            position: relative;
+        }
+
+        .features {
+            position: absolute;
+            bottom: 60px;
+            left: 40px;
+            right: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-item::before {
+            content: "✨";
+            margin-right: 8px;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .instructions {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border-left: 4px solid #667eea;
+        }
+
+        .instructions h3 {
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .instructions ol {
+            padding-left: 20px;
+        }
+
+        .instructions li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .template-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .template-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .template-card:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+        }
+
+        .template-card h4 {
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📸 CAGR Calculator - Screenshot Template Generator</h1>
+
+        <div class="info">
+            <strong>Chrome Web Store Requirements:</strong>
+            <ul style="margin-top: 10px; padding-left: 20px;">
+                <li>Recommended: 1280 x 800 pixels</li>
+                <li>Minimum: 640 x 400 pixels</li>
+                <li>Aspect ratio: 16:10 or 8:5</li>
+                <li>Format: PNG or JPEG</li>
+            </ul>
+        </div>
+
+        <div class="template-options">
+            <div class="template-card" onclick="changeGradient(1)">
+                <h4>🌈 Gradient Style 1</h4>
+                <p>Purple to Blue gradient</p>
+            </div>
+            <div class="template-card" onclick="changeGradient(2)">
+                <h4>🌊 Gradient Style 2</h4>
+                <p>Ocean blue gradient</p>
+            </div>
+            <div class="template-card" onclick="changeGradient(3)">
+                <h4>🌅 Gradient Style 3</h4>
+                <p>Sunset gradient</p>
+            </div>
+        </div>
+
+        <!-- Preview Frame -->
+        <div id="screenshotFrame" class="screenshot-frame">
+            <div class="frame-title">📊 Smart CAGR Calculator</div>
+            <div class="frame-subtitle">Calculate any parameter with intelligent 3-field input</div>
+
+            <div class="extension-placeholder">
+                <div style="text-align: center;">
+                    <p style="font-size: 18px; margin-bottom: 10px;">🖼️ Place your extension screenshot here</p>
+                    <p style="font-size: 14px; opacity: 0.6;">Recommended: 400 x 600 pixels</p>
+                    <p style="font-size: 14px; opacity: 0.6; margin-top: 20px;">
+                        Take screenshot of your extension popup<br>
+                        Drag and drop or paste it here
+                    </p>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature-item">4-parameter smart calculation</div>
+                <div class="feature-item">Multi-language support (6 languages)</div>
+                <div class="feature-item">Intelligent mode detection</div>
+                <div class="feature-item">Investment insights & market comparison</div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button onclick="downloadScreenshot()">📥 Download Screenshot (1280x800 PNG)</button>
+            <button onclick="resetFrame()">🔄 Reset</button>
+        </div>
+
+        <div class="instructions">
+            <h3>📋 How to Use This Tool:</h3>
+            <ol>
+                <li><strong>Take a screenshot of your extension:</strong>
+                    <ul style="margin-top: 5px; padding-left: 20px;">
+                        <li>Open your CAGR Calculator extension</li>
+                        <li>Use Snipping Tool (Win + Shift + S) or Screenshot (Mac)</li>
+                        <li>Capture the popup window</li>
+                    </ul>
+                </li>
+                <li><strong>Add screenshot to this template:</strong>
+                    <ul style="margin-top: 5px; padding-left: 20px;">
+                        <li>Use a tool like Canva or Photopea</li>
+                        <li>Open this page in browser</li>
+                        <li>Take full page screenshot</li>
+                        <li>Or manually composite in image editor</li>
+                    </ul>
+                </li>
+                <li><strong>Alternative Method (Easier):</strong>
+                    <ul style="margin-top: 5px; padding-left: 20px;">
+                        <li>Right-click the preview above → "Inspect"</li>
+                        <li>Use Chrome DevTools to capture the frame</li>
+                        <li>Saves directly as 1280x800 PNG</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="instructions" style="margin-top: 20px; border-left-color: #f39c12;">
+            <h3>💡 Pro Tips:</h3>
+            <ul style="padding-left: 20px;">
+                <li>Create 5 versions with different screenshots for each required image</li>
+                <li>Change the title and subtitle for each version</li>
+                <li>Use consistent gradient style across all screenshots</li>
+                <li>Make sure text is readable and extension UI is clear</li>
+                <li>First screenshot should show your BEST feature (calculation results)</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function changeGradient(style) {
+            const frame = document.getElementById('screenshotFrame');
+            const gradients = {
+                1: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                2: 'linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%)',
+                3: 'linear-gradient(135deg, #ee0979 0%, #ff6a00 100%)'
+            };
+            frame.style.background = gradients[style];
+        }
+
+        function downloadScreenshot() {
+            alert('📸 To download:\n\n1. Right-click the preview frame above\n2. Select "Inspect Element"\n3. In DevTools, right-click the frame element\n4. Select "Capture node screenshot"\n5. Save as PNG\n\nOr use a screenshot tool to capture the frame at 1280x800 pixels.');
+        }
+
+        function resetFrame() {
+            changeGradient(1);
+        }
+
+        // Enable drag and drop (placeholder functionality)
+        const placeholder = document.querySelector('.extension-placeholder');
+
+        placeholder.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            placeholder.style.borderColor = '#667eea';
+        });
+
+        placeholder.addEventListener('drop', (e) => {
+            e.preventDefault();
+            alert('💡 To add your screenshot:\n\nUse an image editor like:\n• Canva (easiest)\n• Photopea (free online)\n• Photoshop\n• GIMP\n\nOr take a full screenshot of this preview using Chrome DevTools!');
+        });
+    </script>
+</body>
+</html>
