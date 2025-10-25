@@ -1,0 +1,44 @@
+{
+  "appName": {
+    "message": "Intelligenter CAGR-Rechner"
+  },
+  "appDescription": {
+    "message": "Intelligenter 4-Parameter-CAGR-Rechner. Geben Sie beliebige 3 Werte ein (Anfangs-, Endwert, Zeit, Rate) und berechnen Sie automatisch den 4. Funktioniert offline."
+  },
+  "appSlogan": {
+    "message": "Geben Sie 3 Werte ein, berechnen Sie den 4."
+  },
+  "inputInitialValue": {
+    "message": "Anfangswert ($)"
+  },
+  "inputFinalValue": {
+    "message": "Endwert ($)"
+  },
+  "inputTimePeriod": {
+    "message": "Zeitraum (Jahre)"
+  },
+  "inputCAGRRate": {
+    "message": "CAGR-Rate (%)"
+  },
+  "btnCalculate": {
+    "message": "Jetzt Berechnen"
+  },
+  "btnClear": {
+    "message": "Löschen"
+  },
+  "visitWebsite": {
+    "message": "Vollständige Website Besuchen"
+  },
+  "explanationCAGR": {
+    "message": "Ihre Investition von _PV_ wuchs auf _FV_ über _N_ Jahre mit einer CAGR von _R_% pro Jahr."
+  },
+  "explanationFV": {
+    "message": "Ihre _PV_ Investition mit _R_% jährlichem Wachstum erreicht _FV_ in _N_ Jahren."
+  },
+  "explanationPV": {
+    "message": "Um _FV_ in _N_ Jahren mit einer Wachstumsrate von _R_% zu erreichen, müssen Sie heute _PV_ investieren."
+  },
+  "explanationTIME": {
+    "message": "Das Wachstum von _PV_ auf _FV_ mit _R_% jährlichem Wachstum dauert _N_ Jahre."
+  }
+}

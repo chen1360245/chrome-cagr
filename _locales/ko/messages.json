@@ -1,0 +1,26 @@
+{
+  "appName": {
+    "message": "스마트 CAGR 계산기"
+  },
+  "appDescription": {
+    "message": "지능형 4-매개변수 CAGR 계산기. 3개의 값(초기, 최종, 시간, 비율)을 입력하고 자동으로 4번째를 계산합니다. 오프라인에서 작동."
+  },
+  "btnCalculate": {
+    "message": "지금 계산"
+  },
+  "visitWebsite": {
+    "message": "전체 웹사이트 방문"
+  },
+  "explanationCAGR": {
+    "message": "_PV_의 투자가 _N_년 동안 _FV_로 성장하여 연간 _R_%의 CAGR을 달성했습니다."
+  },
+  "explanationFV": {
+    "message": "_PV_의 투자가 연간 _R_%로 성장하면 _N_년 후 _FV_에 도달합니다."
+  },
+  "explanationPV": {
+    "message": "_N_년 내에 _R_%의 성장률로 _FV_에 도달하려면 오늘 _PV_를 투자해야 합니다."
+  },
+  "explanationTIME": {
+    "message": "_PV_를 _FV_로, 연간 _R_% 성장률로 키우는 데 _N_년이 걸립니다."
+  }
+}

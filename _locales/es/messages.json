@@ -1,0 +1,44 @@
+{
+  "appName": {
+    "message": "Calculadora Inteligente CAGR"
+  },
+  "appDescription": {
+    "message": "Calculadora CAGR inteligente de 4 parámetros. Ingrese cualquier 3 valores (Inicial, Final, Tiempo, Tasa) y calcule automáticamente el 4to. Funciona sin conexión."
+  },
+  "appSlogan": {
+    "message": "Ingrese cualquier 3 valores, calcule el 4to"
+  },
+  "inputInitialValue": {
+    "message": "Valor Inicial ($)"
+  },
+  "inputFinalValue": {
+    "message": "Valor Final ($)"
+  },
+  "inputTimePeriod": {
+    "message": "Período de Tiempo (Años)"
+  },
+  "inputCAGRRate": {
+    "message": "Tasa CAGR (%)"
+  },
+  "btnCalculate": {
+    "message": "Calcular Ahora"
+  },
+  "btnClear": {
+    "message": "Limpiar"
+  },
+  "visitWebsite": {
+    "message": "Visitar Sitio Web Completo"
+  },
+  "explanationCAGR": {
+    "message": "Su inversión de _PV_ creció a _FV_ durante _N_ años, logrando una TCAC del _R_% anual."
+  },
+  "explanationFV": {
+    "message": "Su inversión de _PV_ creciendo al _R_% anual alcanzará _FV_ en _N_ años."
+  },
+  "explanationPV": {
+    "message": "Para alcanzar _FV_ en _N_ años con una tasa de crecimiento del _R_%, necesita invertir _PV_ hoy."
+  },
+  "explanationTIME": {
+    "message": "Hacer crecer _PV_ a _FV_ con un crecimiento anual del _R_% tomará _N_ años."
+  }
+}

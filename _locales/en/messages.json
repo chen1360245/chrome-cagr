@@ -1,0 +1,147 @@
+{
+  "appName": {
+    "message": "Smart CAGR Calculator"
+  },
+  "appDescription": {
+    "message": "Intelligent 4-parameter CAGR calculator. Input any 3 values (Initial, Final, Time, Rate) and automatically calculate the 4th. Works offline."
+  },
+  "appSlogan": {
+    "message": "Input any 3 values, calculate the 4th"
+  },
+  "inputInitialValue": {
+    "message": "Initial Value ($)"
+  },
+  "inputFinalValue": {
+    "message": "Final Value ($)"
+  },
+  "inputTimePeriod": {
+    "message": "Time Period (Years)"
+  },
+  "inputCAGRRate": {
+    "message": "CAGR Rate (%)"
+  },
+  "placeholderInitialValue": {
+    "message": "10,000"
+  },
+  "placeholderFinalValue": {
+    "message": "40,000"
+  },
+  "placeholderTimePeriod": {
+    "message": "10"
+  },
+  "placeholderCAGRRate": {
+    "message": "15"
+  },
+  "modeDetected": {
+    "message": "💡 Mode: Calculate $MODE$",
+    "placeholders": {
+      "mode": {
+        "content": "$1",
+        "example": "Final Value"
+      }
+    }
+  },
+  "modeCAGR": {
+    "message": "CAGR Rate"
+  },
+  "modeFinalValue": {
+    "message": "Final Value"
+  },
+  "modeInitialValue": {
+    "message": "Initial Value"
+  },
+  "modeTimePeriod": {
+    "message": "Time Period"
+  },
+  "formulaLabel": {
+    "message": "Formula:"
+  },
+  "btnCalculate": {
+    "message": "Calculate Now"
+  },
+  "btnCalculating": {
+    "message": "Calculating..."
+  },
+  "btnClear": {
+    "message": "Clear"
+  },
+  "resultsTitle": {
+    "message": "🎯 Results"
+  },
+  "resultCAGR": {
+    "message": "CAGR"
+  },
+  "resultTotalGrowth": {
+    "message": "Total Growth"
+  },
+  "resultPerYear": {
+    "message": "per year"
+  },
+  "resultOverYears": {
+    "message": "over $YEARS$ years",
+    "placeholders": {
+      "years": {
+        "content": "$1"
+      }
+    }
+  },
+  "insightDoubling": {
+    "message": "💡 Your money will double in $YEARS$ years at this rate",
+    "placeholders": {
+      "years": {
+        "content": "$1"
+      }
+    }
+  },
+  "insightBeatingMarket": {
+    "message": "✅ You're beating the S&P 500 average (10.5%)!"
+  },
+  "insightBelowMarket": {
+    "message": "ℹ️ Below S&P 500 average. Consider diversifying."
+  },
+  "insightHighReturn": {
+    "message": "⚠️ Exceptional returns! This is significantly above market average."
+  },
+  "explanationLabel": {
+    "message": "📝 Explanation:"
+  },
+  "viewChartsHint": {
+    "message": "📊 Want to see growth charts and more features?"
+  },
+  "visitWebsite": {
+    "message": "Visit Full Website"
+  },
+  "poweredBy": {
+    "message": "Powered by"
+  },
+  "errorFillThree": {
+    "message": "Please fill exactly 3 fields"
+  },
+  "errorInvalidValue": {
+    "message": "Invalid value. Please enter a positive number."
+  },
+  "errorCalculationFailed": {
+    "message": "Calculation failed. Please check your inputs."
+  },
+  "helperCurrency": {
+    "message": "Enter amount in dollars"
+  },
+  "helperNumber": {
+    "message": "Enter number of years"
+  },
+  "helperPercentage": {
+    "message": "Enter percentage (e.g., 15 for 15%)"
+  },
+  "explanationCAGR": {
+    "message": "Your investment of _PV_ grew to _FV_ over _N_ years, achieving a CAGR of _R_% annually."
+  },
+  "explanationFV": {
+    "message": "Your _PV_ investment growing at _R_% annually will reach _FV_ in _N_ years."
+  },
+  "explanationPV": {
+    "message": "To reach _FV_ in _N_ years at _R_% growth rate, you need to invest _PV_ today."
+  },
+  "explanationTIME": {
+    "message": "Growing _PV_ to _FV_ at _R_% annual growth will take _N_ years."
+  }
+}

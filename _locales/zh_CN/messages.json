@@ -1,0 +1,146 @@
+{
+  "appName": {
+    "message": "智能CAGR计算器"
+  },
+  "appDescription": {
+    "message": "智能4参数CAGR计算器。输入任意3个值 (初值、终值、时间、增长率)，自动计算第4个。离线可用。"
+  },
+  "appSlogan": {
+    "message": "输入任意3个值，自动计算第4个"
+  },
+  "inputInitialValue": {
+    "message": "初始金额 ($)"
+  },
+  "inputFinalValue": {
+    "message": "最终金额 ($)"
+  },
+  "inputTimePeriod": {
+    "message": "时间周期 (年)"
+  },
+  "inputCAGRRate": {
+    "message": "CAGR增长率 (%)"
+  },
+  "placeholderInitialValue": {
+    "message": "10,000"
+  },
+  "placeholderFinalValue": {
+    "message": "40,000"
+  },
+  "placeholderTimePeriod": {
+    "message": "10"
+  },
+  "placeholderCAGRRate": {
+    "message": "15"
+  },
+  "modeDetected": {
+    "message": "💡 模式：计算$MODE$",
+    "placeholders": {
+      "mode": {
+        "content": "$1"
+      }
+    }
+  },
+  "modeCAGR": {
+    "message": "增长率"
+  },
+  "modeFinalValue": {
+    "message": "最终金额"
+  },
+  "modeInitialValue": {
+    "message": "初始金额"
+  },
+  "modeTimePeriod": {
+    "message": "时间周期"
+  },
+  "formulaLabel": {
+    "message": "公式："
+  },
+  "btnCalculate": {
+    "message": "立即计算"
+  },
+  "btnCalculating": {
+    "message": "计算中..."
+  },
+  "btnClear": {
+    "message": "清空"
+  },
+  "resultsTitle": {
+    "message": "🎯 计算结果"
+  },
+  "resultCAGR": {
+    "message": "年化增长率"
+  },
+  "resultTotalGrowth": {
+    "message": "总增长"
+  },
+  "resultPerYear": {
+    "message": "每年"
+  },
+  "resultOverYears": {
+    "message": "$YEARS$年累计",
+    "placeholders": {
+      "years": {
+        "content": "$1"
+      }
+    }
+  },
+  "insightDoubling": {
+    "message": "💡 按此增长率，资金将在$YEARS$年内翻倍",
+    "placeholders": {
+      "years": {
+        "content": "$1"
+      }
+    }
+  },
+  "insightBeatingMarket": {
+    "message": "✅ 超越标普500平均水平 (10.5%)！"
+  },
+  "insightBelowMarket": {
+    "message": "ℹ️ 低于标普500平均水平。建议考虑分散投资。"
+  },
+  "insightHighReturn": {
+    "message": "⚠️ 超高回报！远高于市场平均水平。"
+  },
+  "explanationLabel": {
+    "message": "📝 说明："
+  },
+  "viewChartsHint": {
+    "message": "📊 想查看增长图表和更多功能？"
+  },
+  "visitWebsite": {
+    "message": "访问完整版网站"
+  },
+  "poweredBy": {
+    "message": "技术支持"
+  },
+  "errorFillThree": {
+    "message": "请准确填写3个字段"
+  },
+  "errorInvalidValue": {
+    "message": "无效值。请输入正数。"
+  },
+  "errorCalculationFailed": {
+    "message": "计算失败。请检查输入。"
+  },
+  "helperCurrency": {
+    "message": "输入美元金额"
+  },
+  "helperNumber": {
+    "message": "输入年数"
+  },
+  "helperPercentage": {
+    "message": "输入百分比 (如: 15表示15%)"
+  },
+  "explanationCAGR": {
+    "message": "您的投资从 _PV_ 增长到 _FV_，经过 _N_ 年，年化增长率为 _R_%。"
+  },
+  "explanationFV": {
+    "message": "您的 _PV_ 投资以 _R_% 的年增长率增长，将在 _N_ 年后达到 _FV_。"
+  },
+  "explanationPV": {
+    "message": "要在 _N_ 年内以 _R_% 的增长率达到 _FV_，您今天需要投资 _PV_。"
+  },
+  "explanationTIME": {
+    "message": "将 _PV_ 增长到 _FV_，以 _R_% 的年增长率需要 _N_ 年。"
+  }
+}

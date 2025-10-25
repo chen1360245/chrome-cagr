@@ -1,0 +1,29 @@
+{
+  "appName": {
+    "message": "スマートCAGR計算機"
+  },
+  "appDescription": {
+    "message": "インテリジェントな4パラメーターCAGR計算機。任意の3つの値（初期、最終、時間、率）を入力し、4番目を自動計算。オフラインで動作。"
+  },
+  "appSlogan": {
+    "message": "任意の3つの値を入力し、4番目を計算"
+  },
+  "btnCalculate": {
+    "message": "今すぐ計算"
+  },
+  "visitWebsite": {
+    "message": "完全版ウェブサイトを訪問"
+  },
+  "explanationCAGR": {
+    "message": "_PV_の投資が_N_年で_FV_に成長し、年率_R_%のCAGRを達成しました。"
+  },
+  "explanationFV": {
+    "message": "_PV_の投資が年率_R_%で成長すると、_N_年後に_FV_に達します。"
+  },
+  "explanationPV": {
+    "message": "_N_年で_R_%の成長率で_FV_に達するには、今日_PV_を投資する必要があります。"
+  },
+  "explanationTIME": {
+    "message": "_PV_を_FV_に、年率_R_%で成長させるには_N_年かかります。"
+  }
+}
