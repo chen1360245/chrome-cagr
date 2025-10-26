@@ -3,7 +3,7 @@
     "message": "Intelligenter CAGR-Rechner"
   },
   "appDescription": {
-    "message": "Intelligenter 4-Parameter-CAGR-Rechner. Geben Sie beliebige 3 Werte ein (Anfangs-, Endwert, Zeit, Rate) und berechnen Sie automatisch den 4. Funktioniert offline."
+    "message": "CAGR-Rechner. Geben Sie 3 Werte ein (Anfangs-, Endwert, Zeit, Rate), berechnen Sie den 4. Funktioniert offline."
   },
   "appSlogan": {
     "message": "Geben Sie 3 Werte ein, berechnen Sie den 4."

@@ -3,7 +3,7 @@
     "message": "Calculadora Inteligente CAGR"
   },
   "appDescription": {
-    "message": "Calculadora CAGR inteligente de 4 parámetros. Ingrese cualquier 3 valores (Inicial, Final, Tiempo, Tasa) y calcule automáticamente el 4to. Funciona sin conexión."
+    "message": "Calculadora CAGR. Ingrese 3 valores (Inicial, Final, Tiempo, Tasa), calcule el 4to. Funciona sin conexión."
   },
   "appSlogan": {
     "message": "Ingrese cualquier 3 valores, calcule el 4to"

@@ -3,7 +3,7 @@
     "message": "Smart CAGR Calculator"
   },
   "appDescription": {
-    "message": "Intelligent 4-parameter CAGR calculator. Input any 3 values (Initial, Final, Time, Rate) and automatically calculate the 4th. Works offline."
+    "message": "Smart CAGR calculator. Input any 3 values (Initial, Final, Time, Rate), auto-calculate the 4th. Works offline."
   },
   "appSlogan": {
     "message": "Input any 3 values, calculate the 4th"

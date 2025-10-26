@@ -3,7 +3,7 @@
     "message": "Calculateur CAGR Intelligent"
   },
   "appDescription": {
-    "message": "Calculateur CAGR intelligent à 4 paramètres. Entrez 3 valeurs (Initiale, Finale, Temps, Taux) et calculez automatiquement la 4ème. Fonctionne hors ligne."
+    "message": "Calculateur CAGR. Entrez 3 valeurs (Initiale, Finale, Temps, Taux), calculez la 4ème. Fonctionne hors ligne."
   },
   "btnCalculate": {
     "message": "Calculer Maintenant"

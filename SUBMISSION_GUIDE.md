@@ -6,12 +6,12 @@
 - ✅ Chrome开发者账号已注册（$5已支付）
 - ✅ 扩展开发完成，功能正常
 - ✅ 商店描述已准备（STORE_DESCRIPTION.md）
-- ✅ ZIP包已创建（smart-cagr-calculator.zip, 27KB）
+- ✅ ZIP包已创建（smart-cagr-calculator.zip, 25KB）
 - ✅ 隐私政策URL已上线（https://cagrcalculator.app/en/privacy）
 - ✅ 布局优化完成（无滚动条）
 
 ### 待完成 ⚠️
-- [ ] 商店截图（1-5张）- 参考 SCREENSHOT_GUIDE.md
+- [x] 商店截图（5张已完成，1280x800）✅
   - **重要：** 第1-2张必须是英文界面（扩展默认语言）
   - 可选添加1张中文截图展示多语言能力
 - [ ] 宣传图片（可选，1400x560）
@@ -38,13 +38,16 @@
 ### 步骤3：上传ZIP包
 
 1. **选择文件：** `smart-cagr-calculator.zip`
-2. **位置：** `D:\program files\AIweb\cagr-chrome\smart-cagr-calculator.zip`
+2. **位置：** `D:\program files\AIweb\chrome-cagr\smart-cagr-calculator.zip`
 3. 点击 **"Upload"**（上传）
 4. 等待验证通过（通常几秒钟）
 
 **如果出现错误：**
 - 检查manifest.json格式
 - 确保所有必需文件都在ZIP中
+- **描述长度错误：** 如果提示"description is too long"，检查所有语言的appDescription是否≤132字符
+  - 我们遇到过此错误：en(140字符)、de(162字符)等超过限制
+  - 解决方案：参考 DESCRIPTION_FIX.md 查看如何缩短描述
 - 重新创建ZIP包
 
 ---
@@ -58,10 +61,11 @@
 Smart CAGR Calculator
 ```
 
-**简短描述（Short Description）：** *最多132字符*
+**简短描述（Short Description）：** *最多132字符* ⚠️
 ```
-Smart 4-parameter CAGR calculator. Input any 3 values (initial, final, time, rate) to calculate the 4th. Supports 9 languages. Works offline.
+Smart CAGR calculator. Input any 3 values (Initial, Final, Time, Rate), auto-calculate the 4th. Works offline.
 ```
+*注意：此描述已优化至110字符以符合Chrome Web Store的132字符限制。*
 
 **详细描述（Detailed Description）：**
 ```
@@ -212,19 +216,25 @@ This extension does not collect, store, or transmit any user data. All calculati
 
 如果被拒绝，Google会发送邮件说明原因。常见原因：
 
-### 1. 隐私政策问题
+### 1. 描述长度问题 ⚠️
+- **问题：** appDescription超过132字符限制
+- **症状：** "The description translation in locale XX is too long"
+- **解决：** 检查所有9种语言的messages.json，确保appDescription≤132字符
+- **参考：** 查看 DESCRIPTION_FIX.md 了解我们如何解决此问题
+
+### 2. 隐私政策问题
 - **问题：** 隐私政策URL无效或内容不完整
 - **解决：** 确保 https://cagrcalculator.app/en/privacy 可访问且内容完整
 
-### 2. 权限问题
+### 3. 权限问题
 - **问题：** 权限说明不清楚
 - **解决：** 补充详细说明
 
-### 3. 截图问题
+### 4. 截图问题
 - **问题：** 截图不符合要求
 - **解决：** 重新创建符合尺寸的截图
 
-### 4. 描述问题
+### 5. 描述问题
 - **问题：** 描述不准确或误导
 - **解决：** 修改描述，确保准确
 
@@ -288,14 +298,14 @@ https://cagrcalculator.app/en/privacy
 提交前最后检查：
 
 ### 文件检查
-- [ ] ZIP包小于100MB（我们是27KB ✅）
+- [ ] ZIP包小于100MB（我们是25KB ✅）
 - [ ] manifest.json格式正确
 - [ ] 所有图标文件存在
 - [ ] 代码无明显错误
 
 ### 信息检查
 - [ ] 扩展名称清晰
-- [ ] 简短描述<132字符
+- [ ] 简短描述≤132字符（当前110字符 ✅）
 - [ ] 详细描述完整
 - [ ] 截图清晰专业（至少1张）
 - [ ] 分类正确
@@ -348,11 +358,13 @@ https://cagrcalculator.app/en/privacy
 
 ---
 
-**文档最后更新：** 2025年10月25日
+**文档最后更新：** 2025年10月26日
 **扩展版本：** 1.0.0
-**提交状态：** 准备中 - 待创建截图
+**提交状态：** ✅ 准备就绪 - 可以立即提交
 **隐私政策：** ✅ 已上线（https://cagrcalculator.app/en/privacy）
-**预计提交时间：** 创建截图后即可提交
+**ZIP包状态：** ✅ 已更新（25KB，描述长度已修复）
+**截图状态：** ✅ 5张截图已完成（1280x800）
+**预计提交时间：** 随时可以提交
 **预计发布时间：** 提交后1-3个工作日
 
 ---
