@@ -54,7 +54,7 @@
 ### 第三部分：Privacy Policy URL
 
 ```
-https://cagrcalculator.app/en/privacy
+https://cagrcalculator.app/en/privacy-extension
 ```
 
 ✅ 已正确填写
@@ -173,7 +173,7 @@ Certifications:
 ✅ I do not use or transfer user data to determine creditworthiness or for lending purposes
 
 Privacy Policy URL:
-https://cagrcalculator.app/en/privacy
+https://cagrcalculator.app/en/privacy-extension
 ```
 
 ---

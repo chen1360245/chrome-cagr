@@ -1,338 +1,89 @@
-# 🧠 智能CAGR计算器 - Chrome扩展
+# Smart CAGR Calculator Chrome Extension
 
-**全球首款智能4参数CAGR计算器Chrome扩展**
+A lightweight Chrome extension for compound annual growth rate calculations.
+Enter any three values and the extension solves for the fourth, entirely on
+your device.
 
-输入任意3个值（初始值、最终值、时间、收益率），自动计算第4个。完全离线工作。
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Chrome Web Store](https://img.shields.io/badge/Chrome-Web%20Store-blue)](https://chromewebstore.google.com/detail/smart-cagr-calculator/cpbbkfbjhcaompikhekjjfopcecomkao)
 
----
+## Install
 
-## ✨ 独特功能
+Install the published extension from the
+[Chrome Web Store](https://chromewebstore.google.com/detail/smart-cagr-calculator/cpbbkfbjhcaompikhekjjfopcecomkao).
 
-### 🎯 4参数智能计算
-与传统计算器只能从3个输入计算CAGR不同，我们的扩展可以：
+Published version: `1.0.0`
 
-- **模式1**：初始值 + 最终值 + 时间 → 计算 **CAGR收益率**
-- **模式2**：初始值 + CAGR + 时间 → 计算 **最终价值**
-- **模式3**：最终值 + CAGR + 时间 → 计算 **初始投资**
-- **模式4**：初始值 + 最终值 + CAGR → 计算 **时间周期**
+![Smart CAGR Calculator results](store-screenshots/01-calculation-results.png)
 
-**一个工具，四种解决方案，无限可能！**
+## Features
 
-### 🌍 多语言支持
-支持9种语言，自动检测浏览器语言：
-- 🇺🇸 English（英语）
-- 🇨🇳 简体中文
-- 🇪🇸 Español（西班牙语）
-- 🇩🇪 Deutsch（德语）
-- 🇯🇵 日本語（日语）
-- 🇫🇷 Français（法语）
-- 🇧🇷 Português（葡萄牙语）
-- 🇰🇷 한국어（韩语）
-- 🇸🇦 العربية（阿拉伯语）
+- Solve for CAGR, final value, initial value, or time period
+- Automatically detect which value should be calculated
+- Show doubling time, growth summaries, and benchmark comparisons
+- Work offline without analytics or telemetry
+- Store only your selected language preference locally
+- Support English, Simplified Chinese, Spanish, German, Japanese, French,
+  Brazilian Portuguese, Korean, and Arabic
 
-### 📊 智能洞察
-- 💡 精确翻倍时间计算（对数公式，而非72法则）
-- ✅ 标普500基准对比（10.5%平均收益率）
-- ⚠️ 高收益警告
-- 📝 自然语言解释
+## Permissions And Privacy
 
-### 🚀 轻量快速
-- **< 100KB** 总大小
-- **离线工作** - 无需联网
-- **零依赖** - 纯JavaScript
-- **隐私优先** - 不收集数据
+The extension requests only the `storage` permission. It uses
+`chrome.storage.local` to remember your language preference.
 
----
+Calculations run locally. The extension does not transmit calculation inputs,
+results, or browsing data. See the
+[extension privacy policy](docs/EXTENSION_PRIVACY_POLICY.md) for details.
 
-## 📸 截图示意
+## Run From Source
 
-```
-┌─────────────────────────────┐
-│ 智能CAGR计算器          [▼] │
-├─────────────────────────────┤
-│                             │
-│  输入任意3个值，            │
-│  自动计算第4个              │
-│                             │
-│  💰 初始价值 ($)            │
-│  [$10,000           ] ✓     │
-│                             │
-│  🎯 最终价值 ($)            │
-│  [                  ]       │
-│                             │
-│  ⏱️ 时间周期 (年)           │
-│  [10                ] ✓     │
-│                             │
-│  📈 CAGR收益率 (%)          │
-│  [15                ] ✓     │
-│                             │
-│  💡 模式：计算最终价值      │
-│  公式：FV = PV×(1+r)^n      │
-│                             │
-│  [立即计算]      [清空]     │
-│                             │
-│  🎯 结果                    │
-│  ─────────────────────────  │
-│  最终价值: $40,455.58       │
-│                             │
-│  CAGR: 15%  | 总增长: +304% │
-│                             │
-│  💡 4.8年翻倍               │
-│  ✅ 跑赢标普500！           │
-│                             │
-│  🌐 访问完整网站 →          │
-└─────────────────────────────┘
-```
+1. Clone the repository:
 
----
-
-## 🚀 安装方法
-
-### 从源码安装（开发模式）
-
-1. **下载扩展**
    ```bash
-   git clone <仓库地址>
-   cd cagr-chrome
+   git clone https://github.com/chen1360245/chrome-cagr.git
+   cd chrome-cagr
    ```
 
-2. **生成图标**（可选但推荐）
-   - 查看 `icons/ICON_INSTRUCTIONS.md`
-   - 或使用提供的SVG模板
+2. Open `chrome://extensions/` in Chrome.
+3. Enable **Developer mode**.
+4. Select **Load unpacked**.
+5. Choose the repository root.
 
-3. **在Chrome中加载**
-   - 打开Chrome，访问 `chrome://extensions/`
-   - 启用"开发者模式"（右上角）
-   - 点击"加载已解压的扩展程序"
-   - 选择项目根目录 `D:\program files\AIweb\cagr-chrome`
-   - 完成！✅
+No build step is required.
 
-### 从Chrome网上应用店安装（即将推出）
+## Project Structure
 
-⏳ 扩展即将发布到Chrome网上应用店。
-在Chrome网上应用店搜索"Smart CAGR Calculator"。
-
----
-
-## 📖 使用方法
-
-1. **打开扩展**
-   - 点击Chrome工具栏中的扩展图标
-   - 或使用键盘快捷键（如已配置）
-
-2. **输入任意3个值**
-   - 初始价值：起始投资金额
-   - 最终价值：目标或已达到金额
-   - 时间周期：投资期限（年）
-   - CAGR收益率：年化增长率百分比
-
-3. **自动检测**
-   - 扩展自动检测使用哪种模式
-   - 显示将要应用的公式
-
-4. **计算**
-   - 点击"立即计算"或按回车键
-   - 查看结果及洞察和解释
-
-5. **访问网站了解更多**
-   - 点击Logo或底部链接
-   - 访问完整网站，包含图表和教育内容
-
----
-
-## 🎓 使用场景
-
-### 投资者
-- **评估收益**：从历史数据计算实际CAGR
-- **规划目标**：确定达到目标所需的初始投资
-- **时间规划**：需要多长时间达到财务目标
-
-### 财务规划师
-- **客户场景**：快速运行多个计算
-- **退休规划**：计算所需储蓄
-- **目标设定**：向客户展示现实时间表
-
-### 商业分析师
-- **收入增长**：分析公司CAGR
-- **市场分析**：比较增长率
-- **预测**：预测未来价值
-
-### 学生
-- **学习CAGR**：理解复合增长
-- **作业**：验证计算
-- **金融素养**：用真实场景练习
-
----
-
-## 🌐 完整网站
-
-访问 **[cagrcalculator.app](https://cagrcalculator.app)** 获取：
-
-- 📊 **交互式图表**：可视化时间增长
-- 📚 **教育内容**：深入学习CAGR
-- 🎓 **真实案例**：查看5个实用案例
-- 🔄 **指标对比**：CAGR vs 平均收益率 vs IRR
-- ❓ **常见问题**：常见问题解答
-
----
-
-## 🛠️ 技术细节
-
-### 架构
-- **前端**：纯JavaScript（无框架）
-- **计算引擎**：从生产网站移植
-- **国际化**：Chrome i18n API
-- **存储**：Chrome Storage API用于偏好设置
-- **Manifest版本**：3（最新标准）
-
-### 文件结构
-```
-D:\program files\AIweb\cagr-chrome/
-├── manifest.json           # 扩展配置
-├── logo-full.svg           # 品牌Logo
-├── _locales/              # 9种语言
-│   ├── en/messages.json
-│   ├── zh_CN/messages.json
-│   └── ...
-├── icons/                 # 扩展图标
-│   ├── icon16.png
-│   ├── icon48.png
-│   └── icon128.png
-├── popup/                 # 主界面
-│   ├── popup.html
-│   ├── popup.js
-│   └── popup.css
-└── lib/                   # 核心库
-    ├── calculator.js      # 计算引擎
-    └── formatters.js      # 数字格式化
+```text
+_locales/       Chrome i18n translations
+icons/          Extension icons
+lib/            Calculation and formatting helpers
+popup/          Extension interface
+manifest.json   Manifest V3 configuration
 ```
 
-### 计算公式
+## Related Project
 
-```javascript
-// 模式1：计算CAGR
-CAGR = (FV / PV)^(1/n) - 1
+The full web calculator includes charts, educational content, and additional
+localized pages:
 
-// 模式2：计算最终价值
-FV = PV × (1 + r)^n
+- Website: [cagrcalculator.app](https://cagrcalculator.app/)
+- Web source: [chen1360245/cagr](https://github.com/chen1360245/cagr)
 
-// 模式3：计算初始价值
-PV = FV / (1 + r)^n
+## Package For Release
 
-// 模式4：计算时间周期
-n = log(FV / PV) / log(1 + r)
+Create the Chrome Web Store zip locally with the packaging script:
 
-// 翻倍时间（精确）
-翻倍时间 = log(2) / log(1 + r)
+```powershell
+./create-zip.ps1
 ```
 
----
+Generated zip archives are intentionally ignored by Git.
 
-## 🔒 隐私与安全
+## Contributing
 
-- ✅ **不收集数据**：所有计算在本地完成
-- ✅ **不跟踪**：无分析或遥测
-- ✅ **无需登录**：完全匿名
-- ✅ **最小权限**：仅需"storage"用于语言偏好
-- ✅ **开源**：代码可供审查
-- ✅ **离线可用**：无需互联网
+Issues and pull requests are welcome. For bug reports or feature ideas, open a
+[GitHub issue](https://github.com/chen1360245/chrome-cagr/issues).
 
----
+## License
 
-## 🐛 故障排除
-
-### 扩展无法加载？
-1. 确保在 `chrome://extensions/` 中启用了"开发者模式"
-2. 检查文件夹中是否存在所有文件
-3. 尝试重新加载扩展
-
-### 图标不显示？
-- 查看 `icons/ICON_INSTRUCTIONS.md` 生成PNG图标
-- 扩展没有图标也能工作（显示Chrome默认图标）
-
-### 计算不正确？
-- 确保输入3个值（不是2个或4个）
-- 检查值是否为正数
-- 验证CAGR在-100%到1000%之间
-
-### 语言无法切换？
-- Chrome扩展i18n使用浏览器的默认语言
-- 语言选择器显示偏好，但实际切换需要重新加载
-- 在Chrome设置中设置浏览器语言
-
----
-
-## 📝 更新日志
-
-### 版本 1.0.0 (2025-10-24)
-- 🎉 首次发布
-- ✅ 4参数智能计算
-- ✅ 9种语言支持
-- ✅ 标普500对比的智能洞察
-- ✅ 离线功能
-- ✅ 简洁现代的UI
-
----
-
-## 🤝 贡献
-
-欢迎贡献！贡献方式：
-
-1. Fork仓库
-2. 创建功能分支
-3. 进行更改
-4. 彻底测试
-5. 提交拉取请求
-
-### 开发设置
-```bash
-# 克隆仓库
-git clone <仓库地址>
-
-# 导航到扩展文件夹
-cd cagr-chrome
-
-# 作为解压扩展在Chrome中加载
-# 进行更改并测试
-```
-
----
-
-## 📄 许可证
-
-**专有** - 保留所有权利。
-
-此扩展免费使用，但源代码为专有。
-
----
-
-## 🔗 链接
-
-- 🌐 **网站**：[cagrcalculator.app](https://cagrcalculator.app)
-- 📧 **联系**：[网站上提供]
-- 🐛 **错误报告**：[GitHub Issues]
-- ⭐ **Chrome网上应用店**：[即将推出]
-
----
-
-## ❤️ 致谢
-
-- 计算引擎改编自生产网站
-- UI灵感来自现代金融工具
-- 感谢所有提供反馈的用户
-
----
-
-## 📊 统计数据
-
-- **语言**：9种
-- **总大小**：< 100KB
-- **计算模式**：4种
-- **所需权限**：1个（storage）
-- **外部依赖**：0
-
----
-
-**为全球投资者倾情打造 ❤️**
-
-*由 [cagrcalculator.app](https://cagrcalculator.app) 提供支持*
+This project is released under the [MIT License](LICENSE).

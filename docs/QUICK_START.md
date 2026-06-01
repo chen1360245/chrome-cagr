@@ -17,7 +17,7 @@
 2. 访问：`chrome://extensions/`
 3. 打开**开发者模式**（右上角开关）
 4. 点击**加载已解压的扩展程序**
-5. 选择项目根目录 `D:\program files\AIweb\cagr-chrome`
+5. 选择克隆后的仓库根目录 `chrome-cagr`
 6. 完成！✅
 
 ### 步骤3：固定扩展（可选）
@@ -176,7 +176,7 @@
 - 访问教育内容
 
 ### 提供反馈
-- 在Chrome网上应用店给扩展评分（发布后）
+- 在 [Chrome Web Store](https://chromewebstore.google.com/detail/smart-cagr-calculator/cpbbkfbjhcaompikhekjjfopcecomkao) 给扩展评分
 - 在GitHub上报告错误
 - 建议新功能
 

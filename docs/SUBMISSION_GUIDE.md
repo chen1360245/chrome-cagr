@@ -1,13 +1,17 @@
 # 🚀 Chrome Web Store 提交完整指南
 
+> **当前状态：** Smart CAGR Calculator `1.0.0` 已发布到
+> [Chrome Web Store](https://chromewebstore.google.com/detail/smart-cagr-calculator/cpbbkfbjhcaompikhekjjfopcecomkao)。
+> 本文保留为后续版本更新与商店维护参考。
+
 ## ✅ 准备就绪清单
 
 ### 已完成 ✅
 - ✅ Chrome开发者账号已注册（$5已支付）
 - ✅ 扩展开发完成，功能正常
 - ✅ 商店描述已准备（STORE_DESCRIPTION.md）
-- ✅ ZIP包已创建（smart-cagr-calculator.zip, 25KB）
-- ✅ 隐私政策URL已上线（https://cagrcalculator.app/en/privacy）
+- ✅ ZIP包可通过 `create-zip.ps1` 在本地生成
+- ✅ 插件隐私政策URL已上线（https://cagrcalculator.app/en/privacy-extension）
 - ✅ 布局优化完成（无滚动条）
 
 ### 待完成 ⚠️
@@ -38,7 +42,7 @@
 ### 步骤3：上传ZIP包
 
 1. **选择文件：** `smart-cagr-calculator.zip`
-2. **位置：** `D:\program files\AIweb\chrome-cagr\smart-cagr-calculator.zip`
+2. **位置：** 仓库根目录中的 `smart-cagr-calculator.zip`
 3. 点击 **"Upload"**（上传）
 4. 等待验证通过（通常几秒钟）
 
@@ -125,7 +129,7 @@ https://cagrcalculator.app/
 
 **隐私政策（Privacy Policy）：** *必填*
 ```
-https://cagrcalculator.app/en/privacy
+https://cagrcalculator.app/en/privacy-extension
 ```
 
 **注意：** 隐私政策页面已经在官网上准备好了。Chrome Web Store要求必须提供有效的隐私政策URL。
@@ -224,7 +228,7 @@ This extension does not collect, store, or transmit any user data. All calculati
 
 ### 2. 隐私政策问题
 - **问题：** 隐私政策URL无效或内容不完整
-- **解决：** 确保 https://cagrcalculator.app/en/privacy 可访问且内容完整
+- **解决：** 确保 https://cagrcalculator.app/en/privacy-extension 可访问且内容完整
 
 ### 3. 权限问题
 - **问题：** 权限说明不清楚
@@ -280,7 +284,7 @@ This extension does not collect, store, or transmit any user data. All calculati
 
 您的隐私政策已经在官网上线：
 ```
-https://cagrcalculator.app/en/privacy
+https://cagrcalculator.app/en/privacy-extension
 ```
 
 **Chrome Web Store要求隐私政策必须包含：**
@@ -298,7 +302,7 @@ https://cagrcalculator.app/en/privacy
 提交前最后检查：
 
 ### 文件检查
-- [ ] ZIP包小于100MB（我们是25KB ✅）
+- [ ] ZIP包小于100MB
 - [ ] manifest.json格式正确
 - [ ] 所有图标文件存在
 - [ ] 代码无明显错误
@@ -352,20 +356,23 @@ https://cagrcalculator.app/en/privacy
 
 ---
 
-## 🎊 祝您发布成功！
+## 🎊 已发布
 
-一旦审核通过，您的扩展将在Chrome Web Store上线，全球用户都可以下载使用！
+Smart CAGR Calculator `1.0.0` 已在 Chrome Web Store 上线：
+
+https://chromewebstore.google.com/detail/smart-cagr-calculator/cpbbkfbjhcaompikhekjjfopcecomkao
+
+后续版本可继续使用本文中的打包、测试和更新流程。
 
 ---
 
-**文档最后更新：** 2025年10月26日
+**文档最后更新：** 2026年6月1日
 **扩展版本：** 1.0.0
-**提交状态：** ✅ 准备就绪 - 可以立即提交
-**隐私政策：** ✅ 已上线（https://cagrcalculator.app/en/privacy）
-**ZIP包状态：** ✅ 已更新（25KB，描述长度已修复）
+**提交状态：** ✅ 已发布到 Chrome Web Store
+**商店地址：** https://chromewebstore.google.com/detail/smart-cagr-calculator/cpbbkfbjhcaompikhekjjfopcecomkao
+**隐私政策：** ✅ 已上线（https://cagrcalculator.app/en/privacy-extension）
+**ZIP包状态：** 发布时在本地生成，不纳入Git版本控制
 **截图状态：** ✅ 5张截图已完成（1280x800）
-**预计提交时间：** 随时可以提交
-**预计发布时间：** 提交后1-3个工作日
 
 ---
 

@@ -16,7 +16,7 @@
 #### 步骤1：打开PowerShell
 
 **方式A：在项目文件夹中打开**
-1. 打开文件夹：`D:\program files\AIweb\cagr-chrome`
+1. 打开克隆后的仓库根目录：`chrome-cagr`
 2. 按住 **Shift** 键，右键点击空白处
 3. 选择"在此处打开 PowerShell 窗口"
 
@@ -24,7 +24,7 @@
 1. 按 **Win + X**，选择"Windows PowerShell"
 2. 输入命令切换到项目目录：
    ```powershell
-   cd "D:\program files\AIweb\cagr-chrome"
+   cd chrome-cagr
    ```
 
 #### 步骤2：运行打包脚本
@@ -580,7 +580,7 @@ MAJOR.MINOR.PATCH
 
 **文件位置：**
 ```
-D:\program files\AIweb\cagr-chrome\create-zip.ps1
+chrome-cagr\create-zip.ps1
 ```
 
 **自动化操作：**
@@ -607,7 +607,7 @@ D:\program files\AIweb\cagr-chrome\create-zip.ps1
 $ErrorActionPreference = "Stop"
 
 # 切换到项目目录
-Set-Location "D:\program files\AIweb\cagr-chrome"
+Set-Location "chrome-cagr"
 
 # 删除旧的ZIP（如果存在）
 if (Test-Path "smart-cagr-calculator.zip") {
@@ -672,7 +672,7 @@ Write-Host "✅ ZIP包创建成功: smart-cagr-calculator.zip" -ForegroundColor 
 - [ ] 无个人信息
 - [ ] 无调试代码（console.log已移除或注释）
 - [ ] 无测试数据
-- [ ] 隐私政策URL正确（https://cagrcalculator.app/en/privacy）
+- [ ] 隐私政策URL正确（https://cagrcalculator.app/en/privacy-extension）
 
 ### 权限检查
 
@@ -718,7 +718,7 @@ Write-Host "✅ ZIP包创建成功: smart-cagr-calculator.zip" -ForegroundColor 
 - [ ] 与之前版本不重复（如果是更新）
 
 #### 5. 隐私政策确认
-- [ ] https://cagrcalculator.app/en/privacy 可访问
+- [ ] https://cagrcalculator.app/en/privacy-extension 可访问
 - [ ] 包含所有必需内容
 
 **✅ 所有检查通过 → 可以上传到Chrome Web Store！**
@@ -772,7 +772,7 @@ Write-Host "✅ ZIP包创建成功: smart-cagr-calculator.zip" -ForegroundColor 
 
 ```powershell
 # 步骤1：进入项目目录
-cd "D:\program files\AIweb\cagr-chrome"
+cd chrome-cagr
 
 # 步骤2：运行打包脚本
 .\create-zip.ps1

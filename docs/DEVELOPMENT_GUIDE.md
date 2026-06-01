@@ -28,7 +28,7 @@
 
 3. **加载已解压的扩展程序**
    - 点击"加载已解压的扩展程序"
-   - 选择项目根目录 `D:\program files\AIweb\cagr-chrome`
+   - 选择克隆后的仓库根目录 `chrome-cagr`
    - 扩展应出现在列表中
 
 4. **固定扩展**
@@ -290,7 +290,7 @@ function calculate() {
 
 4. **创建ZIP包**
    ```bash
-   cd "D:\program files\AIweb\cagr-chrome"
+   cd chrome-cagr
 
    # Windows PowerShell：
    Compress-Archive -Path manifest.json,logo-full.svg,_locales,icons,popup,lib -DestinationPath smart-cagr-calculator.zip

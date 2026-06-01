@@ -1,6 +1,6 @@
 # Chrome Extension Privacy Policy
 
-**Last Updated:** October 26, 2025
+**Last Updated:** June 1, 2026
 **Extension Name:** Smart CAGR Calculator
 **Developer:** CAGR Calculator Team
 
@@ -111,7 +111,7 @@ For the website privacy policy, please visit: https://cagrcalculator.app/en/priv
 
 If you have questions about this Privacy Policy, please contact us:
 
-- **Email:** (您的联系邮箱)
+- **GitHub Issues:** https://github.com/chen1360245/chrome-cagr/issues
 - **Website:** https://cagrcalculator.app
 
 ---
@@ -131,5 +131,5 @@ You can use the Extension with confidence knowing that your financial calculatio
 
 ---
 
-**Last Updated:** October 26, 2025
+**Last Updated:** June 1, 2026
 **Version:** 1.0.0
