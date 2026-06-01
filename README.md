@@ -1,5 +1,7 @@
 # Smart CAGR Calculator Chrome Extension
 
+[English](README.md) | [简体中文](README.zh-CN.md)
+
 A lightweight Chrome extension for compound annual growth rate calculations.
 Enter any three values and the extension solves for the fourth, entirely on
 your device.
