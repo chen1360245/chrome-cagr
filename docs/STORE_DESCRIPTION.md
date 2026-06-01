@@ -223,7 +223,7 @@ stock calculator
 
 **隐私政策URL：**
 ```
-https://cagrcalculator.app/privacy
+https://cagrcalculator.app/en/privacy-extension
 ```
 
 **支持URL：**
@@ -244,7 +244,7 @@ https://cagrcalculator.app
 2. **详细描述：** 复制英文详细描述到"详细描述"字段
 3. **分类：** 选择"Productivity"
 4. **语言：** 主要语言选择"English"，但扩展支持9种语言
-5. **隐私政策：** 填入 https://cagrcalculator.app/privacy
+5. **隐私政策：** 填入 https://cagrcalculator.app/en/privacy-extension
 
 ---
 
