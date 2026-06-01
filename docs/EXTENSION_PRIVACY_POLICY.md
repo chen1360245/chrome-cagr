@@ -142,4 +142,4 @@ You can use the Extension with confidence knowing that your financial calculatio
 ---
 
 **Last Updated:** June 1, 2026
-**Version:** 1.0.0
+**Version:** 1.0.1
