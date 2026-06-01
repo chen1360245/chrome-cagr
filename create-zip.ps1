@@ -3,8 +3,9 @@
 
 $ErrorActionPreference = "Stop"
 
-# 切换到项目目录
-Set-Location "D:\program files\AIweb\chrome-cagr"
+# 切换到脚本所在的仓库目录
+$projectRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
+Set-Location $projectRoot
 
 # 删除旧的ZIP（如果存在）
 if (Test-Path "smart-cagr-calculator.zip") {
@@ -29,8 +30,8 @@ Copy-Item "lib" -Destination $tempFolder -Recurse
 
 # 复制icons文件夹，但只要图片文件
 New-Item -ItemType Directory -Path "$tempFolder\icons" | Out-Null
-Copy-Item "icons\icon.svg" -Destination "$tempFolder\icons"
 Copy-Item "icons\icon16.png" -Destination "$tempFolder\icons"
+Copy-Item "icons\icon32.png" -Destination "$tempFolder\icons"
 Copy-Item "icons\icon48.png" -Destination "$tempFolder\icons"
 Copy-Item "icons\icon128.png" -Destination "$tempFolder\icons"
 
