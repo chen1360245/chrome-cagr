@@ -145,11 +145,23 @@ function parseInputValue(value) {
   return isNaN(num) ? undefined : num;
 }
 
+function toCalculationInputs(inputs) {
+  return {
+    ...inputs,
+    r: inputs.r !== undefined ? inputs.r / 100 : undefined,
+  };
+}
+
 function updateInputStatus(field, value) {
   const statusElement = elements[`status${field.toUpperCase()}`];
   if (!statusElement) return;
 
-  if (value !== undefined && value > 0) {
+  const isValid =
+    field === 'r'
+      ? value !== undefined && value > -100 && value <= 1000
+      : value !== undefined && value > 0;
+
+  if (isValid) {
     statusElement.textContent = '✓';
     statusElement.className = 'input-status status-valid';
   } else {
@@ -187,7 +199,7 @@ function handleInputChange(field, inputElement) {
 
 // ==================== Mode Detection ====================
 function updateModeDetection() {
-  const detection = SmartCAGRCalculator.detectMode(currentInputs);
+  const detection = SmartCAGRCalculator.detectMode(toCalculationInputs(currentInputs));
 
   if (detection.filledCount < 3) {
     elements.modeText.innerHTML = `💡 ${getMessage('errorFillThree')}`;
@@ -236,16 +248,8 @@ function calculate() {
   hideError();
 
   try {
-    // Convert percentage to decimal for calculation
-    const calculationInputs = {
-      pv: currentInputs.pv,
-      fv: currentInputs.fv,
-      n: currentInputs.n,
-      r: currentInputs.r !== undefined ? currentInputs.r / 100 : undefined,
-    };
-
     // Perform calculation
-    currentResult = SmartCAGRCalculator.calculate(calculationInputs);
+    currentResult = SmartCAGRCalculator.calculate(toCalculationInputs(currentInputs));
 
     // Display results
     displayResults(currentResult);
@@ -288,7 +292,8 @@ function displayResults(result) {
   // Display metrics
   const { metrics, inputs } = result;
   elements.metricCAGR.textContent = formatPercentage(inputs.r);
-  elements.metricTotal.textContent = `+${metrics.totalGrowth.toFixed(2)}%`;
+  const totalGrowthPrefix = metrics.totalGrowth >= 0 ? '+' : '';
+  elements.metricTotal.textContent = `${totalGrowthPrefix}${metrics.totalGrowth.toFixed(2)}%`;
   elements.metricSub.textContent = getMessage('resultOverYears', [inputs.n.toFixed(0)]);
 
   // Display insights

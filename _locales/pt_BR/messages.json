@@ -5,6 +5,9 @@
   "appDescription": {
     "message": "Calculadora CAGR. Insira 3 valores (Inicial, Final, Tempo, Taxa), calcule o 4º. Funciona offline."
   },
+  "disclaimer": {
+    "message": "Apenas para fins informativos. Os resultados são estimativas baseadas nos dados inseridos e não há garantia de exatidão, integridade ou adequação para decisões de investimento."
+  },
   "btnCalculate": {
     "message": "Calcular Agora"
   },

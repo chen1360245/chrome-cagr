@@ -32,6 +32,11 @@
 所有计算均在本地完成。插件不会传输计算输入、计算结果或浏览数据。详情请阅读
 [插件隐私政策](docs/EXTENSION_PRIVACY_POLICY.md)。
 
+## 免责声明
+
+本插件仅用于教育和信息参考。计算结果是基于用户输入数据的估算值，不保证准确或完整，
+也不应作为财务或投资决策依据。
+
 ## 从源码运行
 
 1. 克隆仓库：
@@ -47,6 +52,15 @@
 5. 选择仓库根目录。
 
 无需执行构建步骤。
+
+## 验证命令
+
+```bash
+node tests/calculator.test.js
+node --check lib/calculator.js
+node --check lib/formatters.js
+node --check popup/popup.js
+```
 
 ## 项目结构
 

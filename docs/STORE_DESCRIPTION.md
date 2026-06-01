@@ -42,7 +42,7 @@ Simply input ANY 3 values, and the calculator automatically detects which parame
 ### 📊 Investment Insights
 - Compare your returns against S&P 500 average (10.5%)
 - Calculate doubling time for your investments
-- Get personalized investment advice
+- Review informational growth insights
 - Clear explanations of calculation results
 
 ### ✨ User-Friendly Features
@@ -71,6 +71,9 @@ Simply input ANY 3 values, and the calculator automatically detects which parame
 - **Open source friendly** - Transparent calculation logic
 - **No tracking** - We don't track your usage
 
+## ⚠️ Disclaimer
+Calculation results are estimates based on your inputs and are not guaranteed to be accurate or complete. This extension is for educational and informational purposes only, not financial or investment advice.
+
 ## 📈 Example Use Cases
 - "I invested $10,000 and it grew to $40,000 in 10 years. What was my CAGR?" → **14.87%**
 - "My investment grows at 15% annually. If I start with $1,000, what will I have in 20 years?" → **$16,366**
@@ -82,7 +85,7 @@ For more features including interactive charts, comparison tools, and detailed a
 ## 💡 Why Choose Our Calculator?
 ✅ Only CAGR calculator that computes all 4 parameters
 ✅ Most languages supported (9 languages)
-✅ Fastest and most accurate calculations
+✅ Transparent formulas and local calculations
 ✅ Beautiful, intuitive interface
 ✅ Completely free, no ads, no tracking
 
@@ -126,7 +129,7 @@ Powered by cagrcalculator.app
 ### 📊 投资洞察
 - 与标普500平均水平（10.5%）对比您的回报
 - 计算投资翻倍所需时间
-- 获得个性化投资建议
+- 查看参考性的增长洞察
 - 清晰的计算结果说明
 
 ### ✨ 用户友好功能
@@ -155,6 +158,9 @@ Powered by cagrcalculator.app
 - **开源友好** - 透明的计算逻辑
 - **无跟踪** - 我们不跟踪您的使用情况
 
+## ⚠️ 免责声明
+计算结果是基于您输入数据的估算值，不保证准确或完整。本插件仅用于教育和信息参考，不构成财务或投资建议。
+
 ## 📈 示例用例
 - "我投资了$10,000，10年后增长到$40,000。我的CAGR是多少？" → **14.87%**
 - "我的投资以15%年增长率增长。如果我从$1,000开始，20年后我会有多少？" → **$16,366**
@@ -166,7 +172,7 @@ Powered by cagrcalculator.app
 ## 💡 为什么选择我们的计算器？
 ✅ 唯一能计算所有4个参数的CAGR计算器
 ✅ 支持最多语言（9种语言）
-✅ 最快最准确的计算
+✅ 透明公式与本地计算
 ✅ 美观直观的界面
 ✅ 完全免费，无广告，无跟踪
 

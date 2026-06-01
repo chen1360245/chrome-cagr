@@ -5,6 +5,9 @@
   "appDescription": {
     "message": "CAGR-Rechner. Geben Sie 3 Werte ein (Anfangs-, Endwert, Zeit, Rate), berechnen Sie den 4. Funktioniert offline."
   },
+  "disclaimer": {
+    "message": "Nur zu Informationszwecken. Die Ergebnisse sind Schätzungen auf Grundlage Ihrer Eingaben und es wird nicht garantiert, dass sie korrekt, vollständig oder für Anlageentscheidungen geeignet sind."
+  },
   "appSlogan": {
     "message": "Geben Sie 3 Werte ein, berechnen Sie den 4."
   },

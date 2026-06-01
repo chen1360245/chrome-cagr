@@ -5,6 +5,9 @@
   "appDescription": {
     "message": "Smart CAGR calculator. Input any 3 values (Initial, Final, Time, Rate), auto-calculate the 4th. Works offline."
   },
+  "disclaimer": {
+    "message": "For informational purposes only. Results are estimates based on your inputs and are not guaranteed to be accurate, complete, or suitable for investment decisions."
+  },
   "appSlogan": {
     "message": "Input any 3 values, calculate the 4th"
   },

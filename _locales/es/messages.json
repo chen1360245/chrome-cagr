@@ -5,6 +5,9 @@
   "appDescription": {
     "message": "Calculadora CAGR. Ingrese 3 valores (Inicial, Final, Tiempo, Tasa), calcule el 4to. Funciona sin conexión."
   },
+  "disclaimer": {
+    "message": "Solo para fines informativos. Los resultados son estimaciones basadas en sus datos y no se garantiza que sean exactos, completos o adecuados para tomar decisiones de inversión."
+  },
   "appSlogan": {
     "message": "Ingrese cualquier 3 valores, calcule el 4to"
   },

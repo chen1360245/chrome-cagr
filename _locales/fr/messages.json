@@ -5,6 +5,9 @@
   "appDescription": {
     "message": "Calculateur CAGR. Entrez 3 valeurs (Initiale, Finale, Temps, Taux), calculez la 4ème. Fonctionne hors ligne."
   },
+  "disclaimer": {
+    "message": "À titre informatif uniquement. Les résultats sont des estimations basées sur vos données et leur exactitude, leur exhaustivité ou leur pertinence pour des décisions d'investissement ne sont pas garanties."
+  },
   "btnCalculate": {
     "message": "Calculer Maintenant"
   },

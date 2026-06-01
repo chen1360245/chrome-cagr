@@ -37,6 +37,12 @@ Calculations run locally. The extension does not transmit calculation inputs,
 results, or browsing data. See the
 [extension privacy policy](docs/EXTENSION_PRIVACY_POLICY.md) for details.
 
+## Disclaimer
+
+The extension is provided for educational and informational purposes only.
+Calculation results are estimates based on user inputs. They are not guaranteed
+to be accurate, complete, or suitable for financial or investment decisions.
+
 ## Run From Source
 
 1. Clone the repository:
@@ -52,6 +58,15 @@ results, or browsing data. See the
 5. Choose the repository root.
 
 No build step is required.
+
+## Validation
+
+```bash
+node tests/calculator.test.js
+node --check lib/calculator.js
+node --check lib/formatters.js
+node --check popup/popup.js
+```
 
 ## Project Structure
 

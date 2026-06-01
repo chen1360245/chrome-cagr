@@ -50,6 +50,16 @@ This preference is stored using Chrome's `storage.local` API and:
 
 ---
 
+## Calculation Disclaimer
+
+The Extension is provided for educational and informational purposes only.
+Calculation results are estimates based on user inputs. We do not guarantee
+that results are accurate, complete, error-free, or suitable for financial or
+investment decisions. The Extension does not provide financial, investment,
+tax, or legal advice. Consult qualified professionals before making decisions.
+
+---
+
 ## Permissions
 
 The Extension requires the following Chrome permission:
